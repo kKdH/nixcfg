@@ -104,6 +104,7 @@
     ethtool
     pciutils # lspci
     usbutils # lsusb
+    gpu-viewer
   ];
 
   home.file = {

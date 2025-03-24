@@ -40,7 +40,10 @@ in
       };
       profiles."default" = {
         id = 1;
-        bookmarks = bookmarks;
+        bookmarks = {
+          force = true;
+          settings = bookmarks;
+        };
         settings = {
           "browser.contentblocking.category" = "strict"; # "standard"
           "browser.startup.homepage" = "about:blank";
@@ -82,9 +85,9 @@ in
         };
         search = {
           force = true;
-          default = "Google";
+          default = "google";
           engines = {
-            "Google".metaData.alias = "@g";
+            "google".metaData.alias = "@g";
             "Nix Packages" = {
               urls = [{
                 template = "https://search.nixos.org/packages";
