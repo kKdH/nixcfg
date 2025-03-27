@@ -78,12 +78,20 @@ in
   };
   config = lib.mkIf enabled {
     home.packages = []
-      ++ lib.optional intellijCfg.enable (pkgs.jetbrains.idea-ultimate.override {
+      ++ lib.optional intellijCfg.enable ((pkgs.jetbrains.idea-ultimate.overrideAttrs {
+        version = "2025.1.0";
+        src = pkgs.fetchurl {
+          # https://www.jetbrains.com/de-de/idea/nextversion/
+          url = "https://download-cdn.jetbrains.com/idea/ideaIU-251.23774.200.tar.gz";
+          sha256 = "7ce57055e3a5ee92582eb90c2dea469b48a6e7165e74fe085ef1923c16ba7faa";
+        };
+      }).override {
         vmopts = renderVmOptions intellijCfg.vmOptions;
       })
       ++ lib.optional rustRoverCfg.enable ((pkgs.jetbrains.rust-rover.overrideAttrs {
         version = "2025.1.0";
         src = pkgs.fetchurl {
+          # https://www.jetbrains.com/de-de/rust/nextversion/
           url = "https://download.jetbrains.com/rustrover/RustRover-251.23774.119.tar.gz";
           sha256 = "JRltAyNtuZYHFGhXbnIiuVziKWlYd/B1GJxorJD0kA4=";
         };

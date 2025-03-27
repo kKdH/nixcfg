@@ -126,7 +126,10 @@
       enable = true;
       vmOptions.maxMemory = 16384;
     };
-    intellij.enable = true;
+    intellij = {
+      enable = true;
+      vmOptions.awtToolkit = "wayland";
+    };
   };
 
   git = {
