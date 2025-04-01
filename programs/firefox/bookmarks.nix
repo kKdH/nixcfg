@@ -72,6 +72,12 @@
         keyword = "prusa";
         url = "https://www.prusa3d.com/";
       }
+      {
+        name = "Fiberlogy";
+        tags = [ "construction" "shop" "3d-printing" "filament" ];
+        keyword = "";
+        url = "https://fiberlogy.com/";
+      }
     ];
   }
   {
@@ -188,6 +194,17 @@
         tags = [ "news" ];
         keyword = "golem";
         url = "https://golem.de/";
+      }
+      {
+        name = "TV";
+        bookmarks = [
+          {
+            name = "ZDF";
+            tags = [ "news" "tv" ];
+            keyword = "zdf";
+            url = "https://www.zdf.de/";
+          }
+        ];
       }
     ];
   }

@@ -57,6 +57,7 @@ in
           "browser.translations.panelShown" = false;
           "browser.translations.enable" = false;
           "browser.urlbar.showSearchSuggestionsFirst" = false;
+          "network.protocol-handler.external.mailto" = false;
            # Disable some telemetry
           "app.shield.optoutstudies.enabled" = false;
           "browser.discovery.enabled" = false;
@@ -107,7 +108,17 @@ in
                 ];
               }];
               # icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
-              definedAliases = [ "@dict" ];
+              definedAliases = [ "@d" ];
+            };
+            "idealo" = {
+              urls = [{
+                template = "https://www.idealo.de/preisvergleich/MainSearchProductCategory.html";
+                params = [
+                  { name = "q"; value = "{searchTerms}"; }
+                ];
+              }];
+              # icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
+              definedAliases = [ "@idealo" ];
             };
           };
         };
