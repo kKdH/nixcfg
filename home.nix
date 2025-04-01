@@ -46,6 +46,7 @@
     inkscape
     telegram-desktop
     drawio
+    picoscope
     kdePackages.kcolorchooser
 
     neofetch
