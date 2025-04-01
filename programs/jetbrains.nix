@@ -92,8 +92,8 @@ in
         version = "2025.1.0";
         src = pkgs.fetchurl {
           # https://www.jetbrains.com/de-de/rust/nextversion/
-          url = "https://download.jetbrains.com/rustrover/RustRover-251.23774.119.tar.gz";
-          sha256 = "JRltAyNtuZYHFGhXbnIiuVziKWlYd/B1GJxorJD0kA4=";
+          url = "https://download-cdn.jetbrains.com/rustrover/RustRover-251.23774.207.tar.gz";
+          sha256 = "1c81ec3be3785edaa4afcb85b68baeebad8744d8f52716ffcb2ad8f3ed38ffd4";
         };
       }).override {
         vmopts = renderVmOptions rustRoverCfg.vmOptions;
