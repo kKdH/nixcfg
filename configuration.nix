@@ -24,11 +24,18 @@
     device = "nodev";
   };
 
+
   # luks
-  boot.initrd.luks.devices = {
-    crypted = {
-      device = "/dev/disk/by-uuid/bb1a1d1a-24af-4b8d-aefc-c21e850b6507";
-      preLVM = true;
+  boot = {
+    # kernelParams = [ "nvidia-drm.fbdev=1" ];
+    initrd = {
+      # kernelModules = [ "nvidia" "i915" "nvidia_modeset" "nvidia_uvm" "nvidia_drm" ];
+      luks.devices = {
+        crypted = {
+          device = "/dev/disk/by-uuid/bb1a1d1a-24af-4b8d-aefc-c21e850b6507";
+          preLVM = true;
+        };
+      };
     };
   };
 
@@ -56,7 +63,7 @@
   };
 
   hardware.nvidia = {
-# Modesetting is required.
+    # Modesetting is required.
     modesetting.enable = true;
 
     # Nvidia power management. Experimental, and can cause sleep/suspend to fail.
@@ -75,18 +82,18 @@
     # supported GPUs is at: 
     # https://github.com/NVIDIA/open-gpu-kernel-modules#compatible-gpus 
     # Only available from driver 515.43.04+
-    open = true;
+    open = false;
 
     # Enable the Nvidia settings menu,
     # accessible via `nvidia-settings`.
     nvidiaSettings = true;
 
-    package = config.boot.kernelPackages.nvidiaPackages.stable;
+    package = config.boot.kernelPackages.nvidiaPackages.latest;
 
     prime = {
       offload = {
-        enable = true;
-        enableOffloadCmd = true;
+        enable = false;
+        enableOffloadCmd = false;
       };
       intelBusId = "PCI:0:2:0"; # 00:02.0
       nvidiaBusId = "PCI:1:0:0"; # 01:00.0
