@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, services, ... }:
 
 {
   imports = [
@@ -147,6 +147,8 @@
     enable = true;
     plugins = [ "git" "rust" "docker" "kubectl" "helm" "argocd" "aws" "podman" ];
   };
+
+  probe-rs.enable = true;
 
   programs.bash = {
     enable = true;

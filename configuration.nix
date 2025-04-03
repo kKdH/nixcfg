@@ -5,10 +5,9 @@
 { config, lib, pkgs, ... }:
 
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-    ];
+  imports = [
+    ./hardware-configuration.nix
+  ];
 
   nixpkgs.config.allowUnfree = true;
 
@@ -101,6 +100,11 @@
     };
   };
 
+  hardware.bluetooth = {
+    enable = true; # enables support for Bluetooth
+    powerOnBoot = true; # powers up the default Bluetooth controller on boot
+  };
+
   # Enable the X11 windowing system.
   services.xserver.enable = true;
   services.xserver.videoDrivers = ["nvidia"];
@@ -168,7 +172,9 @@
   # services.openssh.enable = true;
 
   # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
+  networking.firewall.allowedTCPPorts = [
+    # 5001 # gRPC e.g. ANNE
+  ];
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;

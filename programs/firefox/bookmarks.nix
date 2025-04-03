@@ -127,23 +127,33 @@
             name = "Nucleo";
             bookmarks = [
               {
-                name = "Nucleo F446 Datasheet";
-                tags = [ "electronics" "datasheet" "stm32" "nucleo" "f4" "f446" ];
+                name = "Nucleo F446";
+                tags = [ "electronics" "stm32" "nucleo" "f4" "f446" ];
+                url = "https://www.st.com/en/evaluation-tools/nucleo-f446re.html";
+              }
+              {
+                name = "Nucleo F446 Datasheet (PDF)";
+                tags = [ "electronics" "datasheet" "stm32" "nucleo" "f4" "f446" "pdf" ];
                 url = "https://www.st.com/resource/en/datasheet/stm32f446re.pdf";
               }
               {
-                name = "Nucleo F446 Manuel";
-                tags = [ "electronics" "manual" "stm32" "nucleo" "f4" "f446" ];
-                url = "https://www.st.com/resource/en/user_manual/dm00493601-stm32g4-nucleo-32-board-mb1430-stmicroelectronics.pdf";
+                name = "Nucleo F446 Manuel (PDF)";
+                tags = [ "electronics" "manual" "stm32" "nucleo" "f4" "f446" "pdf" ];
+                url = "https://www.st.com/resource/en/user_manual/um1724-stm32-nucleo64-boards-mb1136-stmicroelectronics.pdf";
               }
               {
-                name = "Nucleo G431 Datasheet";
-                tags = [ "electronics" "datasheet" "stm32" "nucleo" "g4" "g431" ];
+                name = "Nucleo G431";
+                tags = [ "electronics" "stm32" "nucleo" "g4" "g431" ];
+                url = "https://www.st.com/en/evaluation-tools/nucleo-g431kb.html#documentation";
+              }
+              {
+                name = "Nucleo G431 Datasheet (PDF)";
+                tags = [ "electronics" "datasheet" "stm32" "nucleo" "g4" "g431" "pdf" ];
                 url = "https://www.st.com/resource/en/datasheet/stm32g431c6.pdf";
               }
               {
-                name = "Nucleo G431 Manual";
-                tags = [ "electronics" "manual" "stm32" "nucleo" "g4" "g431" ];
+                name = "Nucleo G431 Manual (PDF)";
+                tags = [ "electronics" "manual" "stm32" "nucleo" "g4" "g431" "pdf" ];
                 url = "https://www.st.com/resource/en/user_manual/dm00493601-stm32g4-nucleo-32-board-mb1430-stmicroelectronics.pdf";
               }            ];
               

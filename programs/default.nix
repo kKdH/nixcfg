@@ -1,4 +1,4 @@
-{ pkgs, lib, config, ... }:
+{ ... }:
 
 {
   imports = [
@@ -7,6 +7,7 @@
     ./helix.nix
     ./jetbrains.nix
     ./plasma.nix
+    ./probe-rs/probe-rs.nix
     ./zsh.nix
   ];
 }
