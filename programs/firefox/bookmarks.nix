@@ -81,6 +81,36 @@
     ];
   }
   {
+    name = "Rust";
+    bookmarks = [
+      {
+        name = "Rust";
+        tags = [ "programming" "rust" ];
+        url = "https://www.rust-lang.org/";
+      }
+      {
+        name = "Rust Blogs";
+        bookmarks = [
+          {
+            name = "Yoshua Wuyts";
+            tags = [ "programming" "blog" "rust" ];
+            url = "https://blog.yoshuawuyts.com/";
+          }
+          {
+            name = "Without boats";
+            tags = [ "programming" "blog" "rust" ];
+            url = "https://without.boats/";
+          }
+          {
+            name = "Babysteps - Niko Matsakis";
+            tags = [ "programming" "blog" "rust" ];
+            url = "https://smallcultfollowing.com/babysteps/";
+          }
+        ];
+      }
+    ];
+  }
+  {
     name = "Electronics";
     bookmarks = [
       {
@@ -236,6 +266,10 @@
         tags = [ "shop" ];
         keyword = "klein";
         url = "https://www.kleinanzeigen.de/";
+      }
+      {
+        name = "Maschinensucher";
+        url = "https://www.maschinensucher.de";
       }
       {
         name = "Wikipedia";

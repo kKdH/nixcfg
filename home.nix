@@ -148,8 +148,6 @@
     plugins = [ "git" "rust" "docker" "kubectl" "helm" "argocd" "aws" "podman" ];
   };
 
-  probe-rs.enable = true;
-
   programs.bash = {
     enable = true;
     enableCompletion = true;

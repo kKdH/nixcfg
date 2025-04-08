@@ -89,6 +89,15 @@ in
           default = "google";
           engines = {
             "google".metaData.alias = "@g";
+            "crates.io" = {
+              urls = [{
+                template = "https://crates.io/search";
+                params = [
+                  { name = "q"; value = "{searchTerms}"; }
+                ];
+              }];
+              definedAliases = [ "@crate" ];
+            };
             "Nix Packages" = {
               urls = [{
                 template = "https://search.nixos.org/packages";
@@ -108,7 +117,7 @@ in
                 ];
               }];
               # icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
-              definedAliases = [ "@d" ];
+              definedAliases = [ "@dict" ];
             };
             "idealo" = {
               urls = [{
