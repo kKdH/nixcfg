@@ -1,4 +1,4 @@
-{ config, pkgs, services, ... }:
+{ config, pkgs, ... }:
 
 {
   imports = [
@@ -82,6 +82,7 @@
     gawk
     zstd
     gnupg
+    wl-clipboard
 
     # nix related
     #
@@ -113,6 +114,25 @@
       [Desktop Entry]
       Icon=folder-script
     '';
+  };
+
+  sops = {
+    defaultSopsFile = ./secrets/secrets.yaml;
+    age.keyFile = "${config.home.homeDirectory}/.config/sops/age/keys.txt";
+    secrets = {
+      ssh_key_jw = {
+        path = "${config.home.homeDirectory}/.ssh/elmar.schug@jayware.org.id_rsa";
+      };
+      ssh_pub_jw = {
+        path = "${config.home.homeDirectory}/.ssh/elmar.schug@jayware.org.id_rsa.pub";
+      };
+      ssh_key_mb = {
+        path = "${config.home.homeDirectory}/.ssh/elschug.id.rsa";
+      };
+      ssh_pub_mb = {
+        path = "${config.home.homeDirectory}/.ssh/elschug.id.rsa.pub";
+      };
+    };
   };
 
   firefox.enable = true;

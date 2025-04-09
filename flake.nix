@@ -7,6 +7,10 @@
       url = "github:nix-community/NUR";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    sops-nix = {
+      url = "github:Mic92/sops-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     home-manager = {
       url = "github:nix-community/home-manager";
       # The `follows` keyword in inputs is used for inheritance.
@@ -26,6 +30,7 @@
     inputs@{ 
       self,
       nixpkgs,
+      sops-nix,
       home-manager,
       plasma-manager,
       ...
@@ -34,11 +39,15 @@
         system = "x86_64-linux";
         modules = [
           ./configuration.nix
+          # sops-nix.nixosModules.sops
           home-manager.nixosModules.home-manager {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             home-manager.users.elmar = import ./home.nix;
-            home-manager.sharedModules = [ plasma-manager.homeManagerModules.plasma-manager ];
+            home-manager.sharedModules = [
+              sops-nix.homeManagerModules.sops
+              plasma-manager.homeManagerModules.plasma-manager
+            ];
             # Optionally, use home-manager.extraSpecialArgs to pass arguments to home.nix
           }
         ];

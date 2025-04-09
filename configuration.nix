@@ -23,7 +23,6 @@
     device = "nodev";
   };
 
-
   # luks
   boot = {
     # kernelParams = [ "nvidia-drm.fbdev=1" ];
@@ -138,10 +137,16 @@
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.elmar = {
     isNormalUser = true;
+    home = "/home/elmar";
     extraGroups = [ "wheel" "dialout" ];
     packages = with pkgs; [
     ];
   };
+
+  # sops = {
+  #   defaultSopsFile = ./secrets/secrets.yaml;
+  #   age.keyFile = "${config.users.users.elmar.home}/.config/sops/age/keys.txt";
+  # };
 
   programs.zsh.enable = true;
   programs.nix-ld.enable = true;
@@ -155,6 +160,8 @@
     curl
     git
     keepassxc
+    sops
+    age
     tree
     vim
     wget
