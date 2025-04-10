@@ -127,13 +127,15 @@
         path = "${config.home.homeDirectory}/.ssh/elmar.schug@jayware.org.id_rsa.pub";
       };
       ssh_key_mb = {
-        path = "${config.home.homeDirectory}/.ssh/elschug.id.rsa";
+        path = "${config.home.homeDirectory}/.ssh/elmar.schug@mercedes-benz.com.id.rsa";
       };
       ssh_pub_mb = {
-        path = "${config.home.homeDirectory}/.ssh/elschug.id.rsa.pub";
+        path = "${config.home.homeDirectory}/.ssh/elmar.schug@mercedes-benz.com.id.rsa.pub";
       };
     };
   };
+
+  sshconfig.enable = true;
 
   firefox.enable = true;
 

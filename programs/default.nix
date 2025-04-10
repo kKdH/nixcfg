@@ -7,6 +7,7 @@
     ./helix.nix
     ./jetbrains.nix
     ./plasma.nix
+    ./sshconfig.nix
     ./zsh.nix
   ];
 }

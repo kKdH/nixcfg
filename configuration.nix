@@ -180,10 +180,13 @@
   # Enable the OpenSSH daemon.
   # services.openssh.enable = true;
 
+  networking.hostName = "c415lx084833926";
+
   # Open ports in the firewall.
   networking.firewall.allowedTCPPorts = [
     # 5001 # gRPC e.g. ANNE
   ];
+
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
