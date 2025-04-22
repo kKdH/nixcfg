@@ -132,6 +132,17 @@
 
   services.udev.extraRules = builtins.readFile programs/probe-rs/probe-rs.udev.rules;
 
+  virtualisation.docker = {
+    rootless = {
+      enable = true;
+      setSocketVariable = true;
+    };
+    daemon.settings = {
+      # data-root = "/some-place/to-store-the-docker-data";
+    };
+    storageDriver = "btrfs";
+  };
+
   users.defaultUserShell = pkgs.zsh;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
