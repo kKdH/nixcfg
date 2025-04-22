@@ -43,11 +43,13 @@
     prusa-slicer
     kicad
     krita
+    blender
     inkscape
     telegram-desktop
     drawio
     picoscope
     kdePackages.kcolorchooser
+    kdePackages.kgpg
 
     neofetch
 
