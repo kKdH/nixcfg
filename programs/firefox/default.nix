@@ -125,6 +125,7 @@ in
                 template = "https://www.idealo.de/preisvergleich/MainSearchProductCategory.html";
                 params = [
                   { name = "q"; value = "{searchTerms}"; }
+                  { name = "sortKey"; value = "minPrice"; }
                 ];
               }];
               # icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";

@@ -78,6 +78,11 @@
         keyword = "";
         url = "https://fiberlogy.com/";
       }
+      {
+        name = "Frantos";
+        tags = [ "shop" "bolts" "nuts" ];
+        url = "frantos.com";
+      }
     ];
   }
   {
@@ -124,6 +129,11 @@
         tags = [ "electronics" "shop" "smart-home" ];
         keyword = "botland";
         url = "https://botland.store";
+      }
+      {
+        name = "Voelkner";
+        tags = [ "shop" "smart-home" ];
+        url = "https://www.voelkner.de/";
       }
       {
         name = "SmartKram";
@@ -305,6 +315,10 @@
         keyword = "typst";
         url = "https://typst.app/";
       }
+      {
+        name = "PC Part Picker";
+        url = "https://de.pcpartpicker.com/list/dtPsLc";
+      }
     ];
   }
   {
@@ -327,6 +341,11 @@
         tags = [ "work" "dhc" "cloud" "kubernetes" "aws" "azure" "container" ];
         keyword = "dhc";
         url = "https://dhc-portal.app.corpintra.net/";
+      }
+      {
+        name = "Mattermost";
+        tags = [ "work" ];
+        url = "https://matter.i.mercedes-benz.com/";
       }
     ];
   }
