@@ -83,7 +83,7 @@ in
         src = pkgs.fetchurl {
           # https://www.jetbrains.com/de-de/idea/nextversion/
           url = "https://download-cdn.jetbrains.com/idea/ideaIU-2025.1.tar.gz";
-          sha256 = "7ce57055e3a5ee92582eb90c2dea469b48a6e7165e74fe085ef1923c16ba7faa";
+          sha256 = "9946a690072f166607fd7b0d29e9e9c6a24c79fd5d7365a5600366b0b27532ec";
         };
       }).override {
         vmopts = renderVmOptions intellijCfg.vmOptions;
@@ -92,8 +92,8 @@ in
         version = "2025.1.0";
         src = pkgs.fetchurl {
           # https://www.jetbrains.com/de-de/rust/nextversion/
-          url = "https://download-cdn.jetbrains.com/rustrover/RustRover-2025.1.tar.gz";
-          sha256 = "6c3e5c2cc45bfbfe631f6f34f87d45fbc3e3f97d12a8ca9e6de77beab230a210";
+          url = "https://download-cdn.jetbrains.com/rustrover/RustRover-2025.1.1.tar.gz";
+          sha256 = "f569ecec2bde49663063810166c5e0ebdeb7edf9ebb59d001cc04c0d06363022";
         };
       }).override {
         vmopts = renderVmOptions rustRoverCfg.vmOptions;
