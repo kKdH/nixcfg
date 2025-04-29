@@ -132,15 +132,18 @@
 
   services.udev.extraRules = builtins.readFile programs/probe-rs/probe-rs.udev.rules;
 
-  virtualisation.docker = {
-    rootless = {
-      enable = true;
-      setSocketVariable = true;
+  virtualisation = {
+    docker = {
+      rootless = {
+        enable = true;
+        setSocketVariable = true;
+      };
+      daemon.settings = {
+        # data-root = "/some-place/to-store-the-docker-data";
+      };
+      storageDriver = "btrfs";
     };
-    daemon.settings = {
-      # data-root = "/some-place/to-store-the-docker-data";
-    };
-    storageDriver = "btrfs";
+    libvirtd.enable = true;
   };
 
   users.defaultUserShell = pkgs.zsh;
@@ -149,7 +152,7 @@
   users.users.elmar = {
     isNormalUser = true;
     home = "/home/elmar";
-    extraGroups = [ "wheel" "dialout" ];
+    extraGroups = [ "wheel" "dialout" "libvirtd" ];
     packages = with pkgs; [
     ];
   };
