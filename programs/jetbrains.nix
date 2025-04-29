@@ -59,7 +59,11 @@ let
     enable = cfg.rustRover.enable;
     vmOptions = mergeVmOptionsOrDefault { set = cfg.rustRover; defaults = cfg.defaultVmOptions; };
   };
-  enabled = intellijCfg.enable || rustRoverCfg.enable;
+  pycharmCfg = {
+    enable = cfg.pycharm.enable;
+    vmOptions = mergeVmOptionsOrDefault { set = cfg.pycharm; defaults = cfg.defaultVmOptions; };
+  };
+  enabled = intellijCfg.enable || rustRoverCfg.enable || pycharmCfg.enable;
 in
 {
   options = {
@@ -68,6 +72,10 @@ in
       default = null;
     };
     jetbrains.rustRover = lib.mkOption {
+      type = lib.types.nullOr ideaOptions;
+      default = null;
+    };
+    jetbrains.pycharm = lib.mkOption {
       type = lib.types.nullOr ideaOptions;
       default = null;
     };
@@ -89,7 +97,7 @@ in
         vmopts = renderVmOptions intellijCfg.vmOptions;
       })
       ++ lib.optional rustRoverCfg.enable ((pkgs.jetbrains.rust-rover.overrideAttrs {
-        version = "2025.1.0";
+        version = "2025.1.1";
         src = pkgs.fetchurl {
           # https://www.jetbrains.com/de-de/rust/nextversion/
           url = "https://download-cdn.jetbrains.com/rustrover/RustRover-2025.1.1.tar.gz";
@@ -97,6 +105,16 @@ in
         };
       }).override {
         vmopts = renderVmOptions rustRoverCfg.vmOptions;
+      })
+      ++ lib.optional pycharmCfg.enable ((pkgs.jetbrains.pycharm-professional.overrideAttrs {
+        version = "2025.1.0";
+        src = pkgs.fetchurl {
+          # https://www.jetbrains.com/de-de/pycharm/nextversion/
+          url = "https://download-cdn.jetbrains.com/python/pycharm-2025.1.tar.gz";
+          sha256 = "1282907f134a726e17bb7fe8cb7088e406aa4fbf9d910def03633572f3a62f8c";
+        };
+      }).override {
+        vmopts = renderVmOptions pycharmCfg.vmOptions;
       });
   };
 }

@@ -50,6 +50,7 @@
     picoscope
     kdePackages.kcolorchooser
     kdePackages.kgpg
+    virt-manager
 
     neofetch
 
@@ -154,6 +155,9 @@
     intellij = {
       enable = true;
       vmOptions.awtToolkit = "wayland";
+    };
+    pycharm = {
+      enable = true;
     };
   };
 
