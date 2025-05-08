@@ -73,6 +73,11 @@
         url = "https://www.prusa3d.com/";
       }
       {
+        name = "Printables";
+        tags = [ "construction" "prusa" "3d-printing" ];
+        url = "https://www.printables.com/";
+      }
+      {
         name = "Fiberlogy";
         tags = [ "construction" "shop" "3d-printing" "filament" ];
         keyword = "";
@@ -209,6 +214,11 @@
         name = "CAN Bit Timing";
         tags = [ "electronics" "can" "timing" "help" ];
         url = "http://www.bittiming.can-wiki.info";
+      }
+      {
+        name = "Mouser Inventory";
+        tags = [ "electronics" ];
+        url = "https://inventory.mouser.com";
       }
     ];
   }
