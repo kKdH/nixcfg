@@ -15,6 +15,9 @@
     programs.plasma = {
       enable = true;
       overrideConfig = true;
+      kscreenlocker = {
+        autoLock = false;
+      };
       panels = [
         {
           screen = 0;
