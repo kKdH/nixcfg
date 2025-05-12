@@ -269,6 +269,21 @@
     ];
   }
   {
+    name = "Programming";
+    bookmarks = [
+      {
+        name = "Regexper";
+        tags = [ "programming" "regex" ];
+        url = "https://regexper.com/";
+      }
+      {
+        name = "Regex101";
+        tags = [ "programming" "regex" ];
+        url = "https://regex101.com/";
+      }
+    ];
+  }
+  {
     name = "Nix";
     bookmarks = [
       {
