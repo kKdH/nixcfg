@@ -368,6 +368,11 @@
         url = "https://dhc-portal.app.corpintra.net/";
       }
       {
+        name = "Artifactory";
+        tags = [ "work" ];
+        url = "https://artifacts.i.mercedes-benz.com/ui/";
+      }
+      {
         name = "Mattermost";
         tags = [ "work" ];
         url = "https://matter.i.mercedes-benz.com/";
