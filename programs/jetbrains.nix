@@ -87,11 +87,11 @@ in
   config = lib.mkIf enabled {
     home.packages = []
       ++ lib.optional intellijCfg.enable ((pkgs.jetbrains.idea-ultimate.overrideAttrs {
-        version = "2025.1.0";
+        version = "2025.2.0";
         src = pkgs.fetchurl {
           # https://www.jetbrains.com/de-de/idea/nextversion/
-          url = "https://download-cdn.jetbrains.com/idea/ideaIU-2025.1.1.tar.gz";
-          sha256 = "17d959a3adc60ed25ff7740b0acfcbbbe40b58cba13dcd97a6a6217ef7227a75";
+          url = "https://download-cdn.jetbrains.com/idea/ideaIU-252.13776.59.tar.gz";
+          sha256 = "862e7d15b0f8cbd752f969684885a47ffb1e32a2c495089176af92d12164ecad";
         };
       }).override {
         vmopts = renderVmOptions intellijCfg.vmOptions;
@@ -107,11 +107,11 @@ in
         vmopts = renderVmOptions rustRoverCfg.vmOptions;
       })
       ++ lib.optional pycharmCfg.enable ((pkgs.jetbrains.pycharm-professional.overrideAttrs {
-        version = "2025.1.0";
+        version = "2025.1.1";
         src = pkgs.fetchurl {
           # https://www.jetbrains.com/de-de/pycharm/nextversion/
-          url = "https://download-cdn.jetbrains.com/python/pycharm-2025.1.tar.gz";
-          sha256 = "1282907f134a726e17bb7fe8cb7088e406aa4fbf9d910def03633572f3a62f8c";
+          url = "https://download-cdn.jetbrains.com/python/pycharm-2025.1.1.1.tar.gz";
+          sha256 = "f5df74fcb44c3a152005c844dfa3e66efe2999a41c120f1c575466180e1ee6ba";
         };
       }).override {
         vmopts = renderVmOptions pycharmCfg.vmOptions;
