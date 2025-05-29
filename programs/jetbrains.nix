@@ -87,31 +87,31 @@ in
   config = lib.mkIf enabled {
     home.packages = []
       ++ lib.optional intellijCfg.enable ((pkgs.jetbrains.idea-ultimate.overrideAttrs {
-        version = "2025.2.0";
+        version = "2025.3.0";
         src = pkgs.fetchurl {
           # https://www.jetbrains.com/de-de/idea/nextversion/
-          url = "https://download-cdn.jetbrains.com/idea/ideaIU-252.13776.59.tar.gz";
-          sha256 = "862e7d15b0f8cbd752f969684885a47ffb1e32a2c495089176af92d12164ecad";
+          url = "https://download-cdn.jetbrains.com/idea/ideaIU-252.16512.17.tar.gz";
+          sha256 = "460619a1e40382157d67cb802566de6469483da1dbbf2c0d35b7fc471d57a210";
         };
       }).override {
         vmopts = renderVmOptions intellijCfg.vmOptions;
       })
       ++ lib.optional rustRoverCfg.enable ((pkgs.jetbrains.rust-rover.overrideAttrs {
-        version = "2025.1.2";
+        version = "2025.2";
         src = pkgs.fetchurl {
           # https://www.jetbrains.com/de-de/rust/nextversion/
-          url = "https://download-cdn.jetbrains.com/rustrover/RustRover-2025.1.2.tar.gz";
-          sha256 = "b2974feb5406153817797b7dc93baaafe35c7b3687d38091d5d1b5d010a03132";
+          url = "https://download-cdn.jetbrains.com/rustrover/RustRover-252.16512.28.tar.gz";
+          sha256 = "cdee166c8ea705a36d6811c137e7539dab8bb04a587ff40961a9cc1b7089039f";
         };
       }).override {
         vmopts = renderVmOptions rustRoverCfg.vmOptions;
       })
       ++ lib.optional pycharmCfg.enable ((pkgs.jetbrains.pycharm-professional.overrideAttrs {
-        version = "2025.1.1";
+        version = "2025.2";
         src = pkgs.fetchurl {
           # https://www.jetbrains.com/de-de/pycharm/nextversion/
-          url = "https://download-cdn.jetbrains.com/python/pycharm-2025.1.1.1.tar.gz";
-          sha256 = "f5df74fcb44c3a152005c844dfa3e66efe2999a41c120f1c575466180e1ee6ba";
+          url = "https://download-cdn.jetbrains.com/python/pycharm-252.16512.37.tar.gz";
+          sha256 = "69d097510a0499040c5ed95c1432512b5fc4def71789ac2d9347b7a1bcc26dd2";
         };
       }).override {
         vmopts = renderVmOptions pycharmCfg.vmOptions;
