@@ -134,6 +134,7 @@
 
   virtualisation = {
     docker = {
+      # enable = true; # system-wide
       rootless = {
         enable = true;
         setSocketVariable = true;
@@ -152,7 +153,7 @@
   users.users.elmar = {
     isNormalUser = true;
     home = "/home/elmar";
-    extraGroups = [ "wheel" "dialout" "libvirtd" ];
+    extraGroups = [ "wheel" "dialout" "libvirtd" "docker" ];
     packages = with pkgs; [
     ];
   };
