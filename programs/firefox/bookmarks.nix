@@ -85,8 +85,18 @@
       }
       {
         name = "Frantos";
-        tags = [ "shop" "bolts" "nuts" ];
-        url = "frantos.com";
+        tags = [ "shop" "bolts" "nuts" "schrauben" "muttern" ];
+        url = "https://www.frantos.com/";
+      }
+      {
+        name = "Kugellager Express";
+        tags = [ "construction" "shop" "3d-printing" ];
+        url = "https://www.kugellager-express.de/";
+      }
+      {
+        name = "CNC Kitchen";
+        tags = [ "construction" "shop" "3d-printing" ];
+        url = "https://cnckitchen.store/";
       }
     ];
   }
@@ -264,6 +274,12 @@
             keyword = "zdf";
             url = "https://www.zdf.de/";
           }
+          {
+            name = "Tageschau24";
+            tags = [ "news" "tv" ];
+            keyword = "tagesschau";
+            url = "https://www.tagesschau.de/thema/tagesschau24";
+          }
         ];
       }
     ];
@@ -344,6 +360,12 @@
         name = "PC Part Picker";
         url = "https://de.pcpartpicker.com/list/dtPsLc";
       }
+      {
+        name = "Google Maps";
+        tags = [ "google" ];
+        keyword = "maps";
+        url = "https://www.google.com/maps";
+      }
     ];
   }
   {
@@ -376,6 +398,11 @@
         name = "Mattermost";
         tags = [ "work" ];
         url = "https://matter.i.mercedes-benz.com/";
+      }
+      {
+        name = "Workday";
+        tags = [ "work" ];
+        url = "https://wd3.myworkday.com/mercedesbenztechinnovation/d/pex/home.htmld";
       }
     ];
   }

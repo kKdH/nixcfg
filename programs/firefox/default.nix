@@ -117,7 +117,6 @@ in
                   { name = "s"; value = "{searchTerms}"; }
                 ];
               }];
-              # icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
               definedAliases = [ "@dict" ];
             };
             "idealo" = {
@@ -128,8 +127,14 @@ in
                   { name = "sortKey"; value = "minPrice"; }
                 ];
               }];
-              # icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
               definedAliases = [ "@idealo" ];
+            };
+            "Google Maps" = {
+              urls = [{
+                template = "https://www.google.com/maps/search/{searchTerms}";
+                params = [];
+              }];
+              definedAliases = [ "@maps" ];
             };
           };
         };
