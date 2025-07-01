@@ -40,6 +40,7 @@
 #        dontPatchELF = true;
 #        nativeBuildInputs = oldAttrs.nativeBuildInputs ++ [pkgs.kdePackages.wrapQtAppsHook];
 #      }))
+    rustup
     prusa-slicer
     kicad
     krita
