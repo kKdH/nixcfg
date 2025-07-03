@@ -9,6 +9,10 @@
     ./hardware-configuration.nix
   ];
 
+  my = {
+    probe-rs-udev-rules.enable = true;
+  };
+
   nixpkgs.config.allowUnfree = true;
 
   # Use the systemd-boot EFI boot loader.
@@ -129,8 +133,6 @@
 
   # Enable touchpad support (enabled default in most desktopManager).
   services.libinput.enable = true;
-
-  services.udev.extraRules = builtins.readFile programs/probe-rs/probe-rs.udev.rules;
 
   virtualisation = {
     docker = {

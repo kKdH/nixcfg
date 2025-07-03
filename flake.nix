@@ -38,15 +38,17 @@
       nixosConfigurations.c415lx084833926 = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
-          ./configuration.nix
+          ./hosts/c415lx084833926/configuration.nix
+          ./modules/nixos
           # sops-nix.nixosModules.sops
           home-manager.nixosModules.home-manager {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.users.elmar = import ./home.nix;
+            home-manager.users.elmar = import ./hosts/c415lx084833926/home.nix;
             home-manager.sharedModules = [
               sops-nix.homeManagerModules.sops
               plasma-manager.homeManagerModules.plasma-manager
+              ./modules/home-manager
             ];
             # Optionally, use home-manager.extraSpecialArgs to pass arguments to home.nix
           }

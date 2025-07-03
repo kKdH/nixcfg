@@ -1,10 +1,6 @@
 { config, pkgs, ... }:
 
 {
-  imports = [
-    ./programs/default.nix
-  ];
-
   home.username = "elmar";
   home.homeDirectory = "/home/elmar";
   home.sessionVariables = {
@@ -121,7 +117,7 @@
   };
 
   sops = {
-    defaultSopsFile = ./secrets/secrets.yaml;
+    defaultSopsFile = ../../secrets/secrets.yaml;
     age.keyFile = "${config.home.homeDirectory}/.config/sops/age/keys.txt";
     secrets = {
       ssh_key_jw = {
