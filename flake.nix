@@ -3,6 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    impermanence.url = "github:nix-community/impermanence";
     nur = {
       url = "github:nix-community/NUR";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -33,6 +34,7 @@
       sops-nix,
       home-manager,
       plasma-manager,
+      impermanence,
       ...
     }: {
       nixosConfigurations.c415lx084833926 = nixpkgs.lib.nixosSystem {
@@ -40,7 +42,6 @@
         modules = [
           ./hosts/c415lx084833926/configuration.nix
           ./modules/nixos
-          # sops-nix.nixosModules.sops
           home-manager.nixosModules.home-manager {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
@@ -50,7 +51,24 @@
               plasma-manager.homeManagerModules.plasma-manager
               ./modules/home-manager
             ];
-            # Optionally, use home-manager.extraSpecialArgs to pass arguments to home.nix
+          }
+        ];
+      };
+      nixosConfigurations.fuji = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        modules = [
+          ./hosts/fuji/configuration.nix
+          ./modules/nixos
+          impermanence.nixosModules.impermanence
+          home-manager.nixosModules.home-manager {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users.elmar = import ./hosts/fuji/home.nix;
+            home-manager.sharedModules = [
+              sops-nix.homeManagerModules.sops
+              plasma-manager.homeManagerModules.plasma-manager
+              ./modules/home-manager
+            ];
           }
         ];
       };

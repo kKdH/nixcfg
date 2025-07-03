@@ -30,11 +30,11 @@
           identitiesOnly = true;
           user = "elmar";
         };
-        "fuji 192.168.0.10" = {
-          hostname = "192.168.0.10";
-          identityFile = "~/.ssh/elmar.schug@smarthome.id_rsa";
+        "fuji 192.168.122.173" = {
+          hostname = "192.168.122.173";
+          identityFile = "~/.ssh/elmar.schug@jayware.org.id_rsa";
           identitiesOnly = true;
-          user = "root";
+          user = "elmar";
         };
       };
     };
