@@ -126,6 +126,11 @@
             tags = [ "programming" "blog" "rust" ];
             url = "https://smallcultfollowing.com/babysteps/";
           }
+          {
+            name = "This Week in Rust";
+            tags = [ "programming" "blog" "rust" ];
+            url = "https://this-week-in-rust.org/";
+          }
         ];
       }
     ];
@@ -403,6 +408,11 @@
         name = "Workday";
         tags = [ "work" ];
         url = "https://wd3.myworkday.com/mercedesbenztechinnovation/d/pex/home.htmld";
+      }
+      {
+        name = "Github Cloud Enterprise";
+        tags = [ "work" ];
+        url = "https://mercedes-benz.ghe.com/";
       }
     ];
   }
