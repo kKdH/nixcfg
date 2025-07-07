@@ -156,6 +156,12 @@
 
   # List services that you want to enable:
 
+  rusty-nix = {
+    enable = true;
+    user.name = "test";
+    service.name = "rusty";
+  };
+
   # Enable the OpenSSH daemon.
   services.openssh = {
     enable = true;
