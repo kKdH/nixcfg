@@ -25,6 +25,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.home-manager.follows = "home-manager";
     };
+    rusty-nix = {
+      url = "github:kKdH/hello-rusty-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -35,6 +39,7 @@
       home-manager,
       plasma-manager,
       impermanence,
+      rusty-nix,
       ...
     }: {
       nixosConfigurations.c415lx084833926 = nixpkgs.lib.nixosSystem {
@@ -54,8 +59,11 @@
           }
         ];
       };
-      nixosConfigurations.fuji = nixpkgs.lib.nixosSystem {
+      nixosConfigurations.fuji = nixpkgs.lib.nixosSystem(
+      let
         system = "x86_64-linux";
+      in
+      {
         modules = [
           ./hosts/fuji/configuration.nix
           ./modules/nixos
@@ -70,8 +78,9 @@
               ./modules/home-manager
             ];
           }
+          rusty-nix.nixosModules."${system}".rusty-nix
         ];
-      };
+      });
     };
 }
 

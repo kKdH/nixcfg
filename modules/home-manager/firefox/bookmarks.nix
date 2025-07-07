@@ -383,18 +383,6 @@
         url = "https://timetracking.mercedes-benz-techinnovation.com/";
       }
       {
-        name = "RepoCar";
-        tags = [ "work" ];
-        keyword = "repocar";
-        url = "https://repocar.detss.corpintra.net/";
-      }
-      {
-        name = "DHC";
-        tags = [ "work" "dhc" "cloud" "kubernetes" "aws" "azure" "container" ];
-        keyword = "dhc";
-        url = "https://dhc-portal.app.corpintra.net/";
-      }
-      {
         name = "Artifactory";
         tags = [ "work" ];
         url = "https://artifacts.i.mercedes-benz.com/ui/";
