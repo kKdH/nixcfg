@@ -158,6 +158,7 @@
 
   rusty-nix = {
     enable = true;
+    data-directory = "/persistent/rusty-nix";
     user.name = "test";
     service.name = "rusty";
   };

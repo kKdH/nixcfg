@@ -9,10 +9,6 @@
     ./hardware-configuration.nix
   ];
 
-  my = {
-    probe-rs-udev-rules.enable = true;
-  };
-
   nixpkgs.config.allowUnfree = true;
 
   # Use the systemd-boot EFI boot loader.
@@ -37,6 +33,27 @@
           device = "/dev/disk/by-uuid/bb1a1d1a-24af-4b8d-aefc-c21e850b6507";
           preLVM = true;
         };
+      };
+    };
+  };
+
+  environment.etc."u2f_keys" = {
+    text = ''
+      elmar:BSyXyknlRYwPgP09BYo5lesdfC0QTSAMQOdKOTE5hNgB6cw4zuPmiEaSBVroQ31pAYKH8sTix5s97iDwmXm5bg==,ni7Y85HxmhVMNfVcwe7A7WHM9KcyGEBn+Xq67dxrBRuIjdnoOmbMsz5wM3z7UxeD422I/hvYW2FMUAfmHMXhbg==,es256,+presence%
+    '';
+  };
+
+  security.pam = {
+    services = {
+      login.u2fAuth = false;
+      sudo.u2fAuth = true;
+    };
+    u2f = {
+      enable = true;
+      settings = {
+        interactive = false; # will prompt you with Insert your U2F device, then press ENTER.
+        cue = true; # will print Please touch the device. when your action is required.
+        authfile = "${config.environment.etc.u2f_keys.source}";
       };
     };
   };
@@ -133,6 +150,20 @@
 
   # Enable touchpad support (enabled default in most desktopManager).
   services.libinput.enable = true;
+
+  security.rtkit.enable = true; # rtkit is optional but recommended for pipewire.
+  services.pipewire = {
+    enable = true;
+    alsa.enable = true;
+    alsa.support32Bit = true;
+    pulse.enable = false;
+    jack.enable = false;
+  };
+
+  services.udev.packages = [
+    (pkgs.callPackage ../../packages/probe-rs-udev-rules {})
+    (pkgs.callPackage ../../packages/yubikey-screen-locking-udev-rules {})
+  ];
 
   virtualisation = {
     docker = {
