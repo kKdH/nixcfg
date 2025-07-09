@@ -7,10 +7,8 @@
 let
   rules = ''
       ACTION=="remove",\
-       ENV{ID_BUS}=="usb",\
-       ENV{ID_MODEL_ID}=="0407",\
-       ENV{ID_VENDOR_ID}=="1050",\
-       ENV{ID_VENDOR}=="Yubico",\
+       ENV{SUBSYSTEM}=="usb",\
+       ENV{PRODUCT}=="1050/407/*",\
        RUN+="${pkgs.systemd}/bin/loginctl lock-sessions"
   '';
   content = pkgs.writeText "yubikey-screen-locking-udev.raw" rules;
