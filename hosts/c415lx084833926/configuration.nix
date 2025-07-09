@@ -139,14 +139,6 @@
   # Enable CUPS to print documents.
   # services.printing.enable = true;
 
-  # Enable sound.
-  # hardware.pulseaudio.enable = true;
-  # OR
-  # services.pipewire = {
-  #   enable = true;
-  #   pulse.enable = true;
-  # };
-
   # Enable touchpad support (enabled default in most desktopManager).
   services.libinput.enable = true;
 
@@ -155,14 +147,19 @@
     enable = true;
     alsa.enable = true;
     alsa.support32Bit = true;
-    pulse.enable = false;
+    pulse.enable = true;
     jack.enable = false;
   };
 
   services.udev.packages = [
     (pkgs.callPackage ../../packages/probe-rs-udev-rules {})
     (pkgs.callPackage ../../packages/yubikey-screen-locking-udev-rules {})
+    pkgs.yubikey-personalization
   ];
+
+  # Smart card mode for Yubikey
+  hardware.gpgSmartcards.enable = true;
+  services.pcscd.enable = true;
 
   virtualisation = {
     docker = {
