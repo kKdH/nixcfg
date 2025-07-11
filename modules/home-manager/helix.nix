@@ -29,12 +29,16 @@
           C-left = "move_prev_word_end";
           C-S-right = "extend_next_word_end";
           C-S-left = "extend_prev_word_start";
+          tab = "indent";
+          S-tab = "unindent";
         };
         keys.insert = {
           C-right = "move_next_word_start";
           C-left = "move_prev_word_end";
           C-S-right = "extend_next_word_end";
           C-S-left = "extend_prev_word_start";
+          tab = "indent";
+          S-tab = "unindent";
         };
       };
     };
