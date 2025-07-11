@@ -110,6 +110,18 @@ in
               icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
               definedAliases = [ "@nix" ];
             };
+            "Nix Options" = {
+              urls = [{
+                template = "https://search.nixos.org/options";
+                params = [
+                  { name = "type"; value = "packages"; }
+                  { name = "channel"; value = "unstable"; }
+                  { name = "query"; value = "{searchTerms}"; }
+                ];
+              }];
+              icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
+              definedAliases = [ "@opt" ];
+            };
             "Dict" = {
               urls = [{
                 template = "https://www.dict.cc";
