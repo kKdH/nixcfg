@@ -1,4 +1,4 @@
-{ pkgs, lib, config, ... }:
+{ pkgs, stable, lib, config, ... }:
 
 let
   cfg = config.jetbrains;
@@ -86,7 +86,7 @@ in
   };
   config = lib.mkIf enabled {
     home.packages = []
-      ++ lib.optional intellijCfg.enable ((pkgs.jetbrains.idea-ultimate.overrideAttrs {
+      ++ lib.optional intellijCfg.enable ((stable.jetbrains.idea-ultimate.overrideAttrs {
         version = "2025.1.1";
         src = pkgs.fetchurl {
           # https://www.jetbrains.com/de-de/idea/nextversion/
@@ -96,7 +96,7 @@ in
       }).override {
         vmopts = renderVmOptions intellijCfg.vmOptions;
       })
-      ++ lib.optional rustRoverCfg.enable ((pkgs.jetbrains.rust-rover.overrideAttrs {
+      ++ lib.optional rustRoverCfg.enable ((stable.jetbrains.rust-rover.overrideAttrs {
         version = "2025.1.3";
         src = pkgs.fetchurl {
           # https://www.jetbrains.com/de-de/rust/nextversion/
@@ -106,7 +106,7 @@ in
       }).override {
         vmopts = renderVmOptions rustRoverCfg.vmOptions;
       })
-      ++ lib.optional pycharmCfg.enable ((pkgs.jetbrains.pycharm-professional.overrideAttrs {
+      ++ lib.optional pycharmCfg.enable ((stable.jetbrains.pycharm-professional.overrideAttrs {
         version = "2025.1.1";
         src = pkgs.fetchurl {
           # https://www.jetbrains.com/de-de/pycharm/nextversion/

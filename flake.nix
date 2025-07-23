@@ -3,6 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-25.05";
     impermanence.url = "github:nix-community/impermanence";
     nur = {
       url = "github:nix-community/NUR";
@@ -35,15 +36,25 @@
     inputs@{ 
       self,
       nixpkgs,
+      nixpkgs-stable,
       sops-nix,
       home-manager,
       plasma-manager,
       impermanence,
       rusty-nix,
       ...
-    }: {
-      nixosConfigurations.c415lx084833926 = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
+    }:
+    let
+      system = "x86_64-linux";
+    in
+    {
+      nixosConfigurations.c415lx084833926 = nixpkgs.lib.nixosSystem rec {
+        specialArgs = {
+          pkgs-stable = import nixpkgs-stable {
+            inherit system;
+            config.allowUnfree = true;
+          };
+        };
         modules = [
           ./hosts/c415lx084833926/configuration.nix
           ./modules/nixos
@@ -51,6 +62,7 @@
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             home-manager.users.elmar = import ./hosts/c415lx084833926/home.nix;
+            home-manager.extraSpecialArgs = specialArgs;
             home-manager.sharedModules = [
               sops-nix.homeManagerModules.sops
               plasma-manager.homeManagerModules.plasma-manager

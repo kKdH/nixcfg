@@ -44,7 +44,7 @@
 
   security.pam = {
     services = {
-      login.u2fAuth = false;
+      login.u2fAuth = true;
       sudo.u2fAuth = true;
     };
     u2f = {
