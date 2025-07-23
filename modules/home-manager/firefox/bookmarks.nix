@@ -122,9 +122,24 @@
             url = "https://without.boats/";
           }
           {
+            name = "Without blogs";
+            tags = [ "programming" "blog" "rust" ];
+            url = "https://boats.gitlab.io/blog/";
+          }
+          {
             name = "Babysteps - Niko Matsakis";
             tags = [ "programming" "blog" "rust" ];
             url = "https://smallcultfollowing.com/babysteps/";
+          }
+          {
+            name = "Dmitrii Aleksandrov";
+            tags = [ "programming" "blog" "rust" ];
+            url = "https://home.expurple.me/";
+          }
+          {
+            name = "Nicholas Cameron - Thoughts on Rust and stuff";
+            tags = [ "programming" "blog" "rust" ];
+            url = "https://www.ncameron.org/blog/";
           }
           {
             name = "This Week in Rust";
@@ -334,6 +349,11 @@
         url = "https://en.wikipedia.org/wiki/Special:Search?search=%s&go=Go";
       }
       {
+        name = "YouTube";
+        keyword = "youtube";
+        url = "https://www.youtube.com/";
+      }
+      {
         name = "eBooks";
         tags = [];
         keyword = "ebooks";
@@ -370,6 +390,11 @@
         tags = [ "google" ];
         keyword = "maps";
         url = "https://www.google.com/maps";
+      }
+      {
+        name = "Random Emoji Generator";
+        keyword = "emoji";
+        url = "https://codebeautify.org/random-emoji-generator";
       }
     ];
   }
