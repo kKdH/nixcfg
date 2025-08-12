@@ -2,7 +2,7 @@
 # your system. Help is available in the configuration.nix(5) man page, on
 # https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
 
-{ config, lib, pkgs, ... }:
+{ config, lib, pkgs, picoscope-pkgs, ... }:
 
 {
   imports = [
@@ -10,6 +10,12 @@
   ];
 
   nixpkgs.config.allowUnfree = true;
+
+  nixpkgs.overlays = [
+    (final: prev: {
+      picoscope = picoscope-pkgs.picoscope;
+    })
+  ];
 
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = false;
@@ -60,7 +66,6 @@
   # networking.hostName = "nixos"; # Define your hostname.
   # Pick only one of the below networking options.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-  networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
 
   # Set your time zone.
   time.timeZone = "Europe/Berlin";
@@ -137,7 +142,12 @@
   # services.xserver.xkb.options = "eurosign:e,caps:escape";
 
   # Enable CUPS to print documents.
-  # services.printing.enable = true;
+  services.printing.enable = false;
+  services.avahi = {
+    enable = false;
+    nssmdns4 = false;
+    openFirewall = false;
+  };
 
   # Enable touchpad support (enabled default in most desktopManager).
   services.libinput.enable = true;
@@ -163,7 +173,7 @@
 
   virtualisation = {
     docker = {
-      # enable = true; # system-wide
+      enable = true; # system-wide
       rootless = {
         enable = true;
         setSocketVariable = true;
@@ -173,7 +183,9 @@
       };
       storageDriver = "btrfs";
     };
-    libvirtd.enable = true;
+    libvirtd = {
+      enable = true;
+    };
   };
 
   users.defaultUserShell = pkgs.zsh;
@@ -183,8 +195,6 @@
     isNormalUser = true;
     home = "/home/elmar";
     extraGroups = [ "wheel" "dialout" "libvirtd" "docker" ];
-    packages = with pkgs; [
-    ];
   };
 
   # sops = {
@@ -224,12 +234,17 @@
   # Enable the OpenSSH daemon.
   # services.openssh.enable = true;
 
-  networking.hostName = "c415lx084833926";
-
-  # Open ports in the firewall.
-  networking.firewall.allowedTCPPorts = [
-    # 5001 # gRPC e.g. ANNE
-  ];
+  networking = {
+    hostName = "c415lx084833926";
+    networkmanager.enable = true;  # Easiest to use and most distros use this by default.
+    firewall = {
+      enable = true;
+      trustedInterfaces = [ "virbr0" ];
+      allowedTCPPorts = [
+      # 5001 # gRPC e.g. ANNE
+      ];
+    };
+  };
 
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
