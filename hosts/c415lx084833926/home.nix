@@ -167,6 +167,8 @@
 
   helix.enable = true;
 
+  konsole.enable = true;
+
   plasma.enable = true;
 
   zsh = {

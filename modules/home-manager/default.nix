@@ -6,7 +6,7 @@
     ./git.nix
     ./helix.nix
     ./jetbrains.nix
-    ./plasma.nix
+    ./plasma/default.nix
     ./sshconfig.nix
     ./zsh.nix
   ];
