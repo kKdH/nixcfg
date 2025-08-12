@@ -413,6 +413,11 @@
         url = "https://artifacts.i.mercedes-benz.com/ui/";
       }
       {
+        name = "Developer Compass";
+        tags = [ "work" ];
+        url = "https://developer-compass.i.mercedes-benz.com";
+      }
+      {
         name = "Mattermost";
         tags = [ "work" ];
         url = "https://matter.i.mercedes-benz.com/";
