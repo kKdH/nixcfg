@@ -30,6 +30,11 @@
       url = "github:kKdH/hello-rusty-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    picoscope-nixpkgs = {
+      url = "github:NixOS/nixpkgs/ea5c3d756e0f001f46560e99afb3cd3e954ae2cb";
+      # url = "github:SteveBinary/nixpkgs/master";
+      # url = "github:tshakah/nixpkgs/15f635f5356f434d65291b921f2b696a588661dd";
+    };
   };
 
   outputs =
@@ -42,6 +47,7 @@
       plasma-manager,
       impermanence,
       rusty-nix,
+      picoscope-nixpkgs,
       ...
     }:
     let
@@ -51,6 +57,10 @@
       nixosConfigurations.c415lx084833926 = nixpkgs.lib.nixosSystem rec {
         specialArgs = {
           pkgs-stable = import nixpkgs-stable {
+            inherit system;
+            config.allowUnfree = true;
+          };
+          picoscope-pkgs = import picoscope-nixpkgs {
             inherit system;
             config.allowUnfree = true;
           };
