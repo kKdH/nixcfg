@@ -66,34 +66,27 @@
   # Pick only one of the below networking options.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
   networking.networkmanager.enable = true;
-  networking.hostName = "fuji";
+  networking = {
+    hostName = "fuji";
+    useDHCP = false;
+    interfaces = {
+      eth0 = {
+        useDHCP = false;
+        ipv4.addresses = [{
+          address = "192.168.0.10";
+          prefixLength = 24;
+        }];
+      };
+    };
+  };
+
+  systemd.network.links."10-lan" = {
+    matchConfig.PermanentMACAddress = "52:54:00:cc:53:49";
+    linkConfig.Name = "eth0";
+  };
 
   # Set your time zone.
   time.timeZone = "Europe/Berlin";
-
-  # Select internationalisation properties.
-  # i18n.defaultLocale = "en_US.UTF-8";
-  # console = {
-  #   font = "Lat2-Terminus16";
-  #   keyMap = "us";
-  #   useXkbConfig = true; # use xkb.options in tty.
-  # };
-
-  # Enable the X11 windowing system.
-  # services.xserver.enable = true;
-
-
-  # Enable the GNOME Desktop Environment.
-  # services.xserver.displayManager.gdm.enable = true;
-  # services.xserver.desktopManager.gnome.enable = true;
-  
-
-  # Configure keymap in X11
-  # services.xserver.xkb.layout = "us";
-  # services.xserver.xkb.options = "eurosign:e,caps:escape";
-
-  # Enable CUPS to print documents.
-  # services.printing.enable = true;
 
   users.mutableUsers = false;
   users.defaultUserShell = pkgs.zsh;
@@ -123,6 +116,7 @@
   # You can use https://search.nixos.org/ to find more packages (and options).
   environment.systemPackages = with pkgs; [
     curl
+    dhcping
     tree
     vim
     zsh
@@ -156,6 +150,11 @@
 
   # List services that you want to enable:
 
+  dnsmasq = {
+    enable = true;
+    interface = "eth0";
+  };
+
   rusty-nix = {
     enable = true;
     data-directory = "/persistent/rusty-nix";
@@ -183,7 +182,11 @@
   # Open ports in the firewall.
   networking.firewall = {
     enable = true;
-    allowedTCPPorts = [ 22 ];
+    allowedTCPPorts = [
+      22 # ssh
+      67 # dhcp
+      53 # dns
+    ];
     allowedUDPPorts = [ ];
   };
 
