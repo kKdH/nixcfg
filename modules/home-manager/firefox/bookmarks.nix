@@ -432,6 +432,11 @@
         tags = [ "work" ];
         url = "https://mercedes-benz.ghe.com/";
       }
+      {
+        name = "Mural";
+        tags = [ "work" ];
+        url = "https://app.mural.co/";
+      }
     ];
   }
 ]
