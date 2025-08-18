@@ -148,6 +148,23 @@ in
               }];
               definedAliases = [ "@maps" ];
             };
+            "dhl" = {
+              urls = [{
+                template = "https://www.dhl.de/de/privatkunden/pakete-empfangen/verfolgen.html";
+                params = [
+                  { name = "piececode"; value = "{searchTerms}"; }
+                ];
+              }];
+              definedAliases = [ "@dhl" ];
+            };
+            
+            "hermes" = {
+              urls = [{
+                template = "https://www.myhermes.de/empfangen/sendungsverfolgung/sendungsinformation#{searchTerms}";
+                params = [];
+              }];
+              definedAliases = [ "@hermes" ];
+            };
           };
         };
 #       # TODO: Add NUR to home manager.
