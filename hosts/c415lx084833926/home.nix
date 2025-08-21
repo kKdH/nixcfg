@@ -149,6 +149,7 @@
     rustRover = {
       enable = true;
       vmOptions.maxMemory = 16384;
+      vmOptions.awtToolkit = "wayland";
     };
     intellij = {
       enable = true;

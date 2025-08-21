@@ -87,33 +87,31 @@ in
   config = lib.mkIf enabled {
     home.packages = with pkgs; []
       ++ lib.optional intellijCfg.enable ((jetbrains.idea-ultimate.overrideAttrs {
-        version = "2025.1.1";
+        version = "2025.2";
         src = pkgs.fetchurl {
           # https://www.jetbrains.com/de-de/idea/nextversion/
-          url = "https://download-cdn.jetbrains.com/idea/ideaIU-2025.1.1.1.tar.gz";
-          sha256 = "337d34b20cdaa8da30d71b98e1b36817bdfe2f2245c491ef38f0cee02f0d0316";
+          url = "https://download-cdn.jetbrains.com/idea/ideaIU-2025.2.tar.gz";
+          sha256 = "d28d0d647cf5f0d2eedd49602493be4a3182aec83c73df01b887164f56db0ff4";
         };
       }).override {
         vmopts = renderVmOptions intellijCfg.vmOptions;
       })
       ++ lib.optional rustRoverCfg.enable ((jetbrains.rust-rover.overrideAttrs {
-        version = "2025.1.3";
+        version = "2025.2";
         src = pkgs.fetchurl {
           # https://www.jetbrains.com/de-de/rust/nextversion/
-          url = "https://download-cdn.jetbrains.com/rustrover/RustRover-2025.1.5.tar.gz";
-          sha256 = "54eda433719c132c48e733b659b29113d362fea3b9c7dd4109497ed31da7c6f6";
-          # url = "https://download-cdn.jetbrains.com/rustrover/RustRover-252.23892.300.tar.gz";
-          # sha256 = "bc480f01e48b4eee5a6790e1958648f2955c4c51bbe411516096b18ca2f29813";
+          url = "https://download-cdn.jetbrains.com/rustrover/RustRover-2025.2.tar.gz";
+          sha256 = "98bf8781c9325d3c4ddd6b0f4efb934b209f2afcbf97533effd2e8ffe40800e0";
         };
       }).override {
         vmopts = renderVmOptions rustRoverCfg.vmOptions;
       })
       ++ lib.optional pycharmCfg.enable ((jetbrains.pycharm-professional.overrideAttrs {
-        version = "2025.1.1";
+        version = "2025.2.0.1";
         src = pkgs.fetchurl {
           # https://www.jetbrains.com/de-de/pycharm/nextversion/
-          url = "https://download-cdn.jetbrains.com/python/pycharm-2025.1.1.1.tar.gz";
-          sha256 = "f5df74fcb44c3a152005c844dfa3e66efe2999a41c120f1c575466180e1ee6ba";
+          url = "https://download-cdn.jetbrains.com/python/pycharm-2025.2.0.1.tar.gz";
+          sha256 = "555a20eb9a695f52430fc3ef1b43c229186df5bf1c8962de55db0ef7eb308fb4";
         };
       }).override {
         vmopts = renderVmOptions pycharmCfg.vmOptions;
