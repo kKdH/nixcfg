@@ -84,6 +84,11 @@
         url = "https://fiberlogy.com/";
       }
       {
+        name = "Filament World";
+        tags = [ "construction" "shop" "3d-printing" "filament" ];
+        keyword = "";
+        url = "https://filamentworld.de/";
+      }      {
         name = "Frantos";
         tags = [ "shop" "bolts" "nuts" "schrauben" "muttern" ];
         url = "https://www.frantos.com/";
