@@ -58,7 +58,10 @@
             # some modifications in which entries to show.
             {
               digitalClock = {
-                calendar.firstDayOfWeek = "monday";
+                calendar = {
+                  firstDayOfWeek = "monday";
+                  showWeekNumbers = true;
+                };
                 date.format = "isoDate";
                 time.format = "24h";
               };
