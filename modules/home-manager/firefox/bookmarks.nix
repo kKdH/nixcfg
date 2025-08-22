@@ -401,6 +401,14 @@
         keyword = "emoji";
         url = "https://codebeautify.org/random-emoji-generator";
       }
+      {
+        name = "Codeberg";
+        url = "https://codeberg.org/";
+      }
+      {
+        name = "Trem";
+        url = "https://codeberg.org/trem";
+      }
     ];
   }
   {
