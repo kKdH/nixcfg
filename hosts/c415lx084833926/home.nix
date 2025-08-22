@@ -48,6 +48,8 @@
     kdePackages.kcolorchooser
     kdePackages.kgpg
     virt-manager
+    zellij
+    alacritty
 
     neofetch
 
@@ -175,6 +177,14 @@
   zsh = {
     enable = true;
     plugins = [ "git" "rust" "docker" "kubectl" "helm" "argocd" "aws" "podman" ];
+  };
+
+  zellij = {
+    enable = true;
+  };
+
+  alacritty = {
+    enable = true;
   };
 
   programs.bash = {

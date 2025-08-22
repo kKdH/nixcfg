@@ -8,6 +8,6 @@
     ./jetbrains.nix
     ./plasma/default.nix
     ./sshconfig.nix
-    ./zsh.nix
+    ./terminal/default.nix
   ];
 }

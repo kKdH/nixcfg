@@ -18,6 +18,20 @@
       kscreenlocker = {
         autoLock = false;
       };
+      workspace = {
+        lookAndFeel = "org.kde.breezedark.desktop";
+        theme = "breeze-dark";
+      };
+      input = {
+        keyboard = {
+          numlockOnStartup = "on";
+        };
+      };
+      shortcuts = {
+        "services/firefox-devedition.desktop"."_launch" = "Ctrl+Alt+F";
+        "services/org.kde.konsole.desktop"."_launch" = "";
+        "services/Alacritty.desktop"."_launch" = "Ctrl+Alt+T";
+      };
       panels = [
         {
           screen = 0;
@@ -84,10 +98,6 @@
           ];
         }
       ];
-      workspace = {
-        lookAndFeel = "org.kde.breezedark.desktop";
-        theme = "breeze-dark";
-      };
     };
   };
 }
