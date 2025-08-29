@@ -103,6 +103,21 @@
         tags = [ "construction" "shop" "3d-printing" ];
         url = "https://cnckitchen.store/";
       }
+      {
+        name = "Dieter Schmid Feine Werkzeuge";
+        tags = [ "shop" "woodworking" ];
+        url = "https://www.feinewerkzeuge.de/";
+      }
+      {
+        name = "Hettich";
+        tags = [ "shop" "woodworking" ];
+        url = "https://www.werkzeughettich.de/";
+      }
+      {
+        name = "Festool";
+        tags = [ "shop" "woodworking" ];
+        url = "https://www.festool.de";
+      }
     ];
   }
   {
