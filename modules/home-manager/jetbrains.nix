@@ -87,11 +87,11 @@ in
   config = lib.mkIf enabled {
     home.packages = with pkgs; []
       ++ lib.optional intellijCfg.enable ((jetbrains.idea-ultimate.overrideAttrs {
-        version = "2025.2";
+        version = "2025.2.1";
         src = pkgs.fetchurl {
           # https://www.jetbrains.com/de-de/idea/nextversion/
-          url = "https://download-cdn.jetbrains.com/idea/ideaIU-2025.2.tar.gz";
-          sha256 = "d28d0d647cf5f0d2eedd49602493be4a3182aec83c73df01b887164f56db0ff4";
+          url = "https://download-cdn.jetbrains.com/idea/ideaIU-2025.2.1.tar.gz";
+          sha256 = "ac36d03153894f393fb65c05f57be4722c2a2374d03b7374b37baf856705d5fd";
         };
       }).override {
         vmopts = renderVmOptions intellijCfg.vmOptions;
