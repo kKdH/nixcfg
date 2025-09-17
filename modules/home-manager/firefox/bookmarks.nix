@@ -118,6 +118,16 @@
         tags = [ "shop" "woodworking" ];
         url = "https://www.festool.de";
       }
+      {
+        name = "Conrad";
+        tags = [ "shop" ];
+        url = "https://www.conrad.de/";
+      }
+      {
+        name = "Wera";
+        tags = [];
+        url = "https://www-de.wera.de/de/";
+      }
     ];
   }
   {
@@ -423,6 +433,10 @@
       {
         name = "Trem";
         url = "https://codeberg.org/trem";
+      }
+      {
+        name = "QiTech";
+        url = "https://en.qitech.de/";
       }
     ];
   }
