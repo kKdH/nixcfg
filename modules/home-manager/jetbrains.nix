@@ -97,11 +97,11 @@ in
         vmopts = renderVmOptions intellijCfg.vmOptions;
       })
       ++ lib.optional rustRoverCfg.enable ((jetbrains.rust-rover.overrideAttrs {
-        version = "2025.2";
+        version = "2025.2.1";
         src = pkgs.fetchurl {
           # https://www.jetbrains.com/de-de/rust/nextversion/
-          url = "https://download-cdn.jetbrains.com/rustrover/RustRover-2025.2.tar.gz";
-          sha256 = "98bf8781c9325d3c4ddd6b0f4efb934b209f2afcbf97533effd2e8ffe40800e0";
+          url = "https://download-cdn.jetbrains.com/rustrover/RustRover-2025.2.1.tar.gz";
+          sha256 = "19fde47a5c3c8e1b21b402c3351018eed64e2cff575f32a86c884168b522074a";
         };
       }).override {
         vmopts = renderVmOptions rustRoverCfg.vmOptions;
