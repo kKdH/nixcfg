@@ -35,7 +35,7 @@
       # kernelModules = [ "nvidia" "i915" "nvidia_modeset" "nvidia_uvm" "nvidia_drm" ];
       luks.devices = {
         crypted = {
-          device = "/dev/disk/by-uuid/bb1a1d1a-24af-4b8d-aefc-c21e850b6507";
+          device = "/dev/nvme0n1p3";
           preLVM = true;
         };
       };
@@ -274,4 +274,5 @@
   # For more information, see `man configuration.nix` or https://nixos.org/manual/nixos/stable/options#opt-system.stateVersion .
   system.stateVersion = "25.05"; # Did you read the comment?
 }
+
 

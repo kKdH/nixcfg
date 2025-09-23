@@ -14,20 +14,20 @@
   boot.extraModulePackages = [ ];
 
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/ec80b3b3-b3e4-45ac-8e32-75a91ea612d6";
+    { device = "/dev/disk/by-label/NIXROOT";
       fsType = "btrfs";
+    };
+
+  fileSystems."/boot" =
+    { device = "/dev/disk/by-label/NIXBOOT";
+      fsType = "vfat";
+      options = [ "fmask=0022" "dmask=0022" ];
     };
 
   # TODO: Implement it as systemd user mount: https://mynixos.com/home-manager/option/systemd.user.mounts
   fileSystems."/home/elmar/Projects" =
     { device = "/dev/disk/by-label/PROJECTS";
       fsType = "btrfs";
-    };
-
-  fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/CD89-87D9";
-      fsType = "vfat";
-      options = [ "fmask=0022" "dmask=0022" ];
     };
 
   swapDevices = [ ];
