@@ -11,7 +11,7 @@
       matchBlocks = {
         "github.com" = {
           hostname =  "github.com";
-          identityFile = "~/.ssh/elmar.schug@jayware.org.id_rsa";
+          identityFile = "~/.ssh/github.com.id_ed25519";
           user = "git";
         };
         "git.daimler.com" = {

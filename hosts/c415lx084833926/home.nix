@@ -119,24 +119,24 @@
     '';
   };
 
-  sops = {
-    defaultSopsFile = ../../secrets/secrets.yaml;
-    age.keyFile = "${config.home.homeDirectory}/.config/sops/age/keys.txt";
-    secrets = {
-      ssh_key_jw = {
-        path = "${config.home.homeDirectory}/.ssh/elmar.schug@jayware.org.id_rsa";
-      };
-      ssh_pub_jw = {
-        path = "${config.home.homeDirectory}/.ssh/elmar.schug@jayware.org.id_rsa.pub";
-      };
-      ssh_key_mb = {
-        path = "${config.home.homeDirectory}/.ssh/elmar.schug@mercedes-benz.com.id.rsa";
-      };
-      ssh_pub_mb = {
-        path = "${config.home.homeDirectory}/.ssh/elmar.schug@mercedes-benz.com.id.rsa.pub";
-      };
-    };
-  };
+  # sops = {
+  #   defaultSopsFile = ../../secrets/secrets.yaml;
+  #   age.keyFile = "${config.home.homeDirectory}/.config/sops/age/keys.txt";
+  #   secrets = {
+  #     ssh_key_jw = {
+  #       path = "${config.home.homeDirectory}/.ssh/elmar.schug@jayware.org.id_rsa";
+  #     };
+  #     ssh_pub_jw = {
+  #       path = "${config.home.homeDirectory}/.ssh/elmar.schug@jayware.org.id_rsa.pub";
+  #     };
+  #     ssh_key_mb = {
+  #       path = "${config.home.homeDirectory}/.ssh/elmar.schug@mercedes-benz.com.id.rsa";
+  #     };
+  #     ssh_pub_mb = {
+  #       path = "${config.home.homeDirectory}/.ssh/elmar.schug@mercedes-benz.com.id.rsa.pub";
+  #     };
+  #   };
+  # };
 
   sshconfig.enable = true;
 
