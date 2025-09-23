@@ -357,6 +357,26 @@
         tags = [ "nix" "nixos" "flakes" "home-manager" "getting started" "tutorial" ];
         url = "https://nixos-and-flakes.thiscute.world/";
       }
+      {
+        name = "Blogs";
+        bookmarks = [
+          {
+            name = "notashelf - Nix Impermanence";
+            url = "https://notashelf.dev/posts/impermanence";
+            tags = [ "nix" "nixos" "impermanence" ];
+          }
+          {
+            name = "Guekka - Nix Impermanence - 1";
+            url = "https://guekka.github.io/nixos-server-1/";
+            tags = [ "nix" "nixos" "impermanence" ];
+          }
+          {
+            name = "Guekka - Nix Impermanence - 2";
+            url = "https://guekka.github.io/nixos-server-2/";
+            tags = [ "nix" "nixos" "impermanence" ];
+          }
+        ];
+      }
     ];
   }
   {
