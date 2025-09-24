@@ -68,6 +68,7 @@
         modules = [
           ./hosts/c415lx084833926/configuration.nix
           ./modules/nixos
+          impermanence.nixosModules.impermanence
           home-manager.nixosModules.home-manager {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
@@ -76,6 +77,7 @@
             home-manager.sharedModules = [
               sops-nix.homeManagerModules.sops
               plasma-manager.homeManagerModules.plasma-manager
+              impermanence.homeManagerModules.impermanence
               ./modules/home-manager
             ];
           }
