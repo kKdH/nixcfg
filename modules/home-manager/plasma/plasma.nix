@@ -54,7 +54,7 @@
               iconTasks = {
                 launchers = [
                   "applications:org.kde.dolphin.desktop"
-                  "applications:org.kde.konsole.desktop"
+                  "applications:Alacritty.desktop"
                   "applications:firefox-devedition.desktop"
                 ];
               };

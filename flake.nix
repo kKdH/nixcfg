@@ -72,7 +72,7 @@
             home-manager.extraSpecialArgs = specialArgs;
             home-manager.sharedModules = [
               sops-nix.homeManagerModules.sops
-              plasma-manager.homeManagerModules.plasma-manager
+              plasma-manager.homeModules.plasma-manager
               impermanence.homeManagerModules.impermanence
               ./modules/home-manager
             ];
@@ -94,7 +94,7 @@
             home-manager.users.elmar = import ./hosts/fuji/home.nix;
             home-manager.sharedModules = [
               sops-nix.homeManagerModules.sops
-              plasma-manager.homeManagerModules.plasma-manager
+              plasma-manager.homeModules.plasma-manager
               ./modules/home-manager
             ];
           }
