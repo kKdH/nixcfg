@@ -30,12 +30,6 @@
 
   # Packages that should be installed to the user profile.
   home.packages = with pkgs; [
-#     (vivaldi.overrideAttrs
-#      (oldAttrs: {
-#        dontWrapQtApps = false;
-#        dontPatchELF = true;
-#        nativeBuildInputs = oldAttrs.nativeBuildInputs ++ [pkgs.kdePackages.wrapQtAppsHook];
-#      }))
     rustup
     prusa-slicer
     kicad

@@ -301,6 +301,12 @@
     url = "https://www.icloud.com/iclouddrive/";
   }
   {
+    name = "Google Drive";
+    tags = [ "google" "drive" ];
+    keyword = "gdrive";
+    url = "https://drive.google.com/drive/home";
+  }
+  {
     name = "News";
     bookmarks = [
       {

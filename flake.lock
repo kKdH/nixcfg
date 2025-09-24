@@ -15,27 +15,6 @@
         "type": "github"
       }
     },
-    "flake-parts": {
-      "inputs": {
-        "nixpkgs-lib": [
-          "nur",
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1733312601,
-        "narHash": "sha256-4pDvzqnegAfRkPwO3wmwBhVi/Sye1mzps0zHWYnP88c=",
-        "owner": "hercules-ci",
-        "repo": "flake-parts",
-        "rev": "205b12d8b7cd4802fbcb8e8ef6a0f1408781a4f9",
-        "type": "github"
-      },
-      "original": {
-        "owner": "hercules-ci",
-        "repo": "flake-parts",
-        "type": "github"
-      }
-    },
     "flake-utils": {
       "inputs": {
         "systems": "systems"
@@ -121,27 +100,6 @@
         "type": "github"
       }
     },
-    "nur": {
-      "inputs": {
-        "flake-parts": "flake-parts",
-        "nixpkgs": [
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1758627334,
-        "narHash": "sha256-PV8pa2UWNdQfJjtAUyLEjfNUZknDFayMvzo6lFbq6sk=",
-        "owner": "nix-community",
-        "repo": "NUR",
-        "rev": "2f55e54fe689ab1edfb24b21a1d40b0bba4ef222",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nix-community",
-        "repo": "NUR",
-        "type": "github"
-      }
-    },
     "picoscope-nixpkgs": {
       "locked": {
         "lastModified": 1636188586,
@@ -187,7 +145,6 @@
         "impermanence": "impermanence",
         "nixpkgs": "nixpkgs",
         "nixpkgs-stable": "nixpkgs-stable",
-        "nur": "nur",
         "picoscope-nixpkgs": "picoscope-nixpkgs",
         "plasma-manager": "plasma-manager",
         "rusty-nix": "rusty-nix",
