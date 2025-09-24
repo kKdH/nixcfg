@@ -14,14 +14,9 @@
           identityFile = "~/.ssh/github.com.id_ed25519";
           user = "git";
         };
-        "git.daimler.com" = {
-          hostname = "git.daimler.com";
-          identityFile = "~/.ssh/elschug.id.rsa";
-          user = "git";
-        };
         "git.i.mercedes-benz.com" = {
           hostname = "git.i.mercedes-benz.com";
-          identityFile = "~/.ssh/elmar.schug@mercedes-benz.com.id.rsa";
+          identityFile = "~/.ssh/git.i.mercedes-benz.com.id_ed25519";
           user = "git";
         };
         "raspberrypi homepi" = {
