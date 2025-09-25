@@ -128,6 +128,11 @@
         tags = [];
         url = "https://www-de.wera.de/de/";
       }
+      {
+        name = "Magnets4You";
+        tags = [ "shop" ];
+        url = "https://www.magnet-shop.net/";
+      }
     ];
   }
   {
