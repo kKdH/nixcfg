@@ -4,10 +4,16 @@ Parallel installation of Ubuntu and NixOS
 
 Overview:
 
-1. Prepare GRUB to boot live images.
-2. Create LUKS key GRUB can decode.
-3. Resize filesystem.
-4. Install NixOS
+1. Download GParted and NixOS ISOs.
+2. Prepare GRUB to boot live images.
+3. Create LUKS key GRUB can decode.
+4. Resize and prepare filesystem.
+5. Install NixOS
+
+## Download
+
+- **GParted ISO image:** https://gparted.org/download.php
+- **NixOS Minimal ISO image:** https://nixos.org/download/#nixos-iso
 
 ## Grub preparations
 
@@ -15,7 +21,7 @@ Overview:
 
 2. Disable grub authentication by commenting out `superusers` and `password_pbkdf2` stuff.
 
-3. GParted menu entry
+3. Add a Grub menu entry to boot GParted:
    ```
    menuentry "GParted Live ISO" {
      set isoFile="/gparted-live-1.7.0-8-amd64.iso"
@@ -25,7 +31,7 @@ Overview:
    }
    ```
 
-4. NixOS Live image menu entry
+4. Add a Grub menu entry to boot the NixOS Live image:
    ```
    menuentry "NixOS Live" {
      set isoFile="/nixos-minimal-25.05.810175.b2a3852bd078-x86_64-linux.iso"
@@ -34,14 +40,14 @@ Overview:
      initrd (loop)/boot//nix/store/gvyk99li3i5z5i125fffs39hsmycphij-initrd-linux-6.12.48/initrd
    }
    ```
+   **TODO:** Check if it is possible to use `configfile` to load the ISOs grub config.
 
 > [!NOTE]  
-> To get the right path into the nix store, mount the iso and open the file `/EFI/BOOT/grub.cfg` and copy the path from one of the menu entries.
+> To get the right path into the nix store, mount the iso, open the file `/EFI/BOOT/grub.cfg` and copy the path from one of the menu entries.
 
 5. NixOS menu entry
    ```
    menuentry "NixOS" --unrestricted {
-     insmod part_gpt
      insmod cryptodisk
      insmod luks2
      insmod lvm
@@ -50,6 +56,7 @@ Overview:
      configfile (lvm/ubuntu--vg-nixos--lv--boot)/grub/grub.cfg
    }
    ```
+   Because the NixOS boot partition resides inside the encrypted volume, GRUB must decrypt the volume before it can access it.
 
 6. Update Grub configuration
    ```sh
@@ -73,20 +80,25 @@ Overview:
 
 ## Filesystem preparations
 
+> [!CAUTION]
+> These steps can affect the existing system and may cause data loss. Proceed with caution!
+
 1. Boot the GParted live system to resize the filesystem.
 2. If it does not open automatically, start `gparted`.
-3. Encrypt the LUKS partition.
+3. Decrypt/open the LUKS partition.
 4. Shrink the logical volume of Ubuntu.
-5. Create a logical volume `nixos-lv-boot` (e.g. 4096 MiB) for the nixos boot partition and add the label `NIXOSBOOT`.
-6. Create a logical volume `nixos-lv-root` (e.g. 512 000 MiB) for the nixos root partition and add the label `NIXOSROOT`.
+5. Create a logical volume `nixos-lv-boot` (e.g. 4096 MiB) for the NixOS boot partition and add the label `NIXOSBOOT`.
+6. Create a logical volume `nixos-lv-root` (e.g. 512 000 MiB) for the NixOS root partition and add the label `NIXOSROOT`.
 
 > [!TIP]
-> Shrinking the logical volume of Ubuntu can also be archived by using `lvreduce`.
-> `lvreduce -r -L 200G /dev/ubuntu-vg/ubuntu-lv-root`
+> Shrinking the logical volume of Ubuntu can also be achieved by using `lvreduce`:
+> ```sh
+> sudo lvreduce -r -L 200G /dev/ubuntu-vg/ubuntu-lv-root
+> ```
 
 ## NixOS installation
 
-> [!NOTE]
+> [!IMPORTANT]
 > Installation requires access to the internet! 
 
 1. Boot NixOS live system.
@@ -118,4 +130,8 @@ Overview:
 8. Set password for user:
    ```sh
    sudo nixos-enter --root /mnt -c 'passwd <user>'
+   ```
+9. Boot into NixOS:
+   ```sh
+   sudo reboot
    ```
