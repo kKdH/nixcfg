@@ -358,6 +358,26 @@
         tags = [ "programming" "regex" ];
         url = "https://regex101.com/";
       }
+      {
+        name = "JetBrains";
+        bookmarks = [
+          {
+            name = "RustRover";
+            tags = [ "programming" "jetbrains" "ide" "rust" ];
+            url = "https://www.jetbrains.com/de-de/rust/";
+          }
+          {
+            name = "IntelliJ";
+            tags = [ "programming" "jetbrains" "ide" "java" "scala" "kotlin" ];
+            url = "https://www.jetbrains.com/de-de/idea/";
+          }
+          {
+            name = "PyCharm";
+            tags = [ "programming" "jetbrains" "ide" "python" ];
+            url = "https://www.jetbrains.com/de-de/pycharm/";
+          }
+        ];
+      }
     ];
   }
   {

@@ -90,8 +90,8 @@ in
         version = "2025.2.1";
         src = pkgs.fetchurl {
           # https://www.jetbrains.com/de-de/idea/nextversion/
-          url = "https://download-cdn.jetbrains.com/idea/ideaIU-2025.2.1.tar.gz";
-          sha256 = "ac36d03153894f393fb65c05f57be4722c2a2374d03b7374b37baf856705d5fd";
+          url = "https://download-cdn.jetbrains.com/idea/ideaIU-2025.2.2.tar.gz";
+          sha256 = "7150ece389a4bc8649f68b103018edeeb09205559671549410ded11de523da62";
         };
       }).override {
         vmopts = renderVmOptions intellijCfg.vmOptions;
@@ -100,8 +100,8 @@ in
         version = "2025.2.1";
         src = pkgs.fetchurl {
           # https://www.jetbrains.com/de-de/rust/nextversion/
-          url = "https://download-cdn.jetbrains.com/rustrover/RustRover-2025.2.1.tar.gz";
-          sha256 = "19fde47a5c3c8e1b21b402c3351018eed64e2cff575f32a86c884168b522074a";
+          url = "https://download-cdn.jetbrains.com/rustrover/RustRover-2025.2.2.tar.gz";
+          sha256 = "cc2cfd0af3967a5ce65af5064ccac03bfb2ee2a1ed7e18e8a2c1a009a6d3721c";
         };
       }).override {
         vmopts = renderVmOptions rustRoverCfg.vmOptions;
@@ -110,8 +110,8 @@ in
         version = "2025.2.0.1";
         src = pkgs.fetchurl {
           # https://www.jetbrains.com/de-de/pycharm/nextversion/
-          url = "https://download-cdn.jetbrains.com/python/pycharm-2025.2.0.1.tar.gz";
-          sha256 = "555a20eb9a695f52430fc3ef1b43c229186df5bf1c8962de55db0ef7eb308fb4";
+          url = "https://download-cdn.jetbrains.com/python/pycharm-2025.2.2.tar.gz";
+          sha256 = "6ffd11bc2ab84f57e90683ce5a9c73ff6ec47e5746e7e4d7ce5f2dc335af6481";
         };
       }).override {
         vmopts = renderVmOptions pycharmCfg.vmOptions;
