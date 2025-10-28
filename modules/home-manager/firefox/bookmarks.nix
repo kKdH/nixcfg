@@ -138,6 +138,11 @@
         tags = [ "shop" "farben" "color" "caparol" "brillux" "lack" ];
         url = "https://www.farbenkönig.de/";
       }
+      {
+        name = "Vallejo";
+        tags = [ "shop" "farben" "color" ];
+        url = "https://www.vallejo-farben.de/";
+      }
     ];
   }
   {
