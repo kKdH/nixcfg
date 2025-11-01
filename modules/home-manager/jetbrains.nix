@@ -87,21 +87,21 @@ in
   config = lib.mkIf enabled {
     home.packages = with pkgs; []
       ++ lib.optional intellijCfg.enable ((jetbrains.idea-ultimate.overrideAttrs {
-        version = "2025.2.1";
+        version = "2025.2.4";
         src = pkgs.fetchurl {
           # https://www.jetbrains.com/de-de/idea/nextversion/
-          url = "https://download-cdn.jetbrains.com/idea/ideaIU-2025.2.2.tar.gz";
-          sha256 = "7150ece389a4bc8649f68b103018edeeb09205559671549410ded11de523da62";
+          url = "https://download-cdn.jetbrains.com/idea/ideaIU-2025.2.4.tar.gz";
+          sha256 = "4d909f989d7fa0a002f5bc669e002e8ab336ee7091f32756a74549cd8c11f432";
         };
       }).override {
         vmopts = renderVmOptions intellijCfg.vmOptions;
       })
       ++ lib.optional rustRoverCfg.enable ((jetbrains.rust-rover.overrideAttrs {
-        version = "2025.2.1";
+        version = "2025.2.4";
         src = pkgs.fetchurl {
           # https://www.jetbrains.com/de-de/rust/nextversion/
-          url = "https://download-cdn.jetbrains.com/rustrover/RustRover-2025.2.2.tar.gz";
-          sha256 = "cc2cfd0af3967a5ce65af5064ccac03bfb2ee2a1ed7e18e8a2c1a009a6d3721c";
+          url = "https://download-cdn.jetbrains.com/rustrover/RustRover-2025.2.4.tar.gz";
+          sha256 = "3da078b5e68bac2283c0dd60fe3ff17d6025d92d6237bc6fab74f1f35ff6fbe5";
         };
       }).override {
         vmopts = renderVmOptions rustRoverCfg.vmOptions;
