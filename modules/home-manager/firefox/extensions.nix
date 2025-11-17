@@ -37,7 +37,7 @@ in
     )
     (mkExtensionPolicy "{3c078156-979c-498b-8990-85f7987dd929}" #sidebery
       {
-        default_area = "menupanel";
+        default_area = "navbar";
         private_browsing = true;
       }
     )

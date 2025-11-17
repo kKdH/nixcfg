@@ -388,6 +388,16 @@
           }
         ];
       }
+      {
+        name = "Fontello";
+        tags = [ "icon" "font" "generator" ];
+        url = "https://fontello.com/";
+      }
+      {
+        name = "Font Awesome";
+        tags = [ "icon" "font" "generator" ];
+        url = "https://fontawesome.com/search";
+      }
     ];
   }
   {
@@ -498,6 +508,21 @@
         name = "Mural";
         tags = [ "work" ];
         url = "https://app.mural.co/";
+      }
+    ];
+  }
+  {
+    name = "Gaming";
+    bookmarks = [
+      {
+        name = "Steam Store";
+        tags = [ "gaming" "steam" ];
+        url = "https://store.steampowered.com";
+      }
+      {
+        name = "Steam Community";
+        tags = [ "gaming" "steam" ];
+        url = "https://steamcommunity.com";
       }
     ];
   }
