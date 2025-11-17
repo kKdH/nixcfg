@@ -154,6 +154,16 @@
         url = "https://www.rust-lang.org/";
       }
       {
+        name = "Rust Crates";
+        tags = [ "programming" "rust" ];
+        url = "https://crates.io/";
+      }
+      {
+        name = "Rust Docs";
+        tags = [ "programming" "rust" "doc" ];
+        url = "https://docs.rs/";
+      }
+      {
         name = "Rust Blogs";
         bookmarks = [
           {
