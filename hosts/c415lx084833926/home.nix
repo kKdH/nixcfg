@@ -41,9 +41,9 @@
     picoscope
     kdePackages.kcolorchooser
     kdePackages.kgpg
+    kdePackages.kruler
     virt-manager
     zellij
-    alacritty
 
     neofetch
 
@@ -109,6 +109,11 @@
     "Projects/.directory".text = ''
       [Desktop Entry]
       Icon=folder-script
+    '';
+    # TODO: Check if the scdaemon config is required.
+    ".gnupg/scdaemon.conf".text = ''
+      reader-port Yubico Yubi
+      disable-ccid
     '';
   };
 
