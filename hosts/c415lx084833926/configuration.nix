@@ -2,7 +2,7 @@
 # your system. Help is available in the configuration.nix(5) man page, on
 # https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
 
-{ config, lib, pkgs, picoscope-pkgs, ... }:
+{ config, pkgs, picoscope-pkgs, ... }:
 
 {
   imports = [
@@ -213,6 +213,7 @@
     curl
     git
     keepassxc
+    pcsclite
     sops
     age
     tree
