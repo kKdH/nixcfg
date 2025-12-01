@@ -197,6 +197,11 @@
             url = "https://www.ncameron.org/blog/";
           }
           {
+            name = "sysid";
+            tags = [ "programming" "blog" "rust" ];
+            url = "https://sysid.github.io/blog/";
+          }
+          {
             name = "This Week in Rust";
             tags = [ "programming" "blog" "rust" ];
             url = "https://this-week-in-rust.org/";
