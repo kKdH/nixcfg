@@ -8,6 +8,7 @@
   config = lib.mkIf config.sshconfig.enable {
     programs.ssh = {
       enable = true;
+      enableDefaultConfig = false;
       includes = [
         "local.conf"
       ];
