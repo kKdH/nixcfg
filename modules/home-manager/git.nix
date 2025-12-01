@@ -14,11 +14,13 @@
   config = lib.mkIf config.git.enable {
     programs.git = {
       enable = true;
-      userName = config.git.userName;
-      userEmail = config.git.userEmail;
-      extraConfig = {
-        init.defaultBranch = "main";
-        safe.directory = "*";
+      settings = {
+        user.name = config.git.userName;
+        user.email = config.git.userEmail;
+        extraConfig = {
+          init.defaultBranch = "main";
+          safe.directory = "*";
+        };
       };
     };
   };
