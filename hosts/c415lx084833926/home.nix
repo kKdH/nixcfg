@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
 {
   home.username = "elmar";
@@ -129,15 +129,21 @@
     };
     rustRover = {
       enable = true;
+      version = "253.28294.188";
+      checksum = "5f8002f44ff8d1b6f88e7c4a8fdd76c89898e6fcf61195dfe77a8d4be5afdd91";
       vmOptions.maxMemory = 16384;
       vmOptions.awtToolkit = "wayland";
     };
     intellij = {
       enable = true;
+      version = "253.28294.251";
+      checksum = "1cf4610b87aa04dfbf6c27abd0c869cd0259782b57e9c2b43a0e3ef7c3eb6328";
       vmOptions.awtToolkit = "wayland";
     };
     pycharm = {
       enable = true;
+      version = "2025.2.2";
+      checksum = "6ffd11bc2ab84f57e90683ce5a9c73ff6ec47e5746e7e4d7ce5f2dc335af6481";
     };
   };
 
