@@ -174,7 +174,7 @@
     docker = {
       enable = true; # system-wide
       rootless = {
-        enable = true;
+        enable = false;
         setSocketVariable = true;
       };
       daemon.settings = {
