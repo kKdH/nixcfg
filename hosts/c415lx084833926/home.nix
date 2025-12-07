@@ -142,8 +142,8 @@
     };
     pycharm = {
       enable = true;
-      version = "2025.2.2";
-      checksum = "6ffd11bc2ab84f57e90683ce5a9c73ff6ec47e5746e7e4d7ce5f2dc335af6481";
+      version = "253.28294.256";
+      checksum = "76c1cf285dcb9447a4f2942914974a66ac9ce04b80e32fcb42a9dbdfc2e76c50";
     };
   };
 
