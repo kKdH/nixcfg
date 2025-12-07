@@ -143,6 +143,11 @@
         tags = [ "shop" "farben" "color" ];
         url = "https://www.vallejo-farben.de/";
       }
+      {
+        name = "Akku Shop";
+        tags = [ "shop" "akku" "LiFePO4" ];
+        url = "https://www.akkushop-24.de/";
+      }
     ];
   }
   {
