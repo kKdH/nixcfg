@@ -1,8 +1,4 @@
-# Edit this configuration file to define what should be installed on
-# your system. Help is available in the configuration.nix(5) man page, on
-# https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
-
-{ config, pkgs, picoscope-pkgs, ... }:
+{ pkgs, ... }:
 
 {
   imports = [
@@ -10,12 +6,6 @@
   ];
 
   nixpkgs.config.allowUnfree = true;
-
-  nixpkgs.overlays = [
-    (final: prev: {
-      picoscope = picoscope-pkgs.picoscope;
-    })
-  ];
 
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
