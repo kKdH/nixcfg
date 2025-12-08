@@ -78,28 +78,14 @@
   helix.enable = true;
 
   jetbrains = {
-    defaultVmOptions = {
-      minMemory = 4096;
-      maxMemory = 8192;
-      # awtToolkit = "wayland";
-    };
     rustRover = {
-      enable = true;
-      version = "253.28294.188";
-      checksum = "5f8002f44ff8d1b6f88e7c4a8fdd76c89898e6fcf61195dfe77a8d4be5afdd91";
-      vmOptions.maxMemory = 16384;
-      vmOptions.awtToolkit = "wayland";
-    };
+      enable = false;
+     };
     intellij = {
-      enable = true;
-      version = "253.28294.251";
-      checksum = "1cf4610b87aa04dfbf6c27abd0c869cd0259782b57e9c2b43a0e3ef7c3eb6328";
-      vmOptions.awtToolkit = "wayland";
-    };
+      enable = false;
+     };
     pycharm = {
-      enable = true;
-      version = "253.28294.256";
-      checksum = "76c1cf285dcb9447a4f2942914974a66ac9ce04b80e32fcb42a9dbdfc2e76c50";
+      enable = false;
     };
   };
 
