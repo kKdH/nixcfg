@@ -7,15 +7,26 @@
     DIRENV_LOG_FORMAT = "";
   };
 
+  # set cursor size and dpi for 4k monitor
+  xresources.properties = {
+    "Xcursor.size" = 12;
+    "Xft.dpi" = 172;
+  };
+
   # Packages that should be installed to the user profile.
   home.packages = with pkgs; [
-    # networking tools
-    mtr # A network diagnostic tool
-    iperf3
-    dnsutils  # `dig` + `nslookup`
-    socat # replacement of openbsd-netcat
-    nmap # A utility for network discovery and security auditing
-    ipcalc  # it is a calculator for the IPv4/v6 addresses
+
+    kicad
+
+    picoscope
+    zellij
+    zip
+    xz
+    unzip
+    p7zip
+
+    # utils
+    ripgrep # recursively searches directories for a regex pattern
 
     # misc
     cowsay
@@ -26,6 +37,8 @@
     gnutar
     gawk
     zstd
+    gnupg
+    wl-clipboard
 
     # nix related
     #
@@ -51,24 +64,21 @@
     usbutils # lsusb
   ];
 
-  jetbrains = {
-    defaultVmOptions = {
-      minMemory = 4096;
-      maxMemory = 8192;
-      # awtToolkit = "wayland";
-    };
-    rustRover = {
-      enable = false;
-      vmOptions.maxMemory = 16384;
-    };
-    intellij = {
-      enable = false;
-      vmOptions.awtToolkit = "wayland";
-    };
-    pycharm = {
-      enable = false;
-    };
+  home.file = {
+    "Projects/.directory".text = ''
+      [Desktop Entry]
+      Icon=folder-script
+    '';
+    # TODO: Check if the scdaemon config is required.
+    ".gnupg/scdaemon.conf".text = ''
+      reader-port Yubico Yubi
+      disable-ccid
+    '';
   };
+
+  sshconfig.enable = true;
+
+  firefox.enable = true;
 
   git = {
     enable = true;
@@ -78,9 +88,23 @@
 
   helix.enable = true;
 
+  eza.enable = true;
+
+  konsole.enable = true;
+
+  plasma.enable = true;
+
   zsh = {
     enable = true;
     plugins = [ "git" "rust" "docker" "kubectl" "helm" "argocd" "aws" "podman" ];
+  };
+
+  zellij = {
+    enable = true;
+  };
+
+  wezterm = {
+    enable = true;
   };
 
   programs.bash = {
@@ -94,6 +118,10 @@
     enableZshIntegration = true;
     nix-direnv.enable = true;
     config.global.warn_timeout = "1h"; # https://github.com/direnv/direnv/blob/master/man/direnv.toml.1.md
+  };
+
+  programs.starship = {
+    enable = true;
   };
 
   # This value determines the home Manager release that your
