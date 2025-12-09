@@ -19,6 +19,7 @@
         theme = "dark_plus";
         editor = {
           color-modes = true;
+          bufferline = "multiple";
           statusline = {
             mode.normal = "NORMAL";
             mode.insert = "INSERT";
