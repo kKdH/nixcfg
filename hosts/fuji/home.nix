@@ -77,18 +77,6 @@
 
   helix.enable = true;
 
-  jetbrains = {
-    rustRover = {
-      enable = false;
-     };
-    intellij = {
-      enable = false;
-     };
-    pycharm = {
-      enable = false;
-    };
-  };
-
   eza.enable = true;
 
   konsole.enable = true;

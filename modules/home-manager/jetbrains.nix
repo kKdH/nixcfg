@@ -57,24 +57,42 @@ let
         "${renderToolkitOption options.awtToolkit}\n"
       )
     ];
-  intellijCfg = {
-    enable = cfg.intellij.enable;
-    version = cfg.intellij.version;
-    checksum = cfg.intellij.checksum;
-    vmOptions = mergeVmOptionsOrDefault { set = cfg.intellij; defaults = cfg.defaultVmOptions; };
-  };
-  rustRoverCfg = {
-    enable = cfg.rustRover.enable;
-    version = cfg.rustRover.version;
-    checksum = cfg.rustRover.checksum;
-    vmOptions = mergeVmOptionsOrDefault { set = cfg.rustRover; defaults = cfg.defaultVmOptions; };
-  };
-  pycharmCfg = {
-    enable = cfg.pycharm.enable;
-    version = cfg.pycharm.version;
-    checksum = cfg.pycharm.checksum;
-    vmOptions = mergeVmOptionsOrDefault { set = cfg.pycharm; defaults = cfg.defaultVmOptions; };
-  };
+  intellijCfg = if cfg != null && cfg.intellij != null
+    then
+    {
+      enable = cfg.intellij.enable;
+      version = cfg.intellij.version;
+      checksum = cfg.intellij.checksum;
+      vmOptions = mergeVmOptionsOrDefault { set = cfg.intellij; defaults = cfg.defaultVmOptions; };
+    }
+    else
+    {
+      enable = false;
+    };
+  rustRoverCfg = if cfg != null && cfg.rustRover != null
+    then
+    {
+      enable = cfg.rustRover.enable;
+      version = cfg.rustRover.version;
+      checksum = cfg.rustRover.checksum;
+      vmOptions = mergeVmOptionsOrDefault { set = cfg.rustRover; defaults = cfg.defaultVmOptions; };
+    }
+    else
+    {
+      enable = false;
+    };
+  pycharmCfg = if cfg != null && cfg.pycharm != null
+    then
+    {
+      enable = cfg.pycharm.enable;
+      version = cfg.pycharm.version;
+      checksum = cfg.pycharm.checksum;
+      vmOptions = mergeVmOptionsOrDefault { set = cfg.pycharm; defaults = cfg.defaultVmOptions; };
+    }
+    else
+    {
+      enable = false;
+    };
   enabled = intellijCfg.enable || rustRoverCfg.enable || pycharmCfg.enable;
 in
 {
