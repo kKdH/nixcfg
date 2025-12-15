@@ -2,6 +2,7 @@
 
 {
   imports = [
+    ./bacon/default.nix
     ./eza.nix
     ./firefox/default.nix
     ./git.nix
