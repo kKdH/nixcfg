@@ -17,10 +17,8 @@
       settings = {
         user.name = config.git.userName;
         user.email = config.git.userEmail;
-        extraConfig = {
-          init.defaultBranch = "main";
-          safe.directory = "*";
-        };
+        init.defaultBranch = "main";
+        safe.directory = "*";
       };
     };
   };
