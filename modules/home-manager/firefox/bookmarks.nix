@@ -148,6 +148,16 @@
         tags = [ "shop" "akku" "LiFePO4" ];
         url = "https://www.akkushop-24.de/";
       }
+      {
+        name = "Paulmann";
+        tags = [ "shop" ];
+        url = "https://de.paulmann.com/";
+      }
+      {
+        name = "Drahtseile24";
+        tags = [ "shop" "draht" "seil" "rope" ];
+        url = "https://www.drahtseile24.de";
+      }
     ];
   }
   {
