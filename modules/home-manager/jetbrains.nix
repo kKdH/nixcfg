@@ -116,7 +116,7 @@ in
   };
   config = lib.mkIf enabled {
     home.packages = with pkgs; []
-      ++ lib.optional intellijCfg.enable ((jetbrains.idea-ultimate.overrideAttrs {
+      ++ lib.optional intellijCfg.enable ((jetbrains.idea.overrideAttrs {
         version = intellijCfg.version;
         src = pkgs.fetchurl {
           # https://www.jetbrains.com/de-de/idea/nextversion/
@@ -136,7 +136,7 @@ in
       }).override {
         vmopts = renderVmOptions rustRoverCfg.vmOptions;
       })
-      ++ lib.optional pycharmCfg.enable ((jetbrains.pycharm-professional.overrideAttrs {
+      ++ lib.optional pycharmCfg.enable ((jetbrains.pycharm.overrideAttrs {
         version = pycharmCfg.version;
         src = pkgs.fetchurl {
           # https://www.jetbrains.com/de-de/pycharm/nextversion/
