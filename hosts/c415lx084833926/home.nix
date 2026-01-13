@@ -41,6 +41,7 @@
     picoscope
     kdePackages.kcolorchooser
     kdePackages.kgpg
+    kdePackages.krdc
     kdePackages.kruler
     virt-manager
     zellij
@@ -129,22 +130,27 @@
     };
     rustRover = {
       enable = true;
-      version = "253.28294.188";
-      checksum = "5f8002f44ff8d1b6f88e7c4a8fdd76c89898e6fcf61195dfe77a8d4be5afdd91";
+      version = "2025.3.1";
+      checksum = "5a1b34e10a1c59eee30694236baa8233c7787580769381be01b4ccb09618ec89";
       vmOptions.maxMemory = 16384;
       vmOptions.awtToolkit = "wayland";
     };
     intellij = {
       enable = true;
-      version = "253.28294.251";
-      checksum = "1cf4610b87aa04dfbf6c27abd0c869cd0259782b57e9c2b43a0e3ef7c3eb6328";
+      version = "2025.3.1";
+      checksum = "21e1b90b5ec684767a03498ba424ef3f9acc5dbf759cceefd5edd474f043ad6c";
       vmOptions.awtToolkit = "wayland";
     };
     pycharm = {
       enable = true;
-      version = "253.28294.256";
-      checksum = "76c1cf285dcb9447a4f2942914974a66ac9ce04b80e32fcb42a9dbdfc2e76c50";
+      version = "2025.3.1";
+      checksum = "933fd42d7cc2a76ad4ba23f9112294e4df013fa4c3362435a1e3368051c07391";
+      vmOptions.awtToolkit = "wayland";
     };
+  };
+
+  bacon = {
+    enable = true;
   };
 
   git = {
@@ -167,10 +173,6 @@
   };
 
   zellij = {
-    enable = true;
-  };
-
-  alacritty = {
     enable = true;
   };
 
@@ -203,7 +205,7 @@
   # You can update home Manager without changing this value. See
   # the home Manager release notes for a list of state version
   # changes in each release.
-  home.stateVersion = "25.05";
+  home.stateVersion = "25.11";
 
   # Let home Manager install and manage itself.
   programs.home-manager.enable = true;
