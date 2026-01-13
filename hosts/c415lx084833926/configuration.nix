@@ -40,7 +40,7 @@
 
   environment.etc."u2f_keys" = {
     text = ''
-      elmar:BSyXyknlRYwPgP09BYo5lesdfC0QTSAMQOdKOTE5hNgB6cw4zuPmiEaSBVroQ31pAYKH8sTix5s97iDwmXm5bg==,ni7Y85HxmhVMNfVcwe7A7WHM9KcyGEBn+Xq67dxrBRuIjdnoOmbMsz5wM3z7UxeD422I/hvYW2FMUAfmHMXhbg==,es256,+presence%
+      elmar:BSyXyknlRYwPgP09BYo5lesdfC0QTSAMQOdKOTE5hNgB6cw4zuPmiEaSBVroQ31pAYKH8sTix5s97iDwmXm5bg==,ni7Y85HxmhVMNfVcwe7A7WHM9KcyGEBn+Xq67dxrBRuIjdnoOmbMsz5wM3z7UxeD422I/hvYW2FMUAfmHMXhbg==,es256,+presence%:jrfXelA34NL31RbB4+EL1MYmb4JXV/kd/EwiQPPswTj5xYn/eTKbxtanqWPDtwyXhnKxVF2wp+EviX63BMU2VQ==,OPn+mMsoLA2X1sX2wzU5/6aB4vRcZZ0iQNft5v4ormsZo7Ea8CPHwzu80OCyKsIuSQ4SUoH4dXKqhjnnz4+RFQ==,es256,+presence
     '';
   };
 
