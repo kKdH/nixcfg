@@ -130,21 +130,21 @@
     };
     rustRover = {
       enable = true;
-      version = "2025.3.1";
-      checksum = "5a1b34e10a1c59eee30694236baa8233c7787580769381be01b4ccb09618ec89";
+      version = "2025.3.2";
+      checksum = "73a3e8bba6b6edcc0272f7292a78503add8499ffa2487c8e2102325d3101de11";
       vmOptions.maxMemory = 16384;
       vmOptions.awtToolkit = "wayland";
     };
     intellij = {
       enable = true;
-      version = "2025.3.1";
-      checksum = "21e1b90b5ec684767a03498ba424ef3f9acc5dbf759cceefd5edd474f043ad6c";
+      version = "2025.3.1.1";
+      checksum = "3a064b22961f3f39b866b64b628558e0d0f708d423a3f9565d43f0e81196997b";
       vmOptions.awtToolkit = "wayland";
     };
     pycharm = {
       enable = true;
-      version = "2025.3.1";
-      checksum = "933fd42d7cc2a76ad4ba23f9112294e4df013fa4c3362435a1e3368051c07391";
+      version = "2025.3.1.1";
+      checksum = "de54121e9a8d7ffc9a3b22167ae8588ad23ffe606e246fec7efad631d26fb44b";
       vmOptions.awtToolkit = "wayland";
     };
   };
