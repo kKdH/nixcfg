@@ -17,6 +17,23 @@
     ];
   }
   {
+    name = "Proton";
+    bookmarks = [
+      {
+        name = "Proton Mail";
+        tags = [ "proton" "mail" ];
+        keyword = "mail";
+        url = "https://mail.proton.me/";
+      }
+      {
+        name = "Proton Pass";
+        tags = [ "proton" "pass" ];
+        keyword = "pass";
+        url = "https://pass.proton.me/";
+      }
+    ];
+  }
+  {
   name = "GitHub";
     tags = [ "git" "github" "collaboration" ];
     keyword = "git";
@@ -122,6 +139,16 @@
         name = "Conrad";
         tags = [ "shop" ];
         url = "https://www.conrad.de/";
+      }
+      {
+        name = "DigiKey";
+        tags = [ "shop" ];
+        url = "https://www.digikey.de/";
+      }
+      {
+        name = "TME - Electronic Components";
+        tags = [ "shop" ];
+        url = "https://www.tme.eu/";
       }
       {
         name = "Wera";
