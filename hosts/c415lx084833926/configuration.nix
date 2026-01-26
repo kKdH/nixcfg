@@ -1,4 +1,4 @@
-{ config, pkgs, picoscope-pkgs, ... }:
+{ inputs, config, pkgs, ... }:
 
 {
   imports = [
@@ -7,13 +7,7 @@
 
   nixpkgs.config.allowUnfree = true;
 
-  nixpkgs.overlays = [
-    (final: prev: {
-      picoscope = picoscope-pkgs.picoscope;
-    })
-  ];
-
-  # Use the systemd-boot EFI boot loader.
+   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = false;
   boot.loader.efi.canTouchEfiVariables = false;
 
@@ -38,6 +32,7 @@
     };
   };
 
+  environment.localBinInPath = true;
   environment.etc."u2f_keys" = {
     text = ''
       elmar:BSyXyknlRYwPgP09BYo5lesdfC0QTSAMQOdKOTE5hNgB6cw4zuPmiEaSBVroQ31pAYKH8sTix5s97iDwmXm5bg==,ni7Y85HxmhVMNfVcwe7A7WHM9KcyGEBn+Xq67dxrBRuIjdnoOmbMsz5wM3z7UxeD422I/hvYW2FMUAfmHMXhbg==,es256,+presence%:jrfXelA34NL31RbB4+EL1MYmb4JXV/kd/EwiQPPswTj5xYn/eTKbxtanqWPDtwyXhnKxVF2wp+EviX63BMU2VQ==,OPn+mMsoLA2X1sX2wzU5/6aB4vRcZZ0iQNft5v4ormsZo7Ea8CPHwzu80OCyKsIuSQ4SUoH4dXKqhjnnz4+RFQ==,es256,+presence
@@ -202,6 +197,10 @@
 
   # Enable the Flakes feature and the accompanying new nix command-line tool
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
+
+  nix.registry = {
+    nixpkgs.flake = inputs.nixpkgs;
+  };
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget

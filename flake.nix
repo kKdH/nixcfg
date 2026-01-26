@@ -22,9 +22,6 @@
       url = "github:kKdH/hello-rusty-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    picoscope-nixpkgs = {
-      url = "github:NixOS/nixpkgs/ea5c3d756e0f001f46560e99afb3cd3e954ae2cb";
-    };
   };
 
   outputs =
@@ -37,7 +34,6 @@
       plasma-manager,
       impermanence,
       rusty-nix,
-      picoscope-nixpkgs,
       ...
     }:
     let
@@ -53,10 +49,7 @@
             inherit system;
             config.allowUnfree = true;
           };
-          picoscope-pkgs = import picoscope-nixpkgs {
-            inherit system;
-            config.allowUnfree = true;
-          };
+          inherit inputs;
         };
         modules = [
           {
