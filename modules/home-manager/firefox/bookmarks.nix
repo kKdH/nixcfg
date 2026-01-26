@@ -288,6 +288,16 @@
         url = "https://feltron-zeissler.de/";
       }
       {
+        name = "Christians Shop";
+        tags = [ "electronics" "shop" ];
+        url = "https://www.christians-shop.de/";
+      }
+      {
+        name = "Makershop";
+        tags = [ "electronics" "shop" ];
+        url = "https://www.makershop.de";
+      }
+      {
         name = "ST";
         bookmarks = [
           {
