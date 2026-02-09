@@ -13,6 +13,12 @@
         "local.conf"
       ];
       matchBlocks = {
+        "wipro" = {
+          hostname = "localhost";
+          identityFile = "~/.ssh/wipro-localhost.id_ed25519";
+          identitiesOnly = true;
+          user = "root";
+        };
         "github.com" = {
           hostname =  "github.com";
           identityFile = "~/.ssh/github.com.id_ed25519";
