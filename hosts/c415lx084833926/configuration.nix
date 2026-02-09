@@ -184,7 +184,7 @@
   users.users.elmar = {
     isNormalUser = true;
     home = "/home/elmar";
-    extraGroups = [ "wheel" "dialout" "libvirtd" "docker" ];
+    extraGroups = [ "wheel" "dialout" "libvirtd" "docker" "pico" ];
   };
 
   # sops = {
