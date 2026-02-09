@@ -389,6 +389,11 @@
     url = "https://drive.google.com/drive/home";
   }
   {
+    name = "PayPal";
+    tags = [ "paypal" ];
+    url = "https://www.paypal.com/";
+  }
+  {
     name = "News";
     bookmarks = [
       {
