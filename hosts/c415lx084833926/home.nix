@@ -31,7 +31,6 @@
   # Packages that should be installed to the user profile.
   home.packages = with pkgs; [
     rustup
-    prusa-slicer
     kicad
     krita
     blender
@@ -139,6 +138,7 @@
       enable = true;
       version = "2025.3.2";
       checksum = "a3442c9f1953c66dcb0825e9b788c7e74efb586edbf1d30ef8b0df553fe136e4";
+      vmOptions.maxMemory = 16384;
       vmOptions.awtToolkit = "wayland";
     };
     pycharm = {
@@ -177,6 +177,10 @@
   };
 
   wezterm = {
+    enable = true;
+  };
+
+  prusa-slicer = {
     enable = true;
   };
 
