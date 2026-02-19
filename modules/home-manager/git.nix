@@ -17,6 +17,7 @@
       settings = {
         user.name = config.git.userName;
         user.email = config.git.userEmail;
+        core.autocrlf = "false";
         init.defaultBranch = "main";
         safe.directory = "*";
       };
