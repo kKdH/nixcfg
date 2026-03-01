@@ -5,6 +5,7 @@
     ./bacon/default.nix
     ./eza.nix
     ./firefox/default.nix
+    ./freecad/default.nix
     ./git.nix
     ./helix.nix
     ./jetbrains.nix
