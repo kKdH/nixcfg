@@ -44,8 +44,8 @@
     kdePackages.kruler
     virt-manager
     zellij
-
     neofetch
+    spnavcfg
 
     # archives
     zip
@@ -120,6 +120,8 @@
   sshconfig.enable = true;
 
   firefox.enable = true;
+
+  freecad.enable = true;
 
   jetbrains = {
     defaultVmOptions = {

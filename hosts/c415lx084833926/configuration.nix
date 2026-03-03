@@ -119,6 +119,10 @@
     powerOnBoot = true; # powers up the default Bluetooth controller on boot
   };
 
+  hardware.spacenavd = {
+    enable = true;
+  };
+
   # Enable the X11 windowing system.
   services.xserver.enable = true;
   services.xserver.videoDrivers = ["nvidia"];

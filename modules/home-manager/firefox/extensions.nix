@@ -49,5 +49,11 @@ in
         private_browsing = true;
       }
     )
+    (mkExtensionPolicy "{firefox@tampermonkey.net}" # Proton Pass
+      {
+        default_area = "navbar";
+        private_browsing = false;
+      }
+    )
   ];
 }
