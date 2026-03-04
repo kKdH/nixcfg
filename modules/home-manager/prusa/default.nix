@@ -15,11 +15,11 @@ in
     ];
     home.file = {
       ${filamentConfigDir} = {
-        source = "${./filament}";
+        source = ./filament;
         recursive = true;
       };
       ${printerConfigDir} = {
-        source = "${./printer}";
+        source = ./printer;
         recursive = true;
       };
     };

@@ -2,16 +2,16 @@
 
 {
   imports = [
-    ./bacon/default.nix
+    ./bacon
     ./eza.nix
-    ./firefox/default.nix
-    ./freecad/default.nix
+    ./firefox
+    ./freecad
     ./git.nix
     ./helix.nix
     ./jetbrains.nix
-    ./plasma/default.nix
-    ./prusa/default.nix
+    ./plasma
+    ./prusa
     ./sshconfig.nix
-    ./terminal/default.nix
+    ./terminal
   ];
 }
