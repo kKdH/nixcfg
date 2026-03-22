@@ -3,6 +3,7 @@
 let
   slicerConfigDir = "${config.xdg.configHome}/PrusaSlicer";
   filamentConfigDir = "${slicerConfigDir}/filament";
+  printConfigDir = "${slicerConfigDir}/print";
   printerConfigDir = "${slicerConfigDir}/printer";
 in
 {
@@ -16,6 +17,10 @@ in
     home.file = {
       ${filamentConfigDir} = {
         source = ./filament;
+        recursive = true;
+      };
+      ${printConfigDir} = {
+        source = ./print;
         recursive = true;
       };
       ${printerConfigDir} = {
