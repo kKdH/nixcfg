@@ -42,9 +42,9 @@
     kdePackages.kgpg
     kdePackages.krdc
     kdePackages.kruler
+    kubectl
     virt-manager
     zellij
-    neofetch
     spnavcfg
 
     # archives
@@ -131,22 +131,22 @@
     };
     rustRover = {
       enable = true;
-      version = "261.20362.28";
-      checksum = "d3d45dbba6daea3f0b95cd34ff3d6ec1d064ecfdb5d93688a2b588dd314a6adf";
+      version = "2025.3.5";
+      checksum = "db21193965280fa10bb34592bdd312652540980fcbb282b27c9891db423ce9a4";
       vmOptions.maxMemory = 16384;
       vmOptions.awtToolkit = "wayland";
     };
     intellij = {
       enable = true;
-      version = "2025.3.2";
-      checksum = "a3442c9f1953c66dcb0825e9b788c7e74efb586edbf1d30ef8b0df553fe136e4";
+      version = "2025.3.4";
+      checksum = "b86ddae3a3fd6c2afbaca160a3b7d54f4b4fa6d1361ac2616bdb7a6416632ea1";
       vmOptions.maxMemory = 16384;
       vmOptions.awtToolkit = "wayland";
     };
     pycharm = {
       enable = true;
-      version = "2025.3.2.1";
-      checksum = "6d3cc25041c2a091695cfe733e8893ddda154e6f9b92cc060a6d1be3e8779fae";
+      version = "2025.3.3";
+      checksum = "347752040eb83eb79f5eb0458a556d2cb306ac0e1d973c3e73743f9cdb8a4a0a";
       vmOptions.awtToolkit = "wayland";
     };
   };
