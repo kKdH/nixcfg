@@ -37,6 +37,16 @@
       icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
       definedAliases = [ "@opt" ];
     };
+    "Nixpkgs Pull Request" = {
+      urls = [{
+        template = "https://nixpk.gs/pr-tracker.html";
+        params = [
+          { name = "pr"; value = "{searchTerms}"; }
+        ];
+      }];
+      icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
+      definedAliases = [ "@nixpr" ];
+    };
     "Dict" = {
       urls = [{
         template = "https://www.dict.cc";
