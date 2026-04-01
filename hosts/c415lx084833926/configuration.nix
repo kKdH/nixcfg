@@ -157,6 +157,7 @@
 
   services.udev.packages = [
     (pkgs.callPackage ../../packages/probe-rs-udev-rules {})
+    (pkgs.callPackage ../../packages/weylus-uinput-udev-rules {})
     (pkgs.callPackage ../../packages/yubikey-screen-locking-udev-rules {})
     pkgs.yubikey-personalization
   ];
@@ -241,6 +242,7 @@
       trustedInterfaces = [ "virbr0" ];
       allowedTCPPorts = [
       # 5001 # gRPC e.g. ANNE
+      # 1701 # Weylus
       ];
     };
   };
