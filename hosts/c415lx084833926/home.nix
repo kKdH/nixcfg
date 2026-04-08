@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, inputs, ... }:
 
 {
   home.username = "elmar";
@@ -46,6 +46,7 @@
     virt-manager
     zellij
     spnavcfg
+    inputs.spacenav-rs.packages.${pkgs.system}.default
 
     # archives
     zip

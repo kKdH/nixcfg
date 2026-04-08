@@ -18,6 +18,10 @@
       url = "github:Mic92/sops-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    spacenav-rs = {
+      url = "github:kkdh/spacenav-rs";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     rusty-nix = {
       url = "github:kKdH/hello-rusty-nix";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -33,6 +37,7 @@
       home-manager,
       plasma-manager,
       impermanence,
+      spacenav-rs,
       rusty-nix,
       ...
     }:
