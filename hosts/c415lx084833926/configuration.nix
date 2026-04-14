@@ -222,6 +222,15 @@
     zsh
   ];
 
+  services.ollama = {
+    enable = true;
+    package = pkgs.ollama-cuda;
+    loadModels = [
+      "gemma4:e2b"
+      "qwen3.5:2b"
+    ];
+  };
+
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
