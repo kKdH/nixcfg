@@ -7,20 +7,25 @@
     DIRENV_LOG_FORMAT = "";
   };
 
-  # link the configuration file in current directory to the specified location in home directory
-  # home.file.".config/i3/wallpaper.jpg".source = ./wallpaper.jpg;
-
-  # link all files in `./scripts` to `~/.config/i3/scripts`
-  # home.file.".config/i3/scripts" = {
-  #   source = ./scripts;
-  #   recursive = true;   # link recursively
-  #   executable = true;  # make all files executable
-  # };
-
-  # encode the file content in nix configuration file directly
-  # home.file.".xxx".text = ''
-  #     xxx
-  # '';
+  home.file = {
+    # Suppress kwin opengl loggs due to: https://bugs.kde.org/show_bug.cgi?id=511852
+    # Or set nvidia card as first device: https://bbs.archlinux.org/viewtopic.php?pid=2275751#p2275751
+    # which shifts composing to the dedicated GPU (GPU will be active all the time)
+    ".config/systemd/user/plasma-kwin_wayland.service.d/override.conf".text = ''
+      [Service]
+      # Environment=QT_LOGGING_RULES=kwin_scene_opengl=false
+      Environment=KWIN_DRM_DEVICES=/dev/dri/card0:/dev/dri/card1
+    '';
+    "Projects/.directory".text = ''
+      [Desktop Entry]
+      Icon=folder-script
+    '';
+    # TODO: Check if the scdaemon config is required.
+    ".gnupg/scdaemon.conf".text = ''
+      reader-port Yubico Yubi
+      disable-ccid
+    '';
+  };
 
   # set cursor size and dpi for 4k monitor
   xresources.properties = {
@@ -47,6 +52,8 @@
     zellij
     spnavcfg
     inputs.spacenav-rs.packages.${pkgs.system}.default
+    claude-code
+    litellm
 
     # archives
     zip
@@ -105,18 +112,6 @@
     usbutils # lsusb
     gpu-viewer
   ];
-
-  home.file = {
-    "Projects/.directory".text = ''
-      [Desktop Entry]
-      Icon=folder-script
-    '';
-    # TODO: Check if the scdaemon config is required.
-    ".gnupg/scdaemon.conf".text = ''
-      reader-port Yubico Yubi
-      disable-ccid
-    '';
-  };
 
   sshconfig.enable = true;
 
