@@ -26,6 +26,10 @@
       url = "github:kKdH/hello-rusty-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    llm-agents = {
+      url = "github:numtide/llm-agents.nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -39,6 +43,7 @@
       impermanence,
       spacenav-rs,
       rusty-nix,
+      llm-agents,
       ...
     }:
     let
@@ -64,6 +69,7 @@
               impermanence.nixosModules.impermanence
               home-manager.nixosModules.home-manager
             ];
+            nixpkgs.overlays = [ llm-agents.overlays.default ];
             home-manager = {
               useGlobalPkgs = true;
               useUserPackages = true;
