@@ -14,7 +14,7 @@
     ".config/systemd/user/plasma-kwin_wayland.service.d/override.conf".text = ''
       [Service]
       # Environment=QT_LOGGING_RULES=kwin_scene_opengl=false
-      Environment=KWIN_DRM_DEVICES=/dev/dri/card0:/dev/dri/card1
+      # Environment=KWIN_DRM_DEVICES=/dev/dri/card0:/dev/dri/card1
     '';
     "Projects/.directory".text = ''
       [Desktop Entry]

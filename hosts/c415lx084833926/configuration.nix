@@ -106,8 +106,8 @@
 
     prime = {
       offload = {
-        enable = false;
-        enableOffloadCmd = false;
+        enable = true;
+        enableOffloadCmd = true;
       };
       intelBusId = "PCI:0:2:0"; # 00:02.0
       nvidiaBusId = "PCI:1:0:0"; # 01:00.0
