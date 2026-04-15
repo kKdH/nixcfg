@@ -53,7 +53,6 @@
     spnavcfg
     inputs.spacenav-rs.packages.${pkgs.system}.default
     claude-code
-    litellm
 
     # archives
     zip
@@ -158,6 +157,11 @@
   };
 
   helix.enable = true;
+
+  litellm = {
+    enable = true;
+    service.enable = true;
+  };
 
   eza.enable = true;
 

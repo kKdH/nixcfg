@@ -9,6 +9,7 @@
     ./git.nix
     ./helix.nix
     ./jetbrains.nix
+    ./litellm
     ./plasma
     ./prusa
     ./sshconfig.nix
