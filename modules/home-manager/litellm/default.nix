@@ -6,6 +6,14 @@ let
         type = lib.types.bool;
         default = false;
       };
+      host = lib.mkOption {
+        type = lib.types.str;
+        default = "localhost";
+      };
+      port = lib.mkOption {
+        type = lib.types.port;
+        default = 4000;
+      };
       configFile = lib.mkOption {
         type = lib.types.path;
         default = "${config.xdg.configHome}/litellm/config.yaml";
@@ -33,7 +41,12 @@ in
       };
       Service = {
         Environment = [];
-        ExecStart = "${lib.getExe pkgs.litellm} --config ${config.litellm.service.configFile}";
+        ExecStart = lib.strings.concatStringsSep " " [
+          "${lib.getExe pkgs.litellm}"
+            "--host ${config.litellm.service.host}"
+            "--port ${toString config.litellm.service.port}"
+            "--config ${config.litellm.service.configFile}"
+        ];
       };
     };
   };
