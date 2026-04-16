@@ -39,6 +39,9 @@ in
         X-SwitchMethod = "stop-start";
         X-Restart-Triggers = [];
       };
+      Install = {
+        WantedBy = [ "default.target" ];
+      };
       Service = {
         Environment = [];
         ExecStart = lib.strings.concatStringsSep " " [
