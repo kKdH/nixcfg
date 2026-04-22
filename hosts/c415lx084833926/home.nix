@@ -53,6 +53,7 @@
     spnavcfg
     inputs.spacenav-rs.packages.${pkgs.system}.default
     claude-code
+    scrcpy
 
     # archives
     zip
