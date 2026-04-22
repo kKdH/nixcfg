@@ -250,9 +250,16 @@
       enable = true;
       trustedInterfaces = [ "virbr0" ];
       allowedTCPPorts = [
-      # 5001 # gRPC e.g. ANNE
+      5001 # gRPC e.g. ANNE
+      # 3000
       # 1701 # Weylus
       ];
+      extraCommands = ''
+        iptables -A nixos-fw -p tcp --source 172.17.0.0/16 --destination 172.17.0.0/16 -j nixos-fw-accept
+      '';
+      extraStopCommands = ''
+        iptables -D nixos-fw -p tcp --source 172.17.0.0/16 --destination 172.17.0.0/16 -j nixos-fw-accept || true
+      '';
     };
   };
 
