@@ -441,6 +441,11 @@
         url = "https://regex101.com/";
       }
       {
+        name = "Json Web Token Debugger";
+        tags = [ "programming" "Json Web Token" "jwt" ];
+        url = "https://www.jwt.io/";
+      }
+      {
         name = "JetBrains";
         bookmarks = [
           {
