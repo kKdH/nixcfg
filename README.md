@@ -6,7 +6,7 @@ My current — and always evolving — NixOS and Home Manager configurations.
 ### Applying changes
 
 ```sh
-sudo nixos-rebuild switch --flake . |& nom
+sudo nixos-rebuild switch --flake . --option corse 16 |& nom
 ```
 
 ### Optimisation and garbage collection
