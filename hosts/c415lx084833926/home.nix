@@ -53,7 +53,9 @@
     spnavcfg
     inputs.spacenav-rs.packages.${pkgs.system}.default
     claude-code
+    mistral-vibe
     scrcpy
+    zed-editor
 
     # archives
     zip
@@ -93,6 +95,7 @@
     # it provides the command `nom` works just like `nix`
     # with more details log output
     nix-output-monitor
+    nixd # nix LSP
 
     btop  # replacement of htop/nmon
     iotop # io monitoring
