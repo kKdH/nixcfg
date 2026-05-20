@@ -56,6 +56,8 @@
     mistral-vibe
     scrcpy
     zed-editor
+    lazygit
+    qgis # Geographic Information System
 
     # archives
     zip
