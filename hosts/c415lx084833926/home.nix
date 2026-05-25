@@ -36,7 +36,6 @@
   # Packages that should be installed to the user profile.
   home.packages = with pkgs; [
     rustup
-    kicad
     krita
     blender
     inkscape
@@ -124,6 +123,8 @@
 
   freecad.enable = true;
 
+  kicad.enable = true;
+
   jetbrains = {
     defaultVmOptions = {
       minMemory = 4096;
@@ -132,22 +133,22 @@
     };
     rustRover = {
       enable = true;
-      version = "2026.1.1";
-      checksum = "5189639b8decfd4384be4d0f7a2a360abb1dc742b953949ea39eccdf80350357";
+      version = "2026.1.2";
+      checksum = "20d233ee719aaffa0787e0877f3e239b9b7dfc044f70c7e99ce97df59de48372";
       vmOptions.maxMemory = 16384;
       vmOptions.awtToolkit = "wayland";
     };
     intellij = {
       enable = true;
-      version = "2026.1.1";
-      checksum = "7a58d386f2a2e5a8cd7e4591657b4fe599aeac22d960c7accf5f927846507bfb";
+      version = "2026.1.2";
+      checksum = "e820175d1a7d0ee2492e7b38f6b7f046a132bfe4b082086d9b035edb03c777b1";
       vmOptions.maxMemory = 16384;
       vmOptions.awtToolkit = "wayland";
     };
     pycharm = {
       enable = true;
-      version = "2026.1.1";
-      checksum = "6f81c5874438965f2566001ad265e727c02e4db7d0b57287d86f3479fd647891";
+      version = "2026.1.2";
+      checksum = "91c775be16fb0859f9b18ebd456d88e131cadf337b0ce9f9d8ed187886561966";
       vmOptions.awtToolkit = "wayland";
     };
   };

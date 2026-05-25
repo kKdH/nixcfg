@@ -9,6 +9,7 @@
     ./git.nix
     ./helix.nix
     ./jetbrains.nix
+    ./kicad
     ./litellm
     ./plasma
     ./prusa
