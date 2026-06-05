@@ -466,6 +466,26 @@
         ];
       }
       {
+        name = "Mistral";
+        bookmarks = [
+          {
+            name = "Mistral";
+            tags = [ "programming" "ai" "mistral" ];
+            url = "https://mistral.ai";
+          }
+          {
+            name = "Mistral Studio";
+            tags = [ "programming" "ai" "mistral" ];
+            url = "https://console.mistral.ai/home";
+          }
+          {
+            name = "Mistral Chat";
+            tags = [ "programming" "ai" "mistral" ];
+            url = "https://chat.mistral.ai";
+          }
+        ];
+      }
+      {
         name = "Fontello";
         tags = [ "icon" "font" "generator" ];
         url = "https://fontello.com/";
@@ -474,6 +494,11 @@
         name = "Font Awesome";
         tags = [ "icon" "font" "generator" ];
         url = "https://fontawesome.com/search";
+      }
+      {
+        name = "Bulma";
+        tags = [ "programming" "css" "doc" ];
+        url = "https://bulma.io/documentation/";
       }
     ];
   }
@@ -565,9 +590,15 @@
       }
       {
         name = "Google Maps";
-        tags = [ "google" ];
+        tags = [ "map" "navigation" "google" ];
         keyword = "maps";
         url = "https://www.google.com/maps";
+      }
+      {
+        name = "Open Street Maps";
+        tags = [ "map" "navigation" ];
+        keyword = "osm";
+        url = "https://www.openstreetmap.org/";
       }
       {
         name = "Codeberg";

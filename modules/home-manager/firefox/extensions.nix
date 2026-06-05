@@ -43,13 +43,13 @@ in
         private_browsing = true;
       }
     )
-    (mkExtensionPolicy "{78272b6fa58f4a1abaac99321d503a20@proton.me}" # Proton Pass
+    (mkExtensionPolicy "78272b6fa58f4a1abaac99321d503a20@proton.me" # Proton Pass
       {
         default_area = "navbar";
         private_browsing = true;
       }
     )
-    (mkExtensionPolicy "{firefox@tampermonkey.net}" # Proton Pass
+    (mkExtensionPolicy "firefox@tampermonkey.net"
       {
         default_area = "navbar";
         private_browsing = false;
