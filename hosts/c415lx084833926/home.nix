@@ -57,6 +57,8 @@
     zed-editor
     lazygit
     qgis # Geographic Information System
+    solaar # Device manager for many Logitech products.
+    github-cli
 
     # archives
     zip
@@ -218,7 +220,7 @@
   # You can update home Manager without changing this value. See
   # the home Manager release notes for a list of state version
   # changes in each release.
-  home.stateVersion = "25.11";
+  home.stateVersion = "26.05";
 
   # Let home Manager install and manage itself.
   programs.home-manager.enable = true;
