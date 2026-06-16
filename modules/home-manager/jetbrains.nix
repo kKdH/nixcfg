@@ -126,24 +126,28 @@ in
       }).override {
         vmopts = renderVmOptions intellijCfg.vmOptions;
       })
-      ++ lib.optional rustRoverCfg.enable ((jetbrains.rust-rover.overrideAttrs {
+      ++ lib.optional rustRoverCfg.enable ((jetbrains.rust-rover.overrideAttrs (old: {
         version = rustRoverCfg.version;
         src = pkgs.fetchurl {
           # https://www.jetbrains.com/de-de/rust/nextversion/
           url = "https://download-cdn.jetbrains.com/rustrover/RustRover-${rustRoverCfg.version}.tar.gz";
           sha256 = rustRoverCfg.checksum;
         };
-      }).override {
+        buildInputs = (old.buildInputs or []) ++ [ pkgs.udev ];
+        autoPatchelfLibs = (old.autoPatchelfLibs or []) ++ [ "${pkgs.jetbrains.jdk}/lib/openjdk/lib" ];
+      })).override {
         vmopts = renderVmOptions rustRoverCfg.vmOptions;
       })
-      ++ lib.optional pycharmCfg.enable ((jetbrains.pycharm.overrideAttrs {
+      ++ lib.optional pycharmCfg.enable ((jetbrains.pycharm.overrideAttrs (old: {
         version = pycharmCfg.version;
         src = pkgs.fetchurl {
           # https://www.jetbrains.com/de-de/pycharm/nextversion/
           url = "https://download-cdn.jetbrains.com/python/pycharm-${pycharmCfg.version}.tar.gz";
           sha256 = pycharmCfg.checksum;
         };
-      }).override {
+        buildInputs = (old.buildInputs or []) ++ [ pkgs.udev ];
+        autoPatchelfLibs = (old.autoPatchelfLibs or []) ++ [ "${pkgs.jetbrains.jdk}/lib/openjdk/lib" ];
+      })).override {
         vmopts = renderVmOptions pycharmCfg.vmOptions;
       });
   };

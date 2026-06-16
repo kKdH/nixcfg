@@ -59,6 +59,9 @@
     qgis # Geographic Information System
     solaar # Device manager for many Logitech products.
     github-cli
+    jetbrains-toolbox
+    opencode
+    teams-for-linux
 
     # archives
     zip
@@ -135,8 +138,10 @@
     };
     rustRover = {
       enable = true;
-      version = "2026.1.2";
-      checksum = "20d233ee719aaffa0787e0877f3e239b9b7dfc044f70c7e99ce97df59de48372";
+#      version = "2026.1.2";
+#      checksum = "20d233ee719aaffa0787e0877f3e239b9b7dfc044f70c7e99ce97df59de48372";
+      version = "262.7581.25";
+      checksum = "bf9574bfbbb43958f133430cf03a5c300674dea0185fa0a912a753e1e289bacf";
       vmOptions.maxMemory = 16384;
       vmOptions.awtToolkit = "wayland";
     };
@@ -149,8 +154,8 @@
     };
     pycharm = {
       enable = true;
-      version = "2026.1.2";
-      checksum = "91c775be16fb0859f9b18ebd456d88e131cadf337b0ce9f9d8ed187886561966";
+      version = "262.7581.27";
+      checksum = "afaf52be24fbc8de5eabbf7d18bb9761a06b69425ea2326a40ec26064fbb1d5c";
       vmOptions.awtToolkit = "wayland";
     };
   };
