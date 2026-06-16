@@ -1,5 +1,13 @@
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="./images/nixos-logo-dark.svg" />
+    <source media="(prefers-color-scheme: light)" srcset="./images/nixos-logo-light.svg" />
+    <img alt="NixOS Logo" src="./images/nixos-logo-light.svg" />
+  </picture>
+</p>
+
 # nixcfg
-My current — and always evolving — NixOS and Home Manager configurations.
+My current — and always evolving — [NixOS](https://nixos.org/) and [Home Manager](https://github.com/nix-community/home-manager) configurations.
 
 ## Usage
 
