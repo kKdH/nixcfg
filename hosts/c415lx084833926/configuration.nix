@@ -226,9 +226,15 @@
     enable = true;
     package = pkgs.ollama-cuda;
     loadModels = [
-      "gemma4:e2b"
-      "qwen3.5:2b"
+      # "gemma4:12b-it-qat"
     ];
+    environmentVariables = {
+      OLLAMA_CONTEXT_LENGTH = "64000";
+      OLLAMA_MAX_LOADED_MODELS = "2";
+      OLLAMA_NO_CLOUD = "true";
+      OLLAMA_NUM_PARALLEL = "8";
+      LLAMA_ARG_FIT = "on";
+    };
   };
 
   # Some programs need SUID wrappers, can be configured further or are
