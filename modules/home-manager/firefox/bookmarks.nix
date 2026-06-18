@@ -52,19 +52,25 @@
     url = "https://discord.com/";
   }
   {
-    name = "Office";
+    name = "Work";
     bookmarks = [
       {
         name = "Outlook";
-        tags = [ "office" "mail" "collaboration" ];
+        tags = [ "work" "office" "mail" "collaboration" ];
         keyword = "";
         url = "https://outlook.office.com/";
       }
       {
         name = "Microsoft Teams";
-        tags = [ "teams" "collaboration" ];
+        tags = [ "work" "teams" "collaboration" ];
         keyword = "teams";
         url = "https://teams.microsoft.com/v2/#";
+      }
+      {
+        name = "Microsoft Azure Portal";
+        tags = [ "work" "azure" "cloud" ];
+        keyword = "azure";
+        url = "https://portal.azure.com/";
       }
     ];
   }
@@ -250,6 +256,25 @@
           }
         ];
       }
+      {
+        name = "Rust Crates";
+        bookmarks = [
+          {
+            name = "Leptos";
+            tags = [ "leptos" "crate" "rust" ];
+            url = "https://leptos.dev/";
+          }
+          {
+            name = "Tokio";
+            tags = [ "tokio" "crate" "rust" ];
+            url = "https://tokio.rs/";
+          }          {
+            name = "Icondata";
+            tags = [ "icons" "crate" "rust" ];
+            url = "https://carloskiki.github.io/icondata/";
+          }
+        ];
+      }
     ];
   }
   {
@@ -366,9 +391,15 @@
   }
   {
     name = "Dict";
-    tags = [ "dictionray" "translate" "english" "german" ];
+    tags = [ "dictionray" "translate" ];
     keyword = "dict";
     url = "https://www.dict.cc/";
+  }
+  {
+    name = "Google Translate";
+    tags = [ "dictionray" "translate" "google" ];
+    keyword = "translate";
+    url = "https://translate.google.com";
   }
   {
     name = "Apple Music";
