@@ -140,8 +140,8 @@
       enable = true;
 #      version = "2026.1.2";
 #      checksum = "20d233ee719aaffa0787e0877f3e239b9b7dfc044f70c7e99ce97df59de48372";
-      version = "262.7581.25";
-      checksum = "bf9574bfbbb43958f133430cf03a5c300674dea0185fa0a912a753e1e289bacf";
+      version = "262.8377.49";
+      checksum = "f0ce574fb25e2fbd2b4fa2832e7795f0fb7551aee70da2b372bed389ebf7633a";
       vmOptions.maxMemory = 16384;
       vmOptions.awtToolkit = "wayland";
     };
@@ -154,8 +154,8 @@
     };
     pycharm = {
       enable = true;
-      version = "262.7581.27";
-      checksum = "afaf52be24fbc8de5eabbf7d18bb9761a06b69425ea2326a40ec26064fbb1d5c";
+      version = "262.8117.23";
+      checksum = "3725d46b6cdeccd60b6d90eddac39e7182742c7bfeedacc0bd5079d47b41b728";
       vmOptions.awtToolkit = "wayland";
     };
   };
