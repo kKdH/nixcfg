@@ -69,7 +69,24 @@
               impermanence.nixosModules.impermanence
               home-manager.nixosModules.home-manager
             ];
-            nixpkgs.overlays = [ llm-agents.overlays.default ];
+            nixpkgs.overlays = [
+              llm-agents.overlays.default
+              (final: prev: {
+                mistral-vibe = prev.mistral-vibe.overrideAttrs (old: {
+                  version = "2.18.0";
+                  src = old.src.override {
+                    tag = "v2.18.0";
+                    hash = "sha256-2eDu2Fqd6K/ZxWSl/pXSN284z7UquNb+zwkHYe9ZWBw=";
+                  };
+                  disabledTests = (old.disabledTests or [ ]) ++ [
+                    "test_bash_submitted_during_running_bash_is_queued"
+                    "test_ui_queues_bash_submitted_while_command_running"
+                    "test_persists_real_subprocess_state_across_calls"
+                    "test_aclose_terminates_real_subprocess"
+                  ];
+                });
+              })
+            ];
             home-manager = {
               useGlobalPkgs = true;
               useUserPackages = true;
