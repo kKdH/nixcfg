@@ -4,7 +4,7 @@
   imports = [
     ./alacritty.nix
     ./wezterm
-    ./zellij.nix
+    ./zellij
     ./zsh.nix
   ];
 }

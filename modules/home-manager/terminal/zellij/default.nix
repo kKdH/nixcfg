@@ -1,5 +1,8 @@
 { lib, config, ... }:
 
+let
+  destinationConfigPath = "${config.xdg.configHome}/zellij/config.kdl";
+in
 {
   options.zellij = {
     enable = lib.mkEnableOption "Enable zellij";
@@ -8,6 +11,11 @@
     programs.zellij = {
       enable = true;
       enableZshIntegration = true;
+    };
+    home.file = {
+      ${destinationConfigPath} = {
+        source = ./config.kdl;
+      };
     };
   };
 }
