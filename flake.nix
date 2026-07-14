@@ -70,19 +70,17 @@
               home-manager.nixosModules.home-manager
             ];
             nixpkgs.overlays = [
-              llm-agents.overlays.default
               (final: prev: {
-                mistral-vibe = prev.mistral-vibe.overrideAttrs (old: {
-                  version = "2.18.0";
-                  src = old.src.override {
-                    tag = "v2.18.0";
-                    hash = "sha256-2eDu2Fqd6K/ZxWSl/pXSN284z7UquNb+zwkHYe9ZWBw=";
+                pdal = prev.pdal.overrideAttrs (old: {
+                  version = "2.10.2";
+                  src = prev.fetchFromGitHub {
+                    owner = "PDAL";
+                    repo = "PDAL";
+                    tag = "2.10.2";
+                    hash = "sha256-VxELHAiiFMKjsvgBK4Cm6YJSrs/4QhhF1haZv4/FlZg=";
                   };
                   disabledTests = (old.disabledTests or [ ]) ++ [
-                    "test_bash_submitted_during_running_bash_is_queued"
-                    "test_ui_queues_bash_submitted_while_command_running"
-                    "test_persists_real_subprocess_state_across_calls"
-                    "test_aclose_terminates_real_subprocess"
+                    "pdal_io_copc_remote_reader_test"
                   ];
                 });
               })
