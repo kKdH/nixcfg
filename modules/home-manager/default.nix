@@ -11,6 +11,7 @@
     ./jetbrains.nix
     ./kicad
     ./litellm
+    ./opencode
     ./plasma
     ./prusa
     ./sshconfig.nix

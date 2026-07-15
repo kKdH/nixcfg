@@ -7,16 +7,23 @@
       type = lib.types.listOf lib.types.str;
       description = "List of plugins to activate.";
     };
+    aliases = lib.mkOption {
+      type = lib.types.attrsOf lib.types.str;
+      description = "List of command aliases to add.";
+    };
   };
 
   config = lib.mkIf config.zsh.enable {
     programs.zsh = {
       enable = true;
       enableCompletion = true;
-      # autosuggestions.enable = true;
+      autosuggestion = {
+        enable = true;
+        highlight = "fg=240";
+      };
       syntaxHighlighting.enable = true;
       history.size = 10000;
-      shellAliases = { };
+      shellAliases = config.zsh.aliases;
       oh-my-zsh = {
         enable = true;
         plugins = config.zsh.plugins;

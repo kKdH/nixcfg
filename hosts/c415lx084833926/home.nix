@@ -56,11 +56,10 @@
     scrcpy
     zed-editor
     lazygit
-    qgis # Geographic Information System
+    # qgis # Geographic Information System # TODO: enable when pdal build is fixed.
     solaar # Device manager for many Logitech products.
     github-cli
     jetbrains-toolbox
-    opencode
     teams-for-linux
 
     # archives
@@ -122,6 +121,10 @@
     gpu-viewer
   ];
 
+  opencode = {
+    enable = true;
+  };
+
   sshconfig.enable = true;
 
   firefox.enable = true;
@@ -154,8 +157,8 @@
     };
     pycharm = {
       enable = true;
-      version = "262.8117.23";
-      checksum = "3725d46b6cdeccd60b6d90eddac39e7182742c7bfeedacc0bd5079d47b41b728";
+      version = "262.8377.41";
+      checksum = "cqZ1m1ykYmw2Be6ZzBZp4U1ofSt4FHueri2t5Ihsnew=";
       vmOptions.awtToolkit = "wayland";
     };
   };
@@ -186,6 +189,9 @@
   zsh = {
     enable = true;
     plugins = [ "git" "rust" "docker" "kubectl" "helm" "argocd" "aws" "podman" ];
+    aliases = {
+      "oc" = "opencode";
+    };
   };
 
   zellij = {
@@ -203,7 +209,7 @@
   programs.bash = {
     enable = true;
     enableCompletion = true;
-   };
+  };
 
   programs.direnv = {
     enable = true;
