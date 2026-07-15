@@ -1,4 +1,4 @@
-{ lib, config, pkgs, ... }:
+{ lib, config, pkgs-stable, ... }:
 
 {
   options.freecad = {
@@ -6,7 +6,7 @@
   };
   config = lib.mkIf config.freecad.enable {
     home.packages = [
-      pkgs.freecad
+      pkgs-stable.freecad
     ];
   };
 }
