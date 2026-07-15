@@ -19,7 +19,7 @@
       enableCompletion = true;
       autosuggestion = {
         enable = true;
-        highlight = "fg=240";
+        highlight = "fg=245";
       };
       syntaxHighlighting.enable = true;
       history.size = 10000;
