@@ -111,7 +111,14 @@
         tags = [ "construction" "shop" "3d-printing" "filament" ];
         keyword = "";
         url = "https://filamentworld.de/";
-      }      {
+      }
+      {
+        name = "Recyclingfabrik";
+        tags = [ "construction" "shop" "3d-printing" "filament" ];
+        keyword = "";
+        url = "https://www.recyclingfabrik.com";
+      }
+      {
         name = "Frantos";
         tags = [ "shop" "bolts" "nuts" "schrauben" "muttern" ];
         url = "https://www.frantos.com/";
@@ -190,6 +197,16 @@
         name = "Drahtseile24";
         tags = [ "shop" "draht" "seil" "rope" ];
         url = "https://www.drahtseile24.de";
+      }
+      {
+        name = "Construction Blogs";
+        bookmarks = [
+          {
+            name = "Rahix Blog";
+            tags = [ "construction" "blog" "3d-printing" ];
+            url = "https://blog.rahix.de/";
+          }
+        ];
       }
     ];
   }

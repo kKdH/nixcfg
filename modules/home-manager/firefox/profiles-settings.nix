@@ -14,6 +14,7 @@
 
   "browser.tabs.loadBookmarksInTabs" = true;
   "browser.tabs.closeWindowWithLastTab" = false;
+  "browser.tabs.selectOwnerOnClose" = true;
 
   "browser.translations.enable" = false;
   "browser.translations.panelShown" = false;
