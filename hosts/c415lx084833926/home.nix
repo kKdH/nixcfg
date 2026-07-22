@@ -141,8 +141,10 @@
     };
     rustRover = {
       enable = true;
-#      version = "2026.1.2";
-#      checksum = "20d233ee719aaffa0787e0877f3e239b9b7dfc044f70c7e99ce97df59de48372";
+#      version = "2026.1.4";
+#      checksum = "f31fc03fab8a49525abf08c0f6d613d48335c55b29399673c26730a4696821cc";
+#      version = "262.8665.139";
+#      checksum = "7bc3c2a19503b7c60c8b392e63b3e7e8593f26cd5e3f586a094a3d5eb17a41fb";
       version = "262.8377.49";
       checksum = "f0ce574fb25e2fbd2b4fa2832e7795f0fb7551aee70da2b372bed389ebf7633a";
       vmOptions.maxMemory = 16384;
@@ -157,8 +159,10 @@
     };
     pycharm = {
       enable = true;
-      version = "262.8377.41";
-      checksum = "cqZ1m1ykYmw2Be6ZzBZp4U1ofSt4FHueri2t5Ihsnew=";
+#      version = "262.8377.41";
+#      checksum = "cqZ1m1ykYmw2Be6ZzBZp4U1ofSt4FHueri2t5Ihsnew=";
+      version = "262.8665.186";
+      checksum = "20d398ad8e4707adaef068f6a5d0b460f3b826d42d6f4b5aab20bcef6dd64830";
       vmOptions.awtToolkit = "wayland";
     };
   };
