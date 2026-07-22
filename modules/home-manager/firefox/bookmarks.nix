@@ -285,7 +285,8 @@
             name = "Tokio";
             tags = [ "tokio" "crate" "rust" ];
             url = "https://tokio.rs/";
-          }          {
+          }
+          {
             name = "Icondata";
             tags = [ "icons" "crate" "rust" ];
             url = "https://carloskiki.github.io/icondata/";
@@ -547,6 +548,41 @@
         name = "Bulma";
         tags = [ "programming" "css" "doc" ];
         url = "https://bulma.io/documentation/";
+      }
+      {
+        name = "Uberspace";
+        bookmarks = [
+          {
+            name = "Uberspace";
+            tags = [ "programming" "hosting" "uberspace" ];
+            url = "https://uberspace.de/";
+          }
+          {
+            name = "Uberspace Lab";
+            tags = [ "programming" "hosting" "uberspace" "doc" ];
+            url = "https://lab.uberspace.de/";
+          }
+          {
+            name = "Uberspace Status";
+            tags = [ "programming" "hosting" "uberspace" ];
+            url = "https://is.uberspace.online/";
+          }
+        ];
+      }
+      {
+        name = "Host Europe";
+        bookmarks = [
+          {
+            name = "Host Europe";
+            tags = [ "programming" "hosting" "hosteurope" ];
+            url = "https://www.hosteurope.de/";
+          }
+          {
+            name = "Host Europe KIS";
+            tags = [ "programming" "hosting" "hosteurope" ];
+            url = "https://sso.hosteurope.de/?app=kis";
+          }
+        ];
       }
     ];
   }
