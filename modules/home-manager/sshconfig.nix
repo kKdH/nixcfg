@@ -12,7 +12,7 @@
       includes = [
         "local.conf"
       ];
-      matchBlocks = {
+      settings = {
         "wipro" = {
           hostname = "localhost";
           identityFile = "~/.ssh/wipro-localhost.id_ed25519";
