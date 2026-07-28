@@ -14,12 +14,16 @@
   config = lib.mkIf config.git.enable {
     programs.git = {
       enable = true;
+      difftastic.enable = true;
       settings = {
         user.name = config.git.userName;
         user.email = config.git.userEmail;
         core.autocrlf = "false";
         init.defaultBranch = "main";
         safe.directory = "*";
+        difftool.prompt = false; # Run the difftool immediately, don't ask 'are you sure' each time.
+        pager.difftool = true; # Use a pager if the difftool output is larger than one screenful.
+        diff.tool = "difft"; # Set difftastic as the default difftool.
       };
     };
   };
