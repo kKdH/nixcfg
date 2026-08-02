@@ -69,22 +69,6 @@
               impermanence.nixosModules.impermanence
               home-manager.nixosModules.home-manager
             ];
-            nixpkgs.overlays = [
-              (final: prev: {
-                pdal = prev.pdal.overrideAttrs (old: {
-                  version = "2.10.2";
-                  src = prev.fetchFromGitHub {
-                    owner = "PDAL";
-                    repo = "PDAL";
-                    tag = "2.10.2";
-                    hash = "sha256-VxELHAiiFMKjsvgBK4Cm6YJSrs/4QhhF1haZv4/FlZg=";
-                  };
-                  disabledTests = (old.disabledTests or [ ]) ++ [
-                    "pdal_io_copc_remote_reader_test"
-                  ];
-                });
-              })
-            ];
             home-manager = {
               useGlobalPkgs = true;
               useUserPackages = true;
