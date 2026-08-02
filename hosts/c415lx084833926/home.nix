@@ -46,6 +46,7 @@
     kdePackages.kgpg
     kdePackages.krdc
     kdePackages.kruler
+    kdePackages.kdeconnect-kde
     kubectl
     virt-manager
     zellij
@@ -61,6 +62,7 @@
     github-cli
     jetbrains-toolbox
     teams-for-linux
+    difftastic
 
     # archives
     zip
@@ -143,16 +145,16 @@
       enable = true;
 #      version = "2026.1.4";
 #      checksum = "f31fc03fab8a49525abf08c0f6d613d48335c55b29399673c26730a4696821cc";
-#      version = "262.8665.139";
-#      checksum = "7bc3c2a19503b7c60c8b392e63b3e7e8593f26cd5e3f586a094a3d5eb17a41fb";
-      version = "262.8377.49";
-      checksum = "f0ce574fb25e2fbd2b4fa2832e7795f0fb7551aee70da2b372bed389ebf7633a";
+      version = "2026.2";
+      checksum = "c4783477bc1d95c5f2ddcff949395669ea2e577acc04435107594ba994ae96a1";
+#      version = "262.8377.49";
+#      checksum = "f0ce574fb25e2fbd2b4fa2832e7795f0fb7551aee70da2b372bed389ebf7633a";
       vmOptions.maxMemory = 16384;
       vmOptions.awtToolkit = "wayland";
     };
     intellij = {
       enable = true;
-      version = "2026.1.2";
+      version = "2026.2.0.1";
       checksum = "e820175d1a7d0ee2492e7b38f6b7f046a132bfe4b082086d9b035edb03c777b1";
       vmOptions.maxMemory = 16384;
       vmOptions.awtToolkit = "wayland";
@@ -161,8 +163,8 @@
       enable = true;
 #      version = "262.8377.41";
 #      checksum = "cqZ1m1ykYmw2Be6ZzBZp4U1ofSt4FHueri2t5Ihsnew=";
-      version = "262.8665.186";
-      checksum = "20d398ad8e4707adaef068f6a5d0b460f3b826d42d6f4b5aab20bcef6dd64830";
+      version = "2026.2.0.1";
+      checksum = "914e31e31b4e1285d538cf3fae5b300af08bcff36bc298ac6200504bbe12f180";
       vmOptions.awtToolkit = "wayland";
     };
   };
@@ -180,7 +182,7 @@
   helix.enable = true;
 
   litellm = {
-    enable = true;
+    enable = false;
     service.enable = true;
   };
 
