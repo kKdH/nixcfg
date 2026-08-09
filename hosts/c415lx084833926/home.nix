@@ -155,7 +155,7 @@
     intellij = {
       enable = true;
       version = "2026.2.0.1";
-      checksum = "e820175d1a7d0ee2492e7b38f6b7f046a132bfe4b082086d9b035edb03c777b1";
+      checksum = "914e31e31b4e1285d538cf3fae5b300af08bcff36bc298ac6200504bbe12f180";
       vmOptions.maxMemory = 16384;
       vmOptions.awtToolkit = "wayland";
     };
@@ -164,7 +164,7 @@
 #      version = "262.8377.41";
 #      checksum = "cqZ1m1ykYmw2Be6ZzBZp4U1ofSt4FHueri2t5Ihsnew=";
       version = "2026.2.0.1";
-      checksum = "914e31e31b4e1285d538cf3fae5b300af08bcff36bc298ac6200504bbe12f180";
+      checksum = "4a37cb2d15703553c61e814d8e014bfa47308508470de5f968c4e9645b771675";
       vmOptions.awtToolkit = "wayland";
     };
   };
