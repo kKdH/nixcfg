@@ -84,6 +84,11 @@
         url = "https://cad.onshape.com/";
       }
       {
+        name = "FreeCAD";
+        tags = [ "construction" "cad" ];
+        url = "https://www.freecad.org/index.php";
+      }
+      {
         name = "Prusa Connect";
         tags = [ "construction" "prusa" "3d-printing" ];
         keyword = "printer";
