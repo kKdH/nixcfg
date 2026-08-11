@@ -12,8 +12,12 @@
   };
 
   config = lib.mkIf config.git.enable {
+    home.packages = [
+      pkgs.git-lfs
+    ];
     programs.git = {
       enable = true;
+      lfs.enable = true;
       difftastic.enable = true;
       settings = {
         user.name = config.git.userName;
