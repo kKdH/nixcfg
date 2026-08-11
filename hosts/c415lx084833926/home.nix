@@ -52,7 +52,6 @@
     zellij
     spnavcfg
     inputs.spacenav-rs.packages.${pkgs.system}.default
-    claude-code
     mistral-vibe
     scrcpy
     zed-editor
@@ -125,6 +124,8 @@
 
   opencode = {
     enable = true;
+    skills = [ "caveman" ];
+    commands = [ "caveman" ];
   };
 
   sshconfig.enable = true;
