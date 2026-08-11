@@ -131,7 +131,14 @@
 
   firefox.enable = true;
 
-  freecad.enable = true;
+  freecad = {
+    enable = true;
+    weekly = true;
+    tag = "weekly-2026.08.05";
+    version = "weekly-2026.08.05";
+    # Update hash: nix run nixpkgs#nix-prefetch-github -- --fetch-submodules FreeCAD FreeCAD --rev <tag>
+    srcHash = "sha256-Wu+m/tTJl7Ds/vzSzJFG3IWTPol5WC1sThwZAhy1eGk=";
+  };
 
   kicad.enable = true;
 
