@@ -114,8 +114,7 @@ in
     home.packages = [
       pkgs.opencode
     ];
-
-  home.file = skillFiles // commandFiles // {
+    home.file = skillFiles // commandFiles // {
       "${configDir}/opencode.json".text = settings.json;
     };
   };
