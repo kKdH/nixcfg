@@ -1,4 +1,4 @@
-{ pkgs, inputs, ... }:
+{ pkgs, inputs, config, opencode, ... }:
 
 {
   home.username = "elmar";
@@ -25,6 +25,24 @@
       reader-port Yubico Yubi
       disable-ccid
     '';
+  };
+
+  sops = {
+    defaultSopsFile = ../../secrets/secrets.yaml;
+    age.keyFile = "${config.xdg.configHome}/sops/age/keys.txt";
+    # Secrets to decrypt
+    secrets = {
+      anthropicApiKey = {};
+      anthropicBaseUrl = {};
+      googleApiKey = {};
+      googleBaseUrl = {};
+      moonshotApiKey = {};
+      moonshotBaseUrl = {};
+      mistralApiKey = {};
+      mistralBaseUrl = {};
+      zhipuApiKey = {};
+      zhipuBaseUrl = {};
+    };
   };
 
   # set cursor size and dpi for 4k monitor
@@ -74,6 +92,7 @@
     jq # A lightweight and flexible command-line JSON processor
     yq-go # yaml processor https://github.com/mikefarah/yq
     fzf # A command-line fuzzy finder
+    bat # Cat(1) clone with syntax highlighting and Git integration
 
     # networking tools
     mtr # A network diagnostic tool
@@ -126,6 +145,29 @@
     enable = true;
     skills = [ "caveman" ];
     commands = [ "caveman" ];
+    providers = {
+      anthropic = opencode.presets.anthropic // {
+        api.url = "{file:${config.sops.secrets.anthropicBaseUrl.path}}";
+        api.key = "{file:${config.sops.secrets.anthropicApiKey.path}}";
+      };
+      google = opencode.presets.google // {
+        api.url = "{file:${config.sops.secrets.googleBaseUrl.path}}";
+        api.key = "{file:${config.sops.secrets.googleApiKey.path}}";
+      };
+      mistral = opencode.presets.mistral // {
+        api.url = "{file:${config.sops.secrets.mistralBaseUrl.path}}";
+        api.key = "{file:${config.sops.secrets.mistralApiKey.path}}";
+      };
+      moonshot = opencode.presets.moonshot // {
+        api.url = "{file:${config.sops.secrets.moonshotBaseUrl.path}}";
+        api.key = "{file:${config.sops.secrets.moonshotApiKey.path}}";
+      };
+      ollama = opencode.presets.ollama;
+      zhipu = opencode.presets.zhipu // {
+        api.url = "{file:${config.sops.secrets.zhipuBaseUrl.path}}";
+        api.key = "{file:${config.sops.secrets.zhipuApiKey.path}}";
+      };
+    };
   };
 
   sshconfig.enable = true;

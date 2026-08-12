@@ -48,6 +48,7 @@
     }:
     let
       system = "x86_64-linux";
+      opencode = import ./modules/home-manager/opencode/presets.nix;
     in
     {
       #
@@ -59,7 +60,7 @@
             inherit system;
             config.allowUnfree = true;
           };
-          inherit inputs;
+          inherit inputs opencode;
         };
         modules = [
           {

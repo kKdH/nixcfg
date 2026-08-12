@@ -28,10 +28,74 @@ let
       force = true;
     };
   }) selectedCommands);
+
+  providerOptions = lib.types.submodule {
+    options = {
+      displayName = lib.mkOption {
+        type = lib.types.nullOr lib.types.str;
+        default = null;
+      };
+      sdk = lib.mkOption {
+        type = lib.types.str;
+      };
+      api = lib.mkOption {
+        type = providerApiOptions;
+      };
+      models = lib.mkOption {
+        type = lib.types.attrsOf providerModelOptions;
+      };
+    };
+  };
+
+  providerApiOptions = lib.types.submodule {
+    options = {
+      url = lib.mkOption {
+        type = lib.types.str;
+      };
+      key = lib.mkOption {
+        type = lib.types.nullOr lib.types.str;
+        default = null;
+      };
+    };
+  };
+
+  providerModelOptions = lib.types.submodule {
+    options = {
+      displayName = lib.mkOption {
+        type = lib.types.nullOr lib.types.str;
+        default = null;
+      };
+      cost = lib.mkOption {
+        type = lib.types.nullOr providerModelCostOptions;
+        default = null;
+      };
+    };
+  };
+
+  providerModelCostOptions = lib.types.submodule {
+    options = {
+      input = lib.mkOption {
+        type = lib.types.float;
+      };
+      output = lib.mkOption {
+        type = lib.types.float;
+      };
+    };
+  };
+
+  settings = import ./settings.nix { inherit lib; } {
+    providers = cfg.providers;
+  };
 in
 {
   options.opencode = {
     enable = lib.mkEnableOption "Enable OpenCode";
+
+    providers = lib.mkOption {
+      type = lib.types.attrsOf providerOptions;
+      default = {};
+      description = "List of providers";
+    };
 
     skills = lib.mkOption {
       type = lib.types.listOf lib.types.str;
@@ -51,6 +115,8 @@ in
       pkgs.opencode
     ];
 
-    home.file = skillFiles // commandFiles;
+  home.file = skillFiles // commandFiles // {
+      "${configDir}/opencode.json".text = settings.json;
+    };
   };
 }
