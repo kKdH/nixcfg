@@ -3,6 +3,7 @@
 {
   imports = [
     ./bacon
+    ./bat.nix
     ./eza.nix
     ./firefox
     ./freecad

@@ -70,7 +70,7 @@
     zellij
     spnavcfg
     inputs.spacenav-rs.packages.${pkgs.system}.default
-    mistral-vibe
+    # mistral-vibe
     scrcpy
     zed-editor
     lazygit
@@ -92,7 +92,6 @@
     jq # A lightweight and flexible command-line JSON processor
     yq-go # yaml processor https://github.com/mikefarah/yq
     fzf # A command-line fuzzy finder
-    bat # Cat(1) clone with syntax highlighting and Git integration
 
     # networking tools
     mtr # A network diagnostic tool
@@ -236,6 +235,7 @@
     service.enable = true;
   };
 
+  bat.enable = true;
   eza.enable = true;
 
   konsole.enable = true;
