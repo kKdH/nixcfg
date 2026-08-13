@@ -4,7 +4,7 @@
   options.bat = {
     enable = lib.mkEnableOption "Enable Bat";
   };
-  config = lib.mkIf config.eza.enable {
+  config = lib.mkIf config.bat.enable {
     programs.bat = {
       enable = true;
     };
