@@ -6,8 +6,8 @@
       models = {
         "claude-sonnet-4.6" = {
           displayName = "Sonnet 4.6";
-          cost.input = 8.00;
-          cost.output = 25.00;
+          cost.input = 3.30;
+          cost.output = 16.50;
         };
       };
     };
