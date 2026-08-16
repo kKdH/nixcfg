@@ -144,25 +144,37 @@
     enable = true;
     skills = [ "caveman" ];
     commands = [ "caveman" ];
+    defaults = {
+      agent = "plan";
+      model = "mistral/mistral-medium-latest";
+      small_model = "mistral/mistral-medium-latest";
+    };
+    agents = {
+      build = opencode.presets.agents.build;
+      debug = opencode.presets.agents.debug;
+      plan = opencode.presets.agents.plan;
+      teach = opencode.presets.agents.teach;
+      brainstorm = opencode.presets.agents.brainstorm;
+    };
     providers = {
-      anthropic = opencode.presets.anthropic // {
+      anthropic = opencode.presets.providers.anthropic // {
         api.url = "{file:${config.sops.secrets.anthropicBaseUrl.path}}";
         api.key = "{file:${config.sops.secrets.anthropicApiKey.path}}";
       };
-      google = opencode.presets.google // {
+      google = opencode.presets.providers.google // {
         api.url = "{file:${config.sops.secrets.googleBaseUrl.path}}";
         api.key = "{file:${config.sops.secrets.googleApiKey.path}}";
       };
-      mistral = opencode.presets.mistral // {
+      mistral = opencode.presets.providers.mistral // {
         api.url = "{file:${config.sops.secrets.mistralBaseUrl.path}}";
         api.key = "{file:${config.sops.secrets.mistralApiKey.path}}";
       };
-      moonshot = opencode.presets.moonshot // {
+      moonshot = opencode.presets.providers.moonshot // {
         api.url = "{file:${config.sops.secrets.moonshotBaseUrl.path}}";
         api.key = "{file:${config.sops.secrets.moonshotApiKey.path}}";
       };
-      ollama = opencode.presets.ollama;
-      zhipu = opencode.presets.zhipu // {
+      ollama = opencode.presets.providers.ollama;
+      zhipu = opencode.presets.providers.zhipu // {
         api.url = "{file:${config.sops.secrets.zhipuBaseUrl.path}}";
         api.key = "{file:${config.sops.secrets.zhipuApiKey.path}}";
       };

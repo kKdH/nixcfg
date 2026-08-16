@@ -48,7 +48,7 @@
     }:
     let
       system = "x86_64-linux";
-      opencode = import ./modules/home-manager/opencode/presets.nix;
+      opencode = import ./modules/home-manager/opencode/presets;
     in
     {
       #
