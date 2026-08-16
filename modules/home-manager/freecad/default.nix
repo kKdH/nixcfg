@@ -6,8 +6,8 @@
 #        nix run nixpkgs#nix-prefetch-github -- --fetch-submodules FreeCAD FreeCAD --rev weekly-YYYY.MM.DD
 #   3. Update home.nix:
 #        tag     = "weekly-YYYY.MM.DD";
-#        version = "weekly-YYYY.MM.DD";
-#        srcHash = "<hash from step 2>";
+#        version = "<version from freecadcmd --version output>";
+#        srcHash       = "<hash from step 2>";
 #   4. Rebuild:
 #        nixos-rebuild switch --flake .#c415lx084833926
 #
@@ -50,8 +50,8 @@ in
     version = lib.mkOption {
       type = lib.types.str;
       default = "1.1.1";
-      example = "weekly-2026.08.05";
-      description = "FreeCAD version string (used in pname/meta).";
+      example = "26.3.0";
+      description = "Version string reported by freecadcmd --version. Used as the nix version attr so versionCheckPhase passes.";
     };
 
     tag = lib.mkOption {
