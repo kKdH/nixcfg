@@ -279,6 +279,16 @@
         ];
       }
       {
+        name = "Rust Learning Material";
+        bookmarks = [
+          {
+            name = "Comprehensive Rust 🦀";
+            tags = [ "programming" "rust" ];
+            url = "https://google.github.io/comprehensive-rust/index.html";
+          }
+        ];
+      }
+      {
         name = "Rust Crates";
         bookmarks = [
           {
