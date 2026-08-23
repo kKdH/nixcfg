@@ -188,10 +188,10 @@
   freecad = {
     enable = true;
     weekly = true;
-    tag = "weekly-2026.08.12";
+    tag = "weekly-2026.08.20";
     version = "26.3.0";
     # Update hash: nix run nixpkgs#nix-prefetch-github -- --fetch-submodules FreeCAD FreeCAD --rev <tag>
-    srcHash = "sha256-0Vzb1GlDZtmGBwXa8ZiGfa2ijBTsbZ4LXrZ1kh+HlYw=";
+    srcHash = "sha256-lXcHg86qkDAZcC5xv013gEvY+mfAtz+v9NadWU3/7SA=";
   };
 
   kicad.enable = true;
