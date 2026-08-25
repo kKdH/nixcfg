@@ -166,12 +166,15 @@
   hardware.gpgSmartcards.enable = true;
   services.pcscd.enable = true;
 
-  virtualisation.libvirtd.enable = true;
-
   docker = {
     enable = true;
     users = [ "elmar" ];
     quotaSize = "30G";
+  };
+
+  libvirtd = {
+    enable = true;
+    users = [ "elmar" ];
   };
 
   users.defaultUserShell = pkgs.zsh;
@@ -180,7 +183,7 @@
   users.users.elmar = {
     isNormalUser = true;
     home = "/home/elmar";
-    extraGroups = [ "wheel" "dialout" "libvirtd" "pico" ];
+    extraGroups = [ "wheel" "dialout" "pico" ];
   };
 
   # sops = {

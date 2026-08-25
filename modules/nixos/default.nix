@@ -4,5 +4,6 @@
   imports = [
     ./dnsmasq
     ./docker
+    ./libvirtd
   ];
 }
