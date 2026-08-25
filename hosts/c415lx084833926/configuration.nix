@@ -166,21 +166,12 @@
   hardware.gpgSmartcards.enable = true;
   services.pcscd.enable = true;
 
-  virtualisation = {
-    docker = {
-      enable = true; # system-wide
-      rootless = {
-        enable = false;
-        setSocketVariable = true;
-      };
-      daemon.settings = {
-        # data-root = "/some-place/to-store-the-docker-data";
-      };
-      storageDriver = "btrfs";
-    };
-    libvirtd = {
-      enable = true;
-    };
+  virtualisation.libvirtd.enable = true;
+
+  docker = {
+    enable = true;
+    users = [ "elmar" ];
+    quotaSize = "30G";
   };
 
   users.defaultUserShell = pkgs.zsh;
@@ -189,7 +180,7 @@
   users.users.elmar = {
     isNormalUser = true;
     home = "/home/elmar";
-    extraGroups = [ "wheel" "dialout" "libvirtd" "docker" "pico" ];
+    extraGroups = [ "wheel" "dialout" "libvirtd" "pico" ];
   };
 
   # sops = {
