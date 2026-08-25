@@ -328,7 +328,11 @@ web_client {
 //   - false
 // 
 // pane_frames false
- 
+
+// Set the style of the pane frames.
+// [possible values: full, titles, none]
+pane_frame_style "full"
+
 // When attaching to an existing session with other users,
 // should the session be mirrored (true)
 // or should each user have their own cursor (false)
@@ -494,7 +498,11 @@ web_client {
 /// Default: false
 // 
 // enforce_https_for_localhost false
- 
+
+// Render stacked panes as a list of titles with the expanded pane at the bottom
+// [possible values: true, false]
+stacked_pane_list false
+
 // Whether to stack panes when resizing beyond a certain size
 // Default: true
 // 
