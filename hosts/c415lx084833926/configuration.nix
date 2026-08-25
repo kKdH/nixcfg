@@ -223,7 +223,7 @@
   ];
 
   services.ollama = {
-    enable = true;
+    enable = false;
     package = pkgs.ollama-cuda;
     loadModels = [
       # "gemma4:12b-it-qat"
@@ -251,14 +251,23 @@
 
   networking = {
     hostName = "c415lx084833926";
-    networkmanager.enable = true;  # Easiest to use and most distros use this by default.
+    networkmanager = {
+      enable = true; # Easiest to use and most distros use this by default.
+      unmanaged = [ "virbr0" ];
+    };
+    localCommands = ''
+      ip route replace 100.64.0.0/10 via 192.168.122.81 || true
+    '';
     firewall = {
       enable = true;
       trustedInterfaces = [ "virbr0" ];
       allowedTCPPorts = [
-      5001 # gRPC e.g. ANNE
+      # 5001 # gRPC e.g. ANNE
       # 3000
       # 1701 # Weylus
+      ];
+      allowedUDPPorts = [
+        
       ];
       extraCommands = ''
         iptables -A nixos-fw -p tcp --source 172.17.0.0/16 --destination 172.17.0.0/16 -j nixos-fw-accept
