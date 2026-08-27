@@ -155,6 +155,7 @@
       plan = opencode.presets.agents.plan;
       teach = opencode.presets.agents.teach;
       brainstorm = opencode.presets.agents.brainstorm;
+      proofread = opencode.presets.agents.proofread;
     };
     providers = {
       anthropic = opencode.presets.providers.anthropic // {
