@@ -65,14 +65,37 @@
         };
       };
       languages = {
-        language = [
+         language = [
+           {
+             name = "json";
+             auto-format = true;
+             formatter = {
+               command = "${pkgs.prettier}/bin/prettier";
+               args = [ "--parser" "json" ];
+             };
+             language-servers = [ "vscode-json-languageserver" ];
+           }
+           {
+             name = "jsonc";
+             auto-format = true;
+             formatter = {
+               command = "${pkgs.prettier}/bin/prettier";
+               args = [ "--parser" "json" ];
+             };
+             language-servers = [ "vscode-json-languageserver" ];
+           }
           {
             name = "rust";
             auto-format = true;
             formatter.command = "${pkgs.rustfmt}/bin/rustfmt";
           }
         ];
-        language-server = {
+       language-server = {
+         vscode-json-languageserver = {
+           command = "${pkgs.vscode-json-languageserver}/bin/vscode-json-languageserver";
+           args = [ "--stdio" ];
+           config = {};
+         };
           rust-analyzer = {
             command = "${pkgs.rust-analyzer}/bin/rust-analyzer";
             config = {
