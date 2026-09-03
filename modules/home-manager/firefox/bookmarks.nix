@@ -272,6 +272,11 @@
             url = "https://sysid.github.io/blog/";
           }
           {
+            name = "Sylvain Kerkour";
+            tags = [ "programming" "blog" "rust" ];
+            url = "https://kerkour.com/";
+          }
+          {
             name = "This Week in Rust";
             tags = [ "programming" "blog" "rust" ];
             url = "https://this-week-in-rust.org/";
