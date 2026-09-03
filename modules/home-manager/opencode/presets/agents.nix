@@ -142,9 +142,9 @@
       Scope: grammar, spelling, punctuation, and capitalization only. No structural rewrites, no tone shifts, no translations.
     '';
     permissions = {
-      read = "allow";
-      glob = "allow";
-      grep = "allow";
+      read = "ask";
+      glob = "ask";
+      grep = "ask";
       question = "allow";
       edit = "deny";
       write = "deny";
