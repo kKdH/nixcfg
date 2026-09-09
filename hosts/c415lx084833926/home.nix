@@ -70,7 +70,6 @@
     zellij
     spnavcfg
     inputs.spacenav-rs.packages.${pkgs.system}.default
-    # mistral-vibe
     scrcpy
     zed-editor
     lazygit
@@ -275,6 +274,8 @@
   prusa-slicer = {
     enable = true;
   };
+
+  vibe.enable = true;
 
   programs.bash = {
     enable = true;
