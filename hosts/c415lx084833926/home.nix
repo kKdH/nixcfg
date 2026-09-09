@@ -208,8 +208,8 @@
       enable = true;
 #      version = "2026.1.4";
 #      checksum = "f31fc03fab8a49525abf08c0f6d613d48335c55b29399673c26730a4696821cc";
-      version = "2026.2.1";
-      checksum = "fd7baa32a6b29cf867bb8afc05ec001e1fca7408278192541611bd5d3f482f5b";
+      version = "2026.2.2";
+      checksum = "d2d7bbc14f1fcb8fa701646d0123f71c521597d2f37072d2072577b803fd041a";
 #      version = "262.8377.49";
 #      checksum = "f0ce574fb25e2fbd2b4fa2832e7795f0fb7551aee70da2b372bed389ebf7633a";
       vmOptions.maxMemory = 16384;
@@ -217,8 +217,8 @@
     };
     intellij = {
       enable = true;
-      version = "2026.2.0.1";
-      checksum = "914e31e31b4e1285d538cf3fae5b300af08bcff36bc298ac6200504bbe12f180";
+      version = "2026.2.2";
+      checksum = "f1cc5329a7adf3ab3bd8886744103f7d3bcf1ca12e699762ecd9bffe57335f8b";
       vmOptions.maxMemory = 16384;
       vmOptions.awtToolkit = "wayland";
     };
@@ -226,8 +226,8 @@
       enable = true;
 #      version = "262.8377.41";
 #      checksum = "cqZ1m1ykYmw2Be6ZzBZp4U1ofSt4FHueri2t5Ihsnew=";
-      version = "2026.2.1";
-      checksum = "9cff6f18ec28a3d51643bcf47f001bed194260185fa6f5693f5a6f83cebae868";
+      version = "2026.2.2";
+      checksum = "60448e3fb4e6a700e3d2ad3583ea8de1505b3f436e6715329a5a35e31c34aced";
       vmOptions.awtToolkit = "wayland";
     };
   };
