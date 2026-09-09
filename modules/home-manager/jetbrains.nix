@@ -120,7 +120,7 @@ in
         version = intellijCfg.version;
         src = pkgs.fetchurl {
           # https://www.jetbrains.com/de-de/idea/nextversion/
-          url = "https://download-cdn.jetbrains.com/idea/idea-${intellijCfg.version}.tar.gz";
+          url = "https://download.jetbrains.com/idea/idea-${intellijCfg.version}.tar.gz";
           sha256 = intellijCfg.checksum;
         };
       }).override {
@@ -130,7 +130,7 @@ in
         version = rustRoverCfg.version;
         src = pkgs.fetchurl {
           # https://www.jetbrains.com/de-de/rust/nextversion/
-          url = "https://download-cdn.jetbrains.com/rustrover/RustRover-${rustRoverCfg.version}.tar.gz";
+          url = "https://download.jetbrains.com/rustrover/RustRover-${rustRoverCfg.version}.tar.gz";
           sha256 = rustRoverCfg.checksum;
         };
         buildInputs = (old.buildInputs or []) ++ [ pkgs.udev ];
@@ -142,7 +142,7 @@ in
         version = pycharmCfg.version;
         src = pkgs.fetchurl {
           # https://www.jetbrains.com/de-de/pycharm/nextversion/
-          url = "https://download-cdn.jetbrains.com/python/pycharm-${pycharmCfg.version}.tar.gz";
+          url = "https://download.jetbrains.com/python/pycharm-${pycharmCfg.version}.tar.gz";
           sha256 = pycharmCfg.checksum;
         };
         buildInputs = (old.buildInputs or []) ++ [ pkgs.udev ];
