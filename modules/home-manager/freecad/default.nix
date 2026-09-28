@@ -38,6 +38,12 @@ let
     # Add it; disable test execution to keep build times reasonable.
     nativeBuildInputs = (old.nativeBuildInputs or []) ++ [ pkgs.gtest ];
     cmakeFlags = (old.cmakeFlags or []) ++ [ "-DBUILD_TESTING=OFF" ];
+
+    # Fix for missing defusedxml runtime dependency.
+    buildInputs = (old.buildInputs or []) ++ [ pkgs.python3Packages.defusedxml ];
+    qtWrapperArgs = (old.qtWrapperArgs or []) ++ [
+      "--prefix PYTHONPATH : ${pkgs.python3Packages.makePythonPath [ pkgs.python3Packages.defusedxml ]}"
+    ];
   });
 
 in
