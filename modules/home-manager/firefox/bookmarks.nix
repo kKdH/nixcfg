@@ -481,6 +481,12 @@
         name = "TV";
         bookmarks = [
           {
+            name = "ARD Mediathek";
+            tags = [ "tv" ];
+            keyword = "ard";
+            url = "https://www.ardmediathek.de/";
+          }
+          {
             name = "ZDF";
             tags = [ "news" "tv" ];
             keyword = "zdf";
