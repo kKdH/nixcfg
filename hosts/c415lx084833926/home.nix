@@ -32,16 +32,20 @@
     age.keyFile = "${config.xdg.configHome}/sops/age/keys.txt";
     # Secrets to decrypt
     secrets = {
-      anthropicApiKey = {};
-      anthropicBaseUrl = {};
-      googleApiKey = {};
-      googleBaseUrl = {};
-      moonshotApiKey = {};
-      moonshotBaseUrl = {};
       mistralApiKey = {};
       mistralBaseUrl = {};
-      zhipuApiKey = {};
-      zhipuBaseUrl = {};
+      moonshotApiKey = {};
+      moonshotBaseUrl = {};
+      nxAnthropicApiKey = {};
+      nxAnthropicBaseUrl = {};
+      nxGoogleApiKey = {};
+      nxGoogleBaseUrl = {};
+      nxMoonshotApiKey = {};
+      nxMoonshotBaseUrl = {};
+      nxOpenaiApiKey = {};
+      nxOpenaiBaseUrl = {};
+      nxZhipuApiKey = {};
+      nxZhipuBaseUrl = {};
     };
   };
 
@@ -158,14 +162,6 @@
       codemate = opencode.presets.agents.codemate;
     };
     providers = {
-      anthropic = opencode.presets.providers.anthropic // {
-        api.url = "{file:${config.sops.secrets.anthropicBaseUrl.path}}";
-        api.key = "{file:${config.sops.secrets.anthropicApiKey.path}}";
-      };
-      google = opencode.presets.providers.google // {
-        api.url = "{file:${config.sops.secrets.googleBaseUrl.path}}";
-        api.key = "{file:${config.sops.secrets.googleApiKey.path}}";
-      };
       mistral = opencode.presets.providers.mistral // {
         api.url = "{file:${config.sops.secrets.mistralBaseUrl.path}}";
         api.key = "{file:${config.sops.secrets.mistralApiKey.path}}";
@@ -174,11 +170,23 @@
         api.url = "{file:${config.sops.secrets.moonshotBaseUrl.path}}";
         api.key = "{file:${config.sops.secrets.moonshotApiKey.path}}";
       };
-      ollama = opencode.presets.providers.ollama;
-      zhipu = opencode.presets.providers.zhipu // {
-        api.url = "{file:${config.sops.secrets.zhipuBaseUrl.path}}";
-        api.key = "{file:${config.sops.secrets.zhipuApiKey.path}}";
+      nx-anthropic = opencode.presets.providers.nx-anthropic // {
+        api.url = "{file:${config.sops.secrets.nxAnthropicBaseUrl.path}}";
+        api.key = "{file:${config.sops.secrets.nxAnthropicApiKey.path}}";
       };
+      nx-google = opencode.presets.providers.nx-google // {
+        api.url = "{file:${config.sops.secrets.nxGoogleBaseUrl.path}}";
+        api.key = "{file:${config.sops.secrets.nxGoogleApiKey.path}}";
+      };
+      nx-moonshot = opencode.presets.providers.nx-moonshot // {
+        api.url = "{file:${config.sops.secrets.nxMoonshotBaseUrl.path}}";
+        api.key = "{file:${config.sops.secrets.nxMoonshotApiKey.path}}";
+      };
+      nx-zhipu = opencode.presets.providers.nx-zhipu // {
+        api.url = "{file:${config.sops.secrets.nxZhipuBaseUrl.path}}";
+        api.key = "{file:${config.sops.secrets.nxZhipuApiKey.path}}";
+      };
+      ollama = opencode.presets.providers.ollama;
     };
   };
 
