@@ -215,8 +215,8 @@
       enable = true;
 #      version = "2026.1.4";
 #      checksum = "f31fc03fab8a49525abf08c0f6d613d48335c55b29399673c26730a4696821cc";
-      version = "2026.2.2";
-      checksum = "d2d7bbc14f1fcb8fa701646d0123f71c521597d2f37072d2072577b803fd041a";
+      version = "2026.2.3";
+      checksum = "fac0d50307301ecdb69998feeb338f1287a96e9c02d205165ec4e1d8c0ed40a6";
 #      version = "262.8377.49";
 #      checksum = "f0ce574fb25e2fbd2b4fa2832e7795f0fb7551aee70da2b372bed389ebf7633a";
       vmOptions.maxMemory = 16384;
