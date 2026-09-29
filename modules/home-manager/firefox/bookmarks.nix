@@ -561,6 +561,26 @@
         ];
       }
       {
+        name = "Moonshot AI";
+        bookmarks = [
+          {
+            name = "Moonshot AI";
+            tags = [ "programming" "ai" "moonshot" ];
+            url = "https://www.moonshot.ai/";
+          }
+          {
+            name = "Kimi Platform";
+            tags = [ "programming" "ai" "moonshot" ];
+            url = "https://platform.kimi.ai/";
+          }
+          {
+            name = "Kimi User Center";
+            tags = [ "programming" "ai" "moonshot" ];
+            url = "https://platform.kimi.ai/console/account";
+          }
+        ];
+      }
+      {
         name = "Fontello";
         tags = [ "icon" "font" "generator" ];
         url = "https://fontello.com/";
