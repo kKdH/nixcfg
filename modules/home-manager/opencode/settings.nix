@@ -29,9 +29,11 @@ let
       #  "model": "anthropic/claude-sonnet-4-20250514",
     }) agents;
 
-  ocProviders = builtins.mapAttrs (name: provider: {
-    npm = provider.sdk;
-    name = provider.displayName;
+  ocProviders = builtins.mapAttrs (name: provider:
+    { name = provider.displayName; }
+    // lib.optionalAttrs (provider.sdk != null) {
+      npm = provider.sdk;
+    } // {
     options = {
       baseURL = provider.api.url;
     } // lib.optionalAttrs (provider.api.key != null) {

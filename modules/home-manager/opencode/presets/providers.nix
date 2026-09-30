@@ -1,6 +1,5 @@
 {
   mistral = {
-    sdk = "@ai-sdk/openai-compatible";
     displayName = "Mistral AI";
     models = {
       "mistral-medium-latest" = {
@@ -26,7 +25,6 @@
     };
   };
   moonshot = {
-    sdk = "@ai-sdk/openai-compatible";
     displayName = "Moonshot AI";
     models = {
       "kimi-k2.7-code" = {
@@ -96,7 +94,6 @@
     };
   };
   ollama = {
-    sdk = "@ai-sdk/openai-compatible";
     displayName = "Ollama (local)";
     api.url = "http://localhost:11434/v1";
     models = {

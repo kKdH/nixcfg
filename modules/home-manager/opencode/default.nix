@@ -82,7 +82,8 @@ let
         default = null;
       };
       sdk = lib.mkOption {
-        type = lib.types.str;
+        type = lib.types.nullOr lib.types.str;
+        default = null;
       };
       api = lib.mkOption {
         type = providerApiOptions;
