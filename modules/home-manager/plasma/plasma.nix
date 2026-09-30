@@ -98,6 +98,23 @@
           ];
         }
       ];
+      configFile = {
+        # Trigger an action by pushing the mouse
+        # pointer against a screen edge or corner:
+        #
+        # BorderActivate = <number>
+        # 
+        # 7 - 8 - 3
+        # 6 -   - 2
+        # 5 - 4 - 1
+        # 
+        # Disable: 9
+        kwinrc = {
+          Effect-overview = {
+            BorderActivate = 9;
+          };
+        };
+      };
     };
   };
 }
