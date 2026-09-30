@@ -31,6 +31,8 @@
         "services/firefox-devedition.desktop"."_launch" = "Ctrl+Alt+F";
         "services/org.kde.konsole.desktop"."_launch" = "";
         "services/org.wezfurlong.wezterm.desktop"."_launch" = "Ctrl+Alt+T";
+        "services/org.kde.kcolorchooser.desktop"."_launch" = "Meta+Shift+C";
+        "services/org.kde.spectacle.desktop"."RectangularRegionScreenShot" = "Meta+Shift+S";
       };
       panels = [
         {
