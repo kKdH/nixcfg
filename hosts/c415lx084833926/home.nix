@@ -281,6 +281,9 @@
 
   prusa-slicer = {
     enable = true;
+    # revision = "version_2.9.6";
+    revision = "version_3.0.0-alpha12";
+    srcHash = "sha256-T40R+K9h2o5QyAiLPQAnL/yx3HLzHWtgh0e8t3D1DHY=";
   };
 
   vibe.enable = false;
