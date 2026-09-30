@@ -197,10 +197,10 @@
   freecad = {
     enable = true;
     weekly = true;
-    tag = "weekly-2026.09.23";
+    tag = "weekly-2026.09.30";
     version = "26.3.0";
     # Update hash: nix run nixpkgs#nix-prefetch-github -- --fetch-submodules FreeCAD FreeCAD --rev <tag>
-    srcHash = "sha256-WIv7HcO5pkfm6p4Kd8aSRY/e8ra9E2ACpLVE/KqLpXY=";
+    srcHash = "sha256-05IT/aCPMJSAr1cFP7iGcqm2OQit1yWvn0Mww7wZnGI=";
   };
 
   kicad.enable = true;
@@ -209,16 +209,11 @@
     defaultVmOptions = {
       minMemory = 4096;
       maxMemory = 8192;
-      # awtToolkit = "wayland";
     };
     rustRover = {
       enable = true;
-#      version = "2026.1.4";
-#      checksum = "f31fc03fab8a49525abf08c0f6d613d48335c55b29399673c26730a4696821cc";
       version = "2026.2.3";
       checksum = "fac0d50307301ecdb69998feeb338f1287a96e9c02d205165ec4e1d8c0ed40a6";
-#      version = "262.8377.49";
-#      checksum = "f0ce574fb25e2fbd2b4fa2832e7795f0fb7551aee70da2b372bed389ebf7633a";
       vmOptions.maxMemory = 16384;
       vmOptions.awtToolkit = "wayland";
     };
@@ -231,8 +226,6 @@
     };
     pycharm = {
       enable = true;
-#      version = "262.8377.41";
-#      checksum = "cqZ1m1ykYmw2Be6ZzBZp4U1ofSt4FHueri2t5Ihsnew=";
       version = "2026.2.2";
       checksum = "60448e3fb4e6a700e3d2ad3583ea8de1505b3f436e6715329a5a35e31c34aced";
       vmOptions.awtToolkit = "wayland";
