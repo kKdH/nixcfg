@@ -40,7 +40,7 @@ in
         enable = false;
         setSocketVariable = true;
       };
-      storageDriver = "btrfs";
+      storageDriver = "overlay2";
     };
 
     users.users = lib.genAttrs cfg.users (_: {
