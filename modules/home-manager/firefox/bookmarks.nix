@@ -641,6 +641,11 @@
         url = "https://nixos-and-flakes.thiscute.world/";
       }
       {
+        name = "Nixpkgs Pull Request Tracker";
+        tags = [ "nix" "nixpkgs" "nixos" "flakes" ];
+        url = "https://nixpk.gs/pr-tracker.html";
+      }
+      {
         name = "Blogs";
         bookmarks = [
           {
