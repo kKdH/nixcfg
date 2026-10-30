@@ -212,8 +212,9 @@
     };
     rustRover = {
       enable = true;
-      version = "2026.2.3";
-      checksum = "fac0d50307301ecdb69998feeb338f1287a96e9c02d205165ec4e1d8c0ed40a6";
+      version = "263.6259.37";
+      #checksum = "fac0d50307301ecdb69998feeb338f1287a96e9c02d205165ec4e1d8c0ed40a6";
+      checksum = "sha256-K+6bQnt8bi9Bww/tZI9JX6UhoBNDJxg5UjHLd6VF7ek=";
       vmOptions.maxMemory = 16384;
       vmOptions.awtToolkit = "wayland";
     };
