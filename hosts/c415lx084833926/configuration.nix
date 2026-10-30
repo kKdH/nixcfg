@@ -26,7 +26,7 @@
       luks.devices = {
         crypted = {
           device = "/dev/nvme0n1p3";
-          preLVM = true;
+          # preLVM = true; has now effect anymore.
         };
       };
     };
