@@ -221,9 +221,9 @@
     };
     rustRover = {
       enable = true;
-      version = "263.6259.37";
+      version = "263.7307.113";
       #checksum = "fac0d50307301ecdb69998feeb338f1287a96e9c02d205165ec4e1d8c0ed40a6";
-      checksum = "sha256-K+6bQnt8bi9Bww/tZI9JX6UhoBNDJxg5UjHLd6VF7ek=";
+      checksum = "sha256-S7EVn1H9sp2b6Kze6AulwKiVzMsKUeAS7paaP8LqL+U=";
       vmOptions.maxMemory = 16384;
       vmOptions.awtToolkit = "wayland";
     };
@@ -236,8 +236,8 @@
     };
     pycharm = {
       enable = true;
-      version = "2026.2.2";
-      checksum = "60448e3fb4e6a700e3d2ad3583ea8de1505b3f436e6715329a5a35e31c34aced";
+      version = "263.7307.101";
+      checksum = "072d4249c9f2fff408ce463d16e5eae0c3f57f0fc3529267b9c86b1590872820";
       vmOptions.awtToolkit = "wayland";
     };
   };
