@@ -88,6 +88,10 @@ let
       api = lib.mkOption {
         type = providerApiOptions;
       };
+      settings = lib.mkOption {
+        type = lib.types.attrs;
+        default = {};
+      };
       models = lib.mkOption {
         type = lib.types.attrsOf providerModelOptions;
       };
@@ -112,9 +116,34 @@ let
         type = lib.types.nullOr lib.types.str;
         default = null;
       };
+      capabilities = lib.mkOption {
+        type = lib.types.nullOr providerModelCapabilitiesOptions;
+        default = null;
+      };
       cost = lib.mkOption {
         type = lib.types.nullOr providerModelCostOptions;
         default = null;
+      };
+      limit = lib.mkOption {
+        type = lib.types.nullOr providerModelLimitsOptions;
+        default = null;
+      };
+    };
+  };
+
+  providerModelCapabilitiesOptions = lib.types.submodule {
+    options = {
+      tools = lib.mkOption {
+        type = lib.types.bool;
+        default = false;
+      };
+      input = lib.mkOption {
+        type = lib.types.listOf lib.types.str;
+        default = [];
+      };
+      output = lib.mkOption {
+        type = lib.types.listOf lib.types.str;
+        default = [];
       };
     };
   };
@@ -127,11 +156,31 @@ let
       output = lib.mkOption {
         type = lib.types.numbers.nonnegative;
       };
-      cache_read = lib.mkOption {
+      cache = lib.mkOption {
+        type = lib.types.nullOr providerModelCostCacheOptions;
+        default = null;
+      };
+    };
+  };
+
+  providerModelCostCacheOptions = lib.types.submodule {
+    options = {
+      read = lib.mkOption {
+        type = lib.types.numbers.nonnegative;
+      };
+      write = lib.mkOption {
+        type = lib.types.numbers.nonnegative;
+      };
+    };
+  };
+
+  providerModelLimitsOptions = lib.types.submodule {
+    options = {
+      context = lib.mkOption {
         type = lib.types.numbers.nonnegative;
         default = 0.0;
       };
-      cache_write = lib.mkOption {
+      output = lib.mkOption {
         type = lib.types.numbers.nonnegative;
         default = 0.0;
       };

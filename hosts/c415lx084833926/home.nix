@@ -30,20 +30,21 @@
   sops = {
     defaultSopsFile = ../../secrets/secrets.yaml;
     age.keyFile = "${config.xdg.configHome}/sops/age/keys.txt";
-    # Secrets to decrypt
     secrets = {
       mistralApiKey = {};
       mistralBaseUrl = {};
       moonshotApiKey = {};
       moonshotBaseUrl = {};
-      nxAnthropicApiKey = {};
-      nxAnthropicBaseUrl = {};
+      nxAnthropicBedrockApiKey = {};
+      nxAnthropicBedrockBaseUrl = {};
+      nxAnthropicVertexApiKey = {};
+      nxAnthropicVertexBaseUrl = {};
       nxGoogleApiKey = {};
       nxGoogleBaseUrl = {};
       nxMoonshotApiKey = {};
       nxMoonshotBaseUrl = {};
-      nxOpenaiApiKey = {};
-      nxOpenaiBaseUrl = {};
+      nxOpenAiApiKey = {};
+      nxOpenAiBaseUrl = {};
       nxZhipuApiKey = {};
       nxZhipuBaseUrl = {};
     };
@@ -149,7 +150,7 @@
     commands = [ "caveman" ];
     defaults = {
       agent = "plan";
-      model = "mistral/mistral-medium-latest";
+      model = "mistral/zai-glm-5-3";
       small_model = "mistral/mistral-medium-latest";
     };
     agents = {
@@ -170,9 +171,13 @@
         api.url = "{file:${config.sops.secrets.moonshotBaseUrl.path}}";
         api.key = "{file:${config.sops.secrets.moonshotApiKey.path}}";
       };
-      nx-anthropic = opencode.presets.providers.nx-anthropic // {
-        api.url = "{file:${config.sops.secrets.nxAnthropicBaseUrl.path}}";
-        api.key = "{file:${config.sops.secrets.nxAnthropicApiKey.path}}";
+      nx-anthropic-bedrock = opencode.presets.providers.nx-anthropic-bedrock // {
+        api.url = "{file:${config.sops.secrets.nxAnthropicBedrockBaseUrl.path}}";
+        api.key = "{file:${config.sops.secrets.nxAnthropicBedrockApiKey.path}}";
+      };
+      nx-anthropic-vertex = opencode.presets.providers.nx-anthropic-vertex // {
+        api.url = "{file:${config.sops.secrets.nxAnthropicVertexBaseUrl.path}}";
+        settings.accessToken = "{file:${config.sops.secrets.nxAnthropicVertexApiKey.path}}";
       };
       nx-google = opencode.presets.providers.nx-google // {
         api.url = "{file:${config.sops.secrets.nxGoogleBaseUrl.path}}";
@@ -181,6 +186,10 @@
       nx-moonshot = opencode.presets.providers.nx-moonshot // {
         api.url = "{file:${config.sops.secrets.nxMoonshotBaseUrl.path}}";
         api.key = "{file:${config.sops.secrets.nxMoonshotApiKey.path}}";
+      };
+      nx-openai = opencode.presets.providers.nx-openai // {
+        api.url = "{file:${config.sops.secrets.nxOpenAiBaseUrl.path}}";
+        api.key = "{file:${config.sops.secrets.nxOpenAiApiKey.path}}";
       };
       nx-zhipu = opencode.presets.providers.nx-zhipu // {
         api.url = "{file:${config.sops.secrets.nxZhipuBaseUrl.path}}";

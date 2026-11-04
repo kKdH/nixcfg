@@ -32,25 +32,33 @@ let
   ocProviders = builtins.mapAttrs (name: provider:
     { name = provider.displayName; }
     // lib.optionalAttrs (provider.sdk != null) {
-      npm = provider.sdk;
+      package = provider.sdk;
     } // {
-    options = {
-      baseURL = provider.api.url;
-    } // lib.optionalAttrs (provider.api.key != null) {
-      apiKey = provider.api.key;
-    };
-    models = builtins.mapAttrs (name: model: {
-      name = model.displayName;
-    } // lib.optionalAttrs (model.cost != null) {
-      cost = {
-        input = model.cost.input;
-        output = model.cost.output;
-        #cache = { # Setting cache costs via config is not supported by OC.
-        #  read = model.cost.cache_read;
-        #  write = model.cost.cache_write;
-        #};
-      };
-    }) provider.models;
+      settings = {
+        baseURL = provider.api.url;
+      } // lib.optionalAttrs (provider.api.key != null) {
+        apiKey = provider.api.key;
+      } // provider.settings;
+      models = builtins.mapAttrs (
+        name: model:
+        {
+          name = model.displayName;
+        }
+        // lib.optionalAttrs (model.capabilities != null) {
+          capabilities = model.capabilities;
+        }
+        // lib.optionalAttrs (model.cost != null) {
+          cost = {
+            input = model.cost.input;
+            output = model.cost.output;
+          } // lib.optionalAttrs (model.cost.cache != null) {
+            cache = model.cost.cache;
+          };
+       }
+       // lib.optionalAttrs (model.limit != null) {
+         limit = model.limit;
+       }
+     ) provider.models;
   }) providers;
 
   ocEnabledProviders = builtins.attrNames providers;
@@ -61,9 +69,9 @@ let
     autoupdate = autoupdate;
     disabled_providers = [];
     enabled_providers = ocEnabledProviders;
-    agent = ocAgents;
-    provider = ocProviders;
-    plugin = [];
+    agents = ocAgents;
+    providers = ocProviders;
+    plugins = [];
   } // lib.optionalAttrs ((defaults.agent or null) != null) {
     default_agent = defaults.agent;
   } // lib.optionalAttrs ((defaults.model or null) != null) {
