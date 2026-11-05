@@ -9,6 +9,7 @@
     ./freecad
     ./git.nix
     ./helix.nix
+    ./herdr
     ./jetbrains.nix
     ./kicad
     ./litellm
