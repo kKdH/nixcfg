@@ -31,7 +31,7 @@ let
       };
       awtToolkit = lib.mkOption {
         type = nullOr (enum [ "wayland" ]);
-        default = null;
+        default = "wayland";
       };
     };
   };
