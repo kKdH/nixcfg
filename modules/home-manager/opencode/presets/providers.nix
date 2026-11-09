@@ -58,12 +58,29 @@
           input = 0.95;
           output = 4.00;
         };
+        limit = {
+          context = 262144;
+          output = 64000;
+        };
       };
-      "kimi-k3" = {
-        displayName = "Kimi K3";
+      "kimi-k3.1-pro" = {
+        displayName = "Kimi K3.1 Pro";
+        capabilities = {
+          tools = true;
+          input = [ "text" "image" "video" ];
+          output = [ "text" ];
+        };
         cost = {
-          input = 3.00;
-          output = 15.00;
+          input = 2.00;
+          output = 10.00;
+          cache = {
+            read = 0.20;
+            write = 4.00;
+          };
+        };
+        limit = {
+          context = 1048576;
+          output = 128000;
         };
       };
     };
