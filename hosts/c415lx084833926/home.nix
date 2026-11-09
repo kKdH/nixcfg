@@ -290,7 +290,7 @@
     enable = true;
   };
 
-  vibe.enable = false;
+  vibe.enable = true;
 
   programs.bash = {
     enable = true;
