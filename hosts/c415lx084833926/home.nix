@@ -144,10 +144,6 @@
     gpu-viewer
   ];
 
-  herdr = {
-    enable = true;
-  };
-
   opencode = {
     enable = true;
     skills = [ "caveman" ];
