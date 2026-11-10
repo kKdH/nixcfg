@@ -18,6 +18,11 @@
     device = "nodev";
   };
 
+  boot.binfmt.emulatedSystems = [
+      # Enable binfmt emulation of aarch64-linux for generating an image for e.g. the Raspberry Pi.
+      "aarch64-linux"
+  ];
+
   # luks
   boot = {
     # kernelParams = [ "nvidia-drm.fbdev=1" ];
