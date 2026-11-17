@@ -83,6 +83,26 @@
           output = 128000;
         };
       };
+      "kimi-k3.1-pro-highspeed" = {
+        displayName = "Kimi K3.1 Pro Highspeed";
+        capabilities = {
+          tools = true;
+          input = [ "text" "image" "video" ];
+          output = [ "text" ];
+        };
+        cost = {
+          input = 4.00;
+          output = 20.00;
+          cache = {
+            read = 0.20;
+            write = 8.00;
+          };
+        };
+        limit = {
+          context = 1048576;
+          output = 128000;
+        };
+      };
     };
   };
   nx-anthropic-bedrock = {
@@ -271,19 +291,22 @@
       useDeploymentBasedUrls = true;
     };
     models = {
-      "gpt-5.6-luna" = {
-        displayName = "GPT 5.6 Luna";
+      # rule of thumb
+      # cache.read = input * 0.1
+      # cache.write = input * 1.25
+      "gpt-6-luna" = {
+        displayName = "GPT 6 Luna";
         capabilities = {
           tools = true;
           input = ["text" "image" "pdf"];
           output = ["text"];
         };
         cost = {
-          input = 0.44;
-          output = 1.98;
+          input = 0.12;
+          output = 0.60;
           cache = {
-            read = 0.05;
-            write = 0.55;
+            read = 0.012;
+            write = 0.15;
           };
         };
         limit = {
@@ -291,8 +314,8 @@
           output = 128000;
         };
       };
-      "gpt-5.6-terra" = {
-        displayName = "GPT 5.6 Terra";
+      "gpt-6.1-terra" = {
+        displayName = "GPT 6.1 Terra";
         capabilities = {
           tools = true;
           input = ["text" "image" "pdf"];
@@ -311,19 +334,39 @@
           output = 128000;
         };
       };
-      "gpt-5.6-sol" = {
-        displayName = "GPT 5.6 Sol";
+      "gpt-6-sol" = {
+        displayName = "GPT 6 Sol";
         capabilities = {
           tools = true;
           input = ["text" "image" "pdf"];
           output = ["text"];
         };
         cost = {
-          input = 5.50;
-          output = 33.00;
+          input = 2.40;
+          output = 12.00;
           cache = {
-            read = 0.55;
-            write = 6.88;
+            read = 0.24;
+            write = 3.00;
+          };
+        };
+        limit = {
+          context = 1050000;
+          output = 128000;
+        };
+      };
+      "gpt-6-astra" = {
+        displayName = "GPT 6 Astra";
+        capabilities = {
+          tools = true;
+          input = ["text" "image" "pdf"];
+          output = ["text"];
+        };
+        cost = {
+          input = 12.00;
+          output = 60.00;
+          cache = {
+            read = 1.20;
+            write = 15.00;
           };
         };
         limit = {
