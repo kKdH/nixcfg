@@ -204,6 +204,11 @@
         url = "https://www.drahtseile24.de";
       }
       {
+        name = "Olimex";
+        tags = [ "shop" ];
+        url = "https://www.olimex.com/";
+      }
+      {
         name = "Construction Blogs";
         bookmarks = [
           {
