@@ -221,8 +221,8 @@
     };
     rustRover = {
       enable = true;
-      version = "2026.3";
-      checksum = "8c6f2274a5a74df916aba9611dcdcb6b904517fcc12d14265717967dbd65f29e";
+      version = "2026.3.1";
+      checksum = "317057983733b08630d8b705699ae009a23b6b8213acdf7075b1112598fd8b0c";
     };
     intellij = {
       enable = true;
