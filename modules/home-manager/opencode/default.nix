@@ -46,6 +46,21 @@ let
     };
   };
 
+  permissionRuleOptions = lib.types.submodule {
+    options = {
+      action = lib.mkOption {
+        type = lib.types.str;
+      };
+      resource = lib.mkOption {
+        type = lib.types.str;
+        default = "*";
+      };
+      effect = lib.mkOption {
+        type = lib.types.enum [ "allow" "deny" "ask" ];
+      };
+    };
+  };
+
   agentsOptions = lib.types.submodule {
     options = {
       description = lib.mkOption {
@@ -61,11 +76,15 @@ let
         default = null;
       };
       permissions = lib.mkOption {
-        type = lib.types.nullOr lib.types.attrs;
-        default = {};
+        type = lib.types.listOf permissionRuleOptions;
+        default = [];
       };
       temperature = lib.mkOption {
         type = lib.types.nullOr (lib.types.numbers.between 0.0 1.0);
+        default = null;
+      };
+      tools = lib.mkOption {
+        type = lib.types.nullOr lib.types.attrs;
         default = null;
       };
       color = lib.mkOption {
@@ -187,10 +206,38 @@ let
     };
   };
 
+  mcpOptions = lib.types.submodule {
+    options = {
+      github = lib.mkOption {
+        type = mcpGitHubOptions;
+      };
+    };
+  };
+
+  mcpGitHubOptions = lib.types.submodule {
+    options = {
+      enable = lib.mkOption {
+        type = lib.types.bool;
+        default = false;
+      };
+      pat = lib.mkOption {
+        type = lib.types.str;
+      };
+    };
+  };
+
+  # nixpkgs#582673: wrong node_modules hash for opencode 2.2.5 (bun 1.4.4)
+  opencode = pkgs.opencode.overrideAttrs (old: lib.optionalAttrs (old.version == "2.2.5") {
+    node_modules = old.node_modules.overrideAttrs {
+      outputHash = "sha256-prx9dX7kUvs/E3zopkaPk5LXh3xJAy5sZeum/W8L7cA=";
+    };
+  });
+
   settings = import ./settings.nix { inherit lib pkgs; } {
     agents = cfg.agents;
     defaults = cfg.defaults;
     providers = cfg.providers;
+    mcp = cfg.mcp;
   };
 in
 {
@@ -213,6 +260,10 @@ in
       description = "List of providers.";
     };
 
+    mcp = lib.mkOption {
+      type = mcpOptions;
+    };
+
     skills = lib.mkOption {
       type = lib.types.listOf lib.types.str;
       default = [];
@@ -228,7 +279,7 @@ in
 
   config = lib.mkIf cfg.enable {
     home.packages = [
-      pkgs.opencode
+      opencode
     ];
     home.file = skillFiles // commandFiles // {
       "${configDir}/opencode.json".text = settings.json;

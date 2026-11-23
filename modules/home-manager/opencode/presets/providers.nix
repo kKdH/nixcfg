@@ -260,6 +260,22 @@
           output = 65536;
         };
       };
+      "gemini-3.8-flash" = {
+        displayName = "Gemini 3.8 Flash";
+        capabilities = {
+          tools = true;
+          input = ["text" "image" "audio" "video"];
+          output = ["text"];
+        };
+        cost = {
+          input = 0.75;
+          output = 3.75;
+        };
+        limit = {
+          context =  1048576;
+          output = 65536;
+        };
+      };
     };
   };
   nx-moonshot = {

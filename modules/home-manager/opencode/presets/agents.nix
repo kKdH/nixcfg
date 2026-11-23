@@ -27,15 +27,15 @@
       6. If they say yes, give an appropriate exercise, then give feedback aligned to the chosen style.
       7. Be patient. Never pad. Never lecture unprompted.
     '';
-    permissions = {
-      edit = "deny";
-      bash = "deny";
-      question = "allow";
-      glob = "allow";
-      grep = "allow";
-      read = "allow";
-      task = "allow";
-    };
+    permissions = [
+      { action = "edit"; resource = "*"; effect = "deny"; }
+      { action = "shell"; resource = "*"; effect = "deny"; }
+      { action = "question"; resource = "*"; effect = "allow"; }
+      { action = "glob"; resource = "*"; effect = "allow"; }
+      { action = "grep"; resource = "*"; effect = "allow"; }
+      { action = "read"; resource = "*"; effect = "allow"; }
+      { action = "subagent"; resource = "*"; effect = "allow"; }
+    ];
     color = "#487e02";
   };
   debug = {
@@ -61,17 +61,16 @@
       - Use websearch when the bug involves a library, framework, or platform behavior that may be documented or a known issue.
       - Think out loud: show your reasoning at each step so the user can catch wrong assumptions early.
     '';
-    permissions = {
-      read = "allow";
-      glob = "allow";
-      grep = "allow";
-      task = "allow";
-      websearch = "allow";
-      bash = "ask";
-      edit = "ask";
-      write = "ask";
-      question = "allow";
-    };
+    permissions = [
+      { action = "read"; resource = "*"; effect = "allow"; }
+      { action = "glob"; resource = "*"; effect = "allow"; }
+      { action = "grep"; resource = "*"; effect = "allow"; }
+      { action = "subagent"; resource = "*"; effect = "allow"; }
+      { action = "websearch"; resource = "*"; effect = "allow"; }
+      { action = "question"; resource = "*"; effect = "allow"; }
+      { action = "shell"; resource = "*"; effect = "ask"; }
+      { action = "edit"; resource = "*"; effect = "ask"; }
+    ];
     color = "#ff8c00";
   };
   brainstorm = {
@@ -95,20 +94,18 @@
       Start each session by restating the problem in your own words, then use the question tool to confirm the restatement is correct and surface any hidden assumptions before generating ideas.
     '';
 
-    permissions = {
-      skill = "ask";
-      todowrite = "allow";
-      webfetch = "deny";
-      read = "allow";
-      glob = "allow";
-      grep = "allow";
-      task = "allow";
-      websearch = "allow";
-      bash = "deny";
-      edit = "deny";
-      write = "deny";
-      question = "allow";
-    };
+    permissions = [
+      { action = "skill"; resource = "*"; effect = "ask"; }
+      { action = "webfetch"; resource = "*"; effect = "deny"; }
+      { action = "read"; resource = "*"; effect = "allow"; }
+      { action = "glob"; resource = "*"; effect = "allow"; }
+      { action = "grep"; resource = "*"; effect = "allow"; }
+      { action = "subagent"; resource = "*"; effect = "allow"; }
+      { action = "websearch"; resource = "*"; effect = "allow"; }
+      { action = "shell"; resource = "*"; effect = "deny"; }
+      { action = "edit"; resource = "*"; effect = "deny"; }
+      { action = "question"; resource = "*"; effect = "allow"; }
+    ];
     temperature = 0.9;
     color = "#00ffff";
   };
@@ -141,16 +138,15 @@
 
       Scope: grammar, spelling, punctuation, and capitalization only. No structural rewrites, no tone shifts, no translations.
     '';
-    permissions = {
-      read = "ask";
-      glob = "ask";
-      grep = "ask";
-      question = "allow";
-      edit = "deny";
-      write = "deny";
-      bash = "deny";
-      webfetch = "deny";
-    };
+    permissions = [
+      { action = "edit"; resource = "*"; effect = "deny"; }
+      { action = "shell"; resource = "*"; effect = "deny"; }
+      { action = "webfetch"; resource = "*"; effect = "deny"; }
+      { action = "read"; resource = "*"; effect = "ask"; }
+      { action = "glob"; resource = "*"; effect = "ask"; }
+      { action = "grep"; resource = "*"; effect = "ask"; }
+      { action = "question"; resource = "*"; effect = "allow"; }
+    ];
     color = "#ff00ff";
   };
   codemate = {
@@ -181,19 +177,17 @@
       - Never write, edit, or run code unless the user explicitly requests it.
       - HARD RULE — NO OFFERS: Never, under any circumstances, offer, suggest, hint at, or ask to apply edits, write code, run commands, or make changes. Not as a question. Not as a statement. Not as a follow-up. Not implicitly. Banned phrases include but are not limited to: "Want me to...", "Should I...", "Would you like me to...", "I can apply...", "I could implement...", "Shall I...", "Let me know if you want me to...", "If you'd like, I can...", "Want me to implement these?". Present the analysis or solution and stop — period. The user will ask when they want changes.
     '';
-    permissions = {
-      read = "allow";
-      glob = "allow";
-      grep = "allow";
-      task = "allow";
-      websearch = "allow";
-      webfetch = "allow";
-      question = "allow";
-      todowrite = "allow";
-      bash = "ask";
-      edit = "ask";
-      write = "ask";
-    };
+    permissions = [
+      { action = "read"; resource = "*"; effect = "allow"; }
+      { action = "glob"; resource = "*"; effect = "allow"; }
+      { action = "grep"; resource = "*"; effect = "allow"; }
+      { action = "subagent"; resource = "*"; effect = "allow"; }
+      { action = "websearch"; resource = "*"; effect = "allow"; }
+      { action = "webfetch"; resource = "*"; effect = "allow"; }
+      { action = "question"; resource = "*"; effect = "allow"; }
+      { action = "shell"; resource = "*"; effect = "ask"; }
+      { action = "edit"; resource = "*"; effect = "ask"; }
+    ];
     color = "#008080";
   };
 }

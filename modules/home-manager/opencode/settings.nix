@@ -7,6 +7,7 @@
   defaults ? {},
   agents ? {},
   providers ? {},
+  mcp ? {},
   ...
 }:
 let
@@ -22,12 +23,17 @@ let
       color = agent.color;
     } // lib.optionalAttrs (agent.prompt != null) {
         prompt = normalizePromptToFile name agent.prompt;
-    } // lib.optionalAttrs (agent.permissions != null) {
-        permission = agent.permissions;
     } // lib.optionalAttrs (agent.temperature != null) {
         temperature = agent.temperature;
-      #  "model": "anthropic/claude-sonnet-4-20250514",
-    }) agents;
+    } // {
+      permissions = agent.permissions
+        ++ lib.optionals (agent.tools != null) (map (tool: {
+          action = tool;
+          resource = "*";
+          effect = "allow";
+        }) (lib.attrNames (lib.filterAttrs (_: enabled: enabled) agent.tools)));
+    }
+  ) agents;
 
   ocProviders = builtins.mapAttrs (name: provider:
     { name = provider.displayName; }
@@ -54,14 +60,33 @@ let
           } // lib.optionalAttrs (model.cost.cache != null) {
             cache = model.cost.cache;
           };
-       }
-       // lib.optionalAttrs (model.limit != null) {
-         limit = model.limit;
-       }
-     ) provider.models;
-  }) providers;
+        }
+        // lib.optionalAttrs (model.limit != null) {
+          limit = model.limit;
+        }
+      ) provider.models;
+    }) providers;
 
   ocEnabledProviders = builtins.attrNames providers;
+
+  ocMcp = {
+    servers = {
+      github = {
+        type = "remote";
+        url = "https://api.githubcopilot.com/mcp/";
+        disabled = !mcp.github.enable;
+        oauth = false;
+        headers = {
+          Authorization = "Bearer ${mcp.github.pat}";
+        };
+      };
+    };
+  };
+
+  ocPermissions = [
+    # Disable all github tool by default. enable selectively per agent.
+    { action = "github_*"; resource = "*"; effect = "deny"; }
+  ];
 
   ocConfig = {
     "$schema" = "https://opencode.ai/config.json";
@@ -72,6 +97,8 @@ let
     agents = ocAgents;
     providers = ocProviders;
     plugins = [];
+    mcp = ocMcp;
+    permissions = ocPermissions;
   } // lib.optionalAttrs ((defaults.agent or null) != null) {
     default_agent = defaults.agent;
   } // lib.optionalAttrs ((defaults.model or null) != null) {

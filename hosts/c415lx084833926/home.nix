@@ -47,6 +47,7 @@
       nxOpenAiBaseUrl = {};
       nxZhipuApiKey = {};
       nxZhipuBaseUrl = {};
+      ghMcpToken = {};
     };
   };
 
@@ -154,9 +155,13 @@
       small_model = "mistral/mistral-medium-latest";
     };
     agents = {
-      build = opencode.presets.agents.build;
+      build = opencode.presets.agents.build // {
+        tools = opencode.presets.tools.github;
+      };
       debug = opencode.presets.agents.debug;
-      plan = opencode.presets.agents.plan;
+      plan = opencode.presets.agents.plan // {
+        tools = opencode.presets.tools.github;
+      };
       teach = opencode.presets.agents.teach;
       brainstorm = opencode.presets.agents.brainstorm;
       proofread = opencode.presets.agents.proofread;
@@ -196,6 +201,12 @@
         api.key = "{file:${config.sops.secrets.nxZhipuApiKey.path}}";
       };
       ollama = opencode.presets.providers.ollama;
+    };
+    mcp = {
+      github = {
+        enable = true;
+        pat = "{file:${config.sops.secrets.ghMcpToken.path}}";
+      };
     };
   };
 
